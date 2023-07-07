@@ -1,10 +1,7 @@
 {
-    "name": "Core",
+    "name": "InputsAssembly",
     "rootNamespace": "",
     "references": [
-        "GUID:d797021d5d22287448befa91f310c71c",
-        "GUID:23f75c5fda4814849b12dd67670a0cb9",
-        "GUID:a9f3e42ced906ae49b64198f4ad100aa",
         "GUID:75469ad4d38634e559750d17036d5f7c"
     ],
     "includePlatforms": [],

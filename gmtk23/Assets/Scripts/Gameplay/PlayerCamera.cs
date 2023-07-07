@@ -13,9 +13,8 @@ namespace Gameplay
         
  
         // Update is called once per frame
-        void Update()
-        {
-            transform.DOMove(PlayerController.instance.transform.position + m_positionFromPlayer,m_speedFollow).SetEase(Ease.OutQuad);
+        void Update() {
+            transform.DOMove(PlayerController.instance.transform.position + m_positionFromPlayer, m_speedFollow).SetEase(EaseFollow);
         }
     }
 }
