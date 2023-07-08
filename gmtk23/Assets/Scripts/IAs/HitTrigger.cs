@@ -1,4 +1,5 @@
 ﻿using System;
+using Managers;
 using UnityEngine;
 
 namespace IAs
@@ -15,6 +16,11 @@ namespace IAs
         public void Hit()
         {
             ai.HitTarget();
+        }
+
+        public void Step()
+        {
+            AudioManager.PlaySoundMobStep();
         }
     }
 }

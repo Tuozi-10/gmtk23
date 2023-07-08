@@ -370,7 +370,12 @@ namespace IAs
             
             if (m_currentHp == 0)
             {
+                AudioManager.PlaySoundRaleAgonie();
                 m_currentState = States.Dead;
+            }
+            else
+            {
+                AudioManager.PlaySoundHitMe();
             }
   
         }
@@ -381,6 +386,7 @@ namespace IAs
             {
                 return;
             }
+            AudioManager.PlaySoundHitEnemy();
 
             if (m_currentJob == Jobs.Shooter)
             {
