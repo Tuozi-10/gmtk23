@@ -67,6 +67,7 @@ namespace IAs
             Shooter
         }
 
+        [SerializeField]
         protected Jobs m_currentJob;
         
         #endregion
@@ -88,6 +89,7 @@ namespace IAs
         [SerializeField] private SphereCollider m_triggerDetection;
         [SerializeField] private float m_distanceAttackCac = 1.5f;
         [SerializeField] private float m_distanceAttackDistance = 5.5f;
+        [SerializeField] private float m_fleeTooNearAttackDistance = 3.5f;
         
         private DetectionManager m_detectionManager;
         
@@ -134,19 +136,26 @@ namespace IAs
         public void SetWeapon(Weapon weapon)
         {
             m_weapon = weapon;
-            m_weaponSlot.sprite = weapon.sprite;
+            RefreshStuffs();
         }
         
         public void SetArmor(Armor armor)
         {
             m_armor = armor;
-            m_armorSlot.sprite = armor.sprite;
+            RefreshStuffs();
         }
 
         public void RefreshStuffs()
         {
-            m_armorSlot.sprite = m_armor is null ? null : m_armor.sprite;
-            m_weaponSlot.sprite = m_weapon is null ? null : m_weapon.sprite;
+            m_armorSlot.sprite = m_armor == null ? null : m_armor.sprite;
+            m_weaponSlot.sprite = m_weapon == null ? null : m_weapon.sprite;
+            if (m_weapon != null)
+            {
+                m_currentJob = m_weapon.AssociatedJob;
+                return;
+            }
+
+            m_currentJob = Jobs.Cac; // default, hit with hands ? or flee ?
         }
         
         #endregion
@@ -238,6 +247,9 @@ namespace IAs
 
             if (distanceTarget < (m_currentJob == Jobs.Cac? m_distanceAttackCac: m_distanceAttackDistance))
             {
+                m_animator.speed = 1f;
+                m_animator.Play("Idle");
+
                 m_currentState = States.Attacking;
                 return;
             }
@@ -247,20 +259,28 @@ namespace IAs
 
         protected virtual void DoAttacking()
         {
+
             if (m_targetAI == null)
             {
                 m_currentState = States.Wander;
                 return;
             }
+            
             var distanceTarget = Vector3.Distance(transform.position, m_targetAI.transform.position);
 
-            if (distanceTarget < (m_currentJob == Jobs.Cac ? m_distanceAttackCac : m_distanceAttackDistance))
+            if (distanceTarget > (m_currentJob == Jobs.Cac ? m_distanceAttackCac : m_distanceAttackDistance) +0.5f)
             {
-
+                m_currentState = States.Chasing;
+                return;
             }
 
-            // DISTANCE > -> CHASE
-            // TOO NEAR FOR SHOOTER FLEE
+            if (m_currentJob == Jobs.Shooter && distanceTarget < m_fleeTooNearAttackDistance)
+            {
+                m_currentState = States.Flee;
+                return;
+            }
+
+            agent.SetDestination(transform.position);
         }
 
         protected virtual void DoDead()
@@ -270,7 +290,32 @@ namespace IAs
 
         protected virtual void DoFlee()
         {
+            if (m_targetAI == null)
+            {
+                m_currentState = States.Wander;
+                return;
+            }
             
+            var distanceTarget = Vector3.Distance(transform.position, m_targetAI.transform.position);
+
+            if (distanceTarget > (m_currentJob == Jobs.Cac ? m_distanceAttackCac : m_distanceAttackDistance) +0.5f)
+            {
+                m_currentState = States.Chasing;
+                return;
+            }
+            
+            if (distanceTarget > m_fleeTooNearAttackDistance && distanceTarget < (m_currentJob == Jobs.Cac? m_distanceAttackCac: m_distanceAttackDistance))
+            {
+                m_animator.speed = 1f;
+                m_animator.Play("Idle");
+
+                m_currentState = States.Attacking;
+                return;
+            }
+            
+            var fleeDestination = (transform.position- m_targetAI.transform.position).normalized;
+            
+            agent.SetDestination(fleeDestination);
         }
         
         #endregion

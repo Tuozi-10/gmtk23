@@ -21,7 +21,11 @@ namespace IAs
         {
             m_sortingGroup.sortingOrder = -(int)(transform.position.z*10);
             transform.eulerAngles = Vector3.zero;
-            transform.localScale = new Vector3(m_agent.destination.x < transform.position.x ? -1 : 1, 1, 1);
+
+            if (m_agent.velocity.magnitude > 0.2f)
+            {
+                transform.localScale = new Vector3(m_agent.destination.x < transform.position.x ? -1 : 1, 1, 1);
+            }
         }
     }
 }
