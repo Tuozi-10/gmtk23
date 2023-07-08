@@ -17,26 +17,31 @@ namespace Managers
         
         public static void PlaySoundDash()
         {
+            if(instance == null) return;
             instance.m_audioSource.PlayOneShot(GetRandomSoundFromList(instance.m_dash));
         }
         
         public static void PlaySoundHitEnemy()
         {
+            if(instance == null) return;
             instance.m_audioSource.PlayOneShot(GetRandomSoundFromList(instance.m_hitEnemy));
         }
         
         public static void PlaySoundHitMe()
         {
+            if(instance == null) return;
             instance.m_audioSource.PlayOneShot(GetRandomSoundFromList(instance.m_hitMe));
         }
         
         public static void PlaySoundMobStep()
         {
+            if(instance == null) return;
             instance.m_audioSource.PlayOneShot(GetRandomSoundFromList(instance.m_mobStep));
         }
         
         public static void PlaySoundRaleAgonie()
         {
+            if(instance == null) return;
             instance.m_audioSource.PlayOneShot(GetRandomSoundFromList(instance.m_raleAgonie));
         }
 
