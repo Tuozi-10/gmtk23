@@ -587,6 +587,7 @@ MonoBehaviour:
   m_arrow: {fileID: 5435709332488754029, guid: a3fcfe6d65609d845ac5695a1b84b366, type: 3}
   m_aiHp: {fileID: 8160503851723319969}
   attackSpeedRate: 1
+  m_body: {fileID: 2175481726682111478}
   m_animator: {fileID: 6138816389122056634}
   m_weapon: {fileID: 11400000, guid: 423eaff5c55e4104a99e2000fb51e8a5, type: 2}
   m_armor: {fileID: 11400000, guid: f8f53c14aad99e9439a104e876151c5c, type: 2}

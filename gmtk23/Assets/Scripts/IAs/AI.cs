@@ -100,6 +100,9 @@ namespace IAs
 
         [SerializeField] private float attackSpeedRate = 1f;
         
+        [SerializeField] private Transform m_body;
+        public Transform body => m_body;
+        
         private DetectionManager m_detectionManager;
         
         protected NavMeshAgent agent;
@@ -383,6 +386,7 @@ namespace IAs
             }
             
             var arrow = Instantiate(m_arrow);
+            arrow.transform.position = transform.position;
             arrow.SetUp(targetAI.transform.position - transform.position, team, m_weapon.damages);
         }
         

@@ -16,6 +16,8 @@ namespace IAs
         {
             m_sortingGroup = GetComponent<SortingGroup>();
             m_agent = transform.parent.GetComponent<NavMeshAgent>();
+            
+            if(m_agent != null)
             ai = m_agent.GetComponent<AI>();
         }
 
@@ -24,13 +26,18 @@ namespace IAs
             m_sortingGroup.sortingOrder = -(int)(transform.position.z*10);
             transform.eulerAngles = Vector3.zero;
 
+            if (m_agent == null)
+            {
+                return;
+            }
+            
             if (m_agent.velocity.magnitude > 0.2f)
             {
                 transform.localScale = new Vector3(m_agent.destination.x < transform.position.x ? -1 : 1, 1, 1);
             }
             else
             {
-                if (ai.targetAI != null)
+                if (ai != null && ai.targetAI != null)
                 {
                     transform.localScale = new Vector3(ai.targetAI.transform.position.x < ai.transform.position.x ? -1 : 1, 1, 1);
                 }
