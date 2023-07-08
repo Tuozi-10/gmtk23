@@ -24,25 +24,26 @@ namespace Gameplay {
         private float velocityChangeTime = 0;
         private Vector2 dir = new();
         private Vector3 startVelocity = new();
+        private float movementDisable = 0;
 
         [Header("Dash")]
         [SerializeField, ReadOnly] private DashState currentDashState = DashState.none;
+        public DashState CurrentDashState => currentDashState;
         [SerializeField] private float dashForce = 10f;
         [SerializeField, Range(0,5)] private float dashCdTime = 1f;
         [SerializeField] private float timeInDash = 1f;
+        [SerializeField] private float moveDisableAfterCollidingInDash = .2f;
         private Vector3 DashDir = new();
         private float timeSinceStartDash = 0;
         private float timeSinceLastDash = 0;
-
-
+        
         [Header("Interface")]
         [SerializeField] private Transform dashCooldownParent = null;
         [SerializeField] private Image dashCooldownImg = null;
         [SerializeField] private Color startDashColor = new();
         [SerializeField] private Color hasDashColor = new();
         [SerializeField] private float getDashAnimDuration = 0.25f;
-
-
+        
         private void Start() {
             cam = Camera.main;
             playerCam = cam.GetComponent<PlayerCamera>();
@@ -76,17 +77,21 @@ namespace Gameplay {
                     rb.velocity = DashDir * dashForce;
                     break;
                 
-                case DashState.WaitForDash when dir.magnitude != 0 && velocityChangeTime < decelerationDashTime:
+                case DashState.WaitForDash when velocityChangeTime < decelerationDashTime:
                     rb.velocity = Vector3.Lerp(startVelocity, new Vector3(dir.x, 0, dir.y) * moveSpeed, velocityChangeTime / decelerationDashTime);
                     velocityChangeTime += Time.fixedDeltaTime;
                     break;
                 
                 default:{
-                    if (currentDashState != DashState.isInDash && dir.magnitude != 0 && velocityChangeTime >= decelerationDashTime) {
-                        rb.velocity = new Vector3(dir.x, 0, dir.y) * moveSpeed;
-                    }
-                    else if (currentDashState != DashState.isInDash && dir.magnitude == 0) {
-                        startVelocity = Vector3.zero;
+                    if (currentDashState == DashState.isInDash) return;
+                    
+                    //If the player has decelerate to the current velocity value
+                    if (velocityChangeTime >= decelerationDashTime) {
+                        if (movementDisable <= 0) rb.velocity = new Vector3(dir.x, 0, dir.y) * moveSpeed;
+                        else {
+                            movementDisable -= Time.fixedDeltaTime;
+                            if(movementDisable <= 0) ExitSlowMotion();
+                        }
                     }
                     break;
                 }
@@ -101,6 +106,7 @@ namespace Gameplay {
             startVelocity = rb.velocity;
         }
 
+        #region Dash
         /// <summary>
         /// Make the player dash
         /// </summary>
@@ -108,11 +114,14 @@ namespace Gameplay {
         /// <exception cref="NotImplementedException"></exception>
         private void PerformDash(InputAction.CallbackContext obj) {
             if (currentDashState != DashState.none) return;
+            ExitSlowMotion();
             playerCam.ChangeDashState(true);
+            movementDisable = 0;
+            
             DashDir = GetMouseDirFromPlayer();
-            currentDashState = DashState.isInDash;
             timeSinceStartDash = 0;
             timeSinceLastDash = 0;
+            currentDashState = DashState.isInDash;
             UpdateDashCooldownUI();
         }
         
@@ -142,9 +151,41 @@ namespace Gameplay {
             }
         }
 
+        /// <summary>
+        /// Method called when colliding with an enemy
+        /// </summary>
+        public void StartCollidingWithEnemy() {
+            StartSlowMotion();
+            GiveDashToPlayer();
+            rb.velocity = Vector3.zero;
+            movementDisable = moveDisableAfterCollidingInDash;
+        }
 
-        private void OnTriggerEnter(Collider other) {
-            Debug.Log(other.gameObject.name);
+        /// <summary>
+        /// Give the dash back to the player
+        /// </summary>
+        private void GiveDashToPlayer() {
+            timeSinceStartDash = timeInDash;
+            timeSinceLastDash = dashCdTime;
+            currentDashState = DashState.none;
+            UpdateDashCooldownUI(true);
+        }
+        #endregion
+
+        /// <summary>
+        /// Start slow motion
+        /// </summary>
+        private void StartSlowMotion() {
+            TimeManager.instance.StartSlowMotion();
+            playerCam.ChangeSlowMo(true);
+        }
+
+        /// <summary>
+        /// End slow motion
+        /// </summary>
+        private void ExitSlowMotion() {
+            TimeManager.instance.EndSlowMotion();
+            playerCam.ChangeSlowMo(false);
         }
 
         #region UI
@@ -155,6 +196,7 @@ namespace Gameplay {
             dashCooldownImg.color = startDashColor;
             dashCooldownImg.fillAmount = timeSinceLastDash / dashCdTime;
             if (dashEnable) {
+                dashCooldownParent.DORewind();
                 dashCooldownParent.DOPunchScale(new Vector3(.75f, .75f, .75f), getDashAnimDuration, 1);
                 dashCooldownImg.DOColor(hasDashColor, getDashAnimDuration);
             }
@@ -165,7 +207,7 @@ namespace Gameplay {
         /// <summary>
         /// Get the current velocity of the player based on the inputs
         /// </summary>
-        private void GetCurrentPlayerVelocity() => dir = inputs.Movement.MoveDirection.ReadValue<Vector2>().normalized;
+        private void GetCurrentPlayerVelocity() => dir = movementDisable > 0 ? Vector2.zero : inputs.Movement.MoveDirection.ReadValue<Vector2>().normalized;
         
         /// <summary>
         /// Get the Vector direction between the mouse and the player
