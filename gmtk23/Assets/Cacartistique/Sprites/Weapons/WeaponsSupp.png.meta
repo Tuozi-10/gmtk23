@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fcb7e460134436045a5bbaea70d25de1
+guid: 64dbc6ac89b8b6d42ae37932ae3ca4ad
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,85 +110,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: armors_0
+      name: WeaponsSupp_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 2
-        width: 16
-        height: 9
+        x: 1
+        y: 1
+        width: 17
+        height: 22
       alignment: 9
-      pivot: {x: 0.50820637, y: 0.43191725}
+      pivot: {x: 0.47153923, y: 0.18434347}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3024488f5f25224a9325f40992262dc
-      internalID: -268100067
+      spriteID: 4b5f75038fd026146a889bd3bd2e9c47
+      internalID: 2008432345
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: armors_1
+      name: WeaponsSupp_1
       rect:
         serializedVersion: 2
-        x: 20
-        y: 2
+        x: 19
+        y: 1
+        width: 10
+        height: 23
+      alignment: 9
+      pivot: {x: 0.50853825, y: 0.3168607}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e72dead0950e83643a903ce2cb19668e
+      internalID: 2145791596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WeaponsSupp_2
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 9
         width: 12
-        height: 12
+        height: 5
       alignment: 9
-      pivot: {x: 0.5070779, y: 0.5626176}
+      pivot: {x: 0.49762884, y: 0.7447634}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ff64ebe00f42f54bb01ab7f146f98f6
-      internalID: -961145310
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: armors_2
-      rect:
-        serializedVersion: 2
-        x: 34
-        y: 4
-        width: 16
-        height: 7
-      alignment: 9
-      pivot: {x: 0.58479977, y: 0.21863739}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7dd889026b3a3cb47aa9492a2f3f8a75
-      internalID: -468011916
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: armors_3
-      rect:
-        serializedVersion: 2
-        x: 52
-        y: 4
-        width: 21
-        height: 11
-      alignment: 9
-      pivot: {x: 0.53121585, y: 0.29360017}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7391f4edc5bf1de469e42309ef009f2e
-      internalID: -1760484249
+      spriteID: 5601abda3ffd7fb4fb08e5cbac64307c
+      internalID: 1073136603
       vertices: []
       indices: 
       edges: []
@@ -204,10 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      armors_0: -268100067
-      armors_1: -961145310
-      armors_2: -468011916
-      armors_3: -1760484249
+      WeaponsSupp_0: 2008432345
+      WeaponsSupp_1: 2145791596
+      WeaponsSupp_2: 1073136603
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

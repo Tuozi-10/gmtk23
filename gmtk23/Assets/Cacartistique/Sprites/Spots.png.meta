@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fcb7e460134436045a5bbaea70d25de1
+guid: cd5be10478d0b9e409ea1db90bca6f85
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,85 +110,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: armors_0
+      name: Spots_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 2
+        x: 1
+        y: 12
         width: 16
-        height: 9
-      alignment: 9
-      pivot: {x: 0.50820637, y: 0.43191725}
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3024488f5f25224a9325f40992262dc
-      internalID: -268100067
+      spriteID: eb71cea5405a26146b9aae1a28f74edf
+      internalID: -1901090658
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: armors_1
+      name: Spots_1
       rect:
         serializedVersion: 2
-        x: 20
-        y: 2
+        x: 3
+        y: 6
         width: 12
-        height: 12
-      alignment: 9
-      pivot: {x: 0.5070779, y: 0.5626176}
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ff64ebe00f42f54bb01ab7f146f98f6
-      internalID: -961145310
+      spriteID: 53a1aa423a85dd34898ed6deae657a50
+      internalID: 107369376
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: armors_2
+      name: Spots_2
       rect:
         serializedVersion: 2
-        x: 34
-        y: 4
-        width: 16
-        height: 7
-      alignment: 9
-      pivot: {x: 0.58479977, y: 0.21863739}
+        x: 5
+        y: 1
+        width: 8
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7dd889026b3a3cb47aa9492a2f3f8a75
-      internalID: -468011916
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: armors_3
-      rect:
-        serializedVersion: 2
-        x: 52
-        y: 4
-        width: 21
-        height: 11
-      alignment: 9
-      pivot: {x: 0.53121585, y: 0.29360017}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7391f4edc5bf1de469e42309ef009f2e
-      internalID: -1760484249
+      spriteID: fbe1ebea8c2036e44804861cf8b4952b
+      internalID: 2061886832
       vertices: []
       indices: 
       edges: []
@@ -204,10 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      armors_0: -268100067
-      armors_1: -961145310
-      armors_2: -468011916
-      armors_3: -1760484249
+      Spots_0: -1901090658
+      Spots_1: 107369376
+      Spots_2: 2061886832
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

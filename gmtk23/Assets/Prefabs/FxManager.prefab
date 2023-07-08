@@ -45,3 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_damageFx: {fileID: 7631704369342897551, guid: 2e4bef1a1e2e4484a9f68a685d27848c, type: 3}
+  m_humanBloodFx: {fileID: 8912669484092859143, guid: e34369cfc36c66a46abfc03cfe0d22d8, type: 3}
+  m_orcBloodFx: {fileID: 7464765596390416045, guid: 6efcff817e8802342910cc051ac56587, type: 3}
