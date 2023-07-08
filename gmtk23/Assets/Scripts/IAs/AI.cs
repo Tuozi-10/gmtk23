@@ -169,6 +169,7 @@ namespace IAs
         
         // entity targeting ( can be ally or enemy for support or attack )
         protected AI m_targetAI;
+        public AI targetAI => m_targetAI;
 
         protected virtual void Move()
         {

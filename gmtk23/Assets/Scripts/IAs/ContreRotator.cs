@@ -10,11 +10,13 @@ namespace IAs
     {
         private SortingGroup m_sortingGroup;
         private NavMeshAgent m_agent;
+        private AI ai;
         
         private void Awake()
         {
             m_sortingGroup = GetComponent<SortingGroup>();
             m_agent = transform.parent.GetComponent<NavMeshAgent>();
+            ai = m_agent.GetComponent<AI>();
         }
 
         private void Update()
@@ -25,6 +27,13 @@ namespace IAs
             if (m_agent.velocity.magnitude > 0.2f)
             {
                 transform.localScale = new Vector3(m_agent.destination.x < transform.position.x ? -1 : 1, 1, 1);
+            }
+            else
+            {
+                if (ai.targetAI != null)
+                {
+                    transform.localScale = new Vector3(ai.targetAI.transform.position.x < ai.transform.position.x ? -1 : 1, 1, 1);
+                }
             }
         }
     }
