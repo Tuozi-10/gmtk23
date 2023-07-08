@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 
-namespace DefaultNamespace
+namespace Items
 {
-    public class AbstractItem : MonoBehaviour
+    public abstract class AbstractItem : MonoBehaviour
     {
-        
+        public Vector2Int m_size = Vector2Int.one;
+        public int price = 1;
     }
 }

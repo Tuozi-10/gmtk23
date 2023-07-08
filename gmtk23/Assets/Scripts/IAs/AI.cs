@@ -1,11 +1,13 @@
 using System;
+using System.Collections.Generic;
+using Items;
 using UnityEngine;
 using UnityEngine.AI;
 
 namespace IAs
 {
     [RequireComponent(typeof(NavMeshAgent))]
-    public class AbstractIA : MonoBehaviour
+    public class AI : MonoBehaviour
     {
 
         #region BodyTypes
@@ -53,6 +55,19 @@ namespace IAs
         
         #endregion
 
+        #region Job
+
+        public enum Jobs
+        {
+            Support,
+            Cac,
+            Shooter
+        }
+
+        protected Jobs m_currentJob;
+        
+        #endregion
+        
         protected NavMeshAgent agent;
         
         private void Awake()
@@ -73,6 +88,14 @@ namespace IAs
         {
             UpdateStateMachine();
         }
+
+        #region Items
+
+        protected List<AbstractItem> m_items;
+        
+
+        
+        #endregion
 
         #region Movement
 
