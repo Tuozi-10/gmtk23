@@ -11,6 +11,11 @@ namespace UI
         [SerializeField] private Image m_fillImage;
         [SerializeField] private CanvasGroup m_canvasGroup;
 
+        private void Awake()
+        {
+            m_canvasGroup = GetComponent<CanvasGroup>();
+        }
+
         private void Update()
         {
             transform.localScale = new Vector3(transform.parent.localScale.x * 0.1f, 0.1f, 0.1f);

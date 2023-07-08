@@ -637,6 +637,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_fillImage: {fileID: 1931830340349165187}
+  m_canvasGroup: {fileID: 0}
 --- !u!225 &4852875640775662420
 CanvasGroup:
   m_ObjectHideFlags: 0
