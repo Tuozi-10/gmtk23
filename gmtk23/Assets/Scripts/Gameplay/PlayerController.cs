@@ -156,11 +156,11 @@ namespace Gameplay {
         /// Method called when colliding with an enemy
         /// </summary>
         public void StartCollidingWithEnemy(StockRemove enemy) {
-            StartSlowMotion();
             GiveDashToPlayer();
-            if(enemy != null) enemyDamageable = enemy;
             rb.velocity = Vector3.zero;
             movementDisable = moveDisableAfterCollidingInDash;
+            if(enemy != null) enemyDamageable = enemy;
+            if (movementDisable == 0) DamageEnemy();
         }
 
         /// <summary>
@@ -188,6 +188,10 @@ namespace Gameplay {
         private void ExitSlowMotion() {
             TimeManager.instance.EndSlowMotion();
             playerCam.ChangeSlowMo(false);
+            DamageEnemy();
+        }
+
+        private void DamageEnemy() {
             if(enemyDamageable != null) enemyDamageable.ApplyStock();
             enemyDamageable = null;
         }

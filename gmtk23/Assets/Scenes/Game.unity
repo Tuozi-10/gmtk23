@@ -9461,6 +9461,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
+    - target: {fileID: 3601968246803459141, guid: d4f96952bb91da54a92d16f3af962bbc, type: 3}
+      propertyPath: moveDisableAfterCollidingInDash
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6566735785665903607, guid: d4f96952bb91da54a92d16f3af962bbc, type: 3}
       propertyPath: m_RootOrder
       value: 3
