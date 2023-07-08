@@ -1,6 +1,7 @@
 using System;
 using Items;
 using Managers;
+using UI;
 using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
@@ -92,6 +93,8 @@ namespace IAs
         [SerializeField] private float m_distanceAttackDistance = 5.5f;
         [SerializeField] private float m_fleeTooNearAttackDistance = 3.5f;
 
+        [SerializeField] private AiHp m_aiHp;
+
         [SerializeField] private float attackSpeedRate = 1f;
         
         private DetectionManager m_detectionManager;
@@ -120,6 +123,8 @@ namespace IAs
                 m_currentBodyType == BodyType.Medium ? m_speedMedium : m_speedSmall;
 
             m_currentHp = m_baseHp;
+            RefreshHp();
+            
             m_triggerDetection.radius = m_radiusAgro;
         }
         
@@ -333,15 +338,15 @@ namespace IAs
         public void Hit(int damages)
         {
             m_currentHp = Mathf.Max(0, m_currentHp-damages);
-
+          
+            FxManagers.RequestDamageFxAtPos(transform.position + Vector3.up );
+            RefreshHp();
+            
             if (m_currentHp == 0)
             {
                 m_currentState = States.Dead;
             }
-            
-            FxManagers.RequestDamageFxAtPos(transform.position + Vector3.up );
-            
-            // TODO PLAY FX HIT and update UI
+  
         }
         
         public void HitTarget()
@@ -357,6 +362,11 @@ namespace IAs
             {
                 m_targetAI.Hit(m_weapon != null ?m_weapon.damages : 1);
             }
+        }
+
+        public void RefreshHp()
+        {
+            m_aiHp.HpRatio((float)m_currentHp/m_baseHp);
         }
         
         #endregion
