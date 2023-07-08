@@ -13,7 +13,7 @@ namespace Gameplay.Projectiles
         void Update()
         {
             transform.position += m_direction * Time.deltaTime * speed;
-            childPivot.transform.localScale = new Vector3(m_direction.x < 0 ? 1 : -1,1,1);
+            childPivot.transform.localScale = new Vector3(m_direction.x < 0 ? -1 : 1,1,1);
         }
 
         private Vector3 m_direction;
@@ -41,7 +41,7 @@ namespace Gameplay.Projectiles
             }
                 
             AI.Hit(m_damages);
-            transform.SetParent(other.transform);
+            transform.SetParent(AI.body);
             Destroy(this);
         }
     }
