@@ -7,6 +7,7 @@ namespace Items
     public class Weapon : AbstractItem
     {
         public AI.Jobs AssociatedJob = AI.Jobs.Cac;
+        public int damages;
 
     }
 }

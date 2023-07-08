@@ -361,6 +361,7 @@ GameObject:
   - component: {fileID: 414037063563456086}
   - component: {fileID: 57419890718515692}
   - component: {fileID: 1894495926236166454}
+  - component: {fileID: 7552379064678284885}
   m_Layer: 0
   m_Name: Parent
   m_TagString: Untagged
@@ -433,6 +434,18 @@ SortingGroup:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortAtRoot: 0
+--- !u!114 &7552379064678284885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939063119868117158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aab0514c9e1e4384993beb7b0fdb02ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2297849107368314040
 GameObject:
   m_ObjectHideFlags: 0
@@ -686,6 +699,7 @@ MonoBehaviour:
   m_distanceAttackCac: 1.5
   m_distanceAttackDistance: 5.5
   m_fleeTooNearAttackDistance: 3.5
+  attackSpeedRate: 1
   m_animator: {fileID: 414037063563456086}
   m_weapon: {fileID: 11400000, guid: 423eaff5c55e4104a99e2000fb51e8a5, type: 2}
   m_armor: {fileID: 11400000, guid: f8f53c14aad99e9439a104e876151c5c, type: 2}
@@ -985,7 +999,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 2004522603, guid: 7158d6fd0ff450c42b5e496603875a1b, type: 3}
+  m_Sprite: {fileID: 272742516, guid: 7158d6fd0ff450c42b5e496603875a1b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

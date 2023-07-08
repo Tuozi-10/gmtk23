@@ -90,6 +90,8 @@ namespace IAs
         [SerializeField] private float m_distanceAttackCac = 1.5f;
         [SerializeField] private float m_distanceAttackDistance = 5.5f;
         [SerializeField] private float m_fleeTooNearAttackDistance = 3.5f;
+
+        [SerializeField] private float attackSpeedRate = 1f;
         
         private DetectionManager m_detectionManager;
         
@@ -257,8 +259,15 @@ namespace IAs
             Move();
         }
 
+        private float m_lastAttack;
+        
         protected virtual void DoAttacking()
         {
+            if (Time.time - m_lastAttack > attackSpeedRate)
+            {
+                m_lastAttack = Time.time;
+                m_animator.Play( m_currentJob ==Jobs.Cac ? "AttackCac" : "AttackDistance");
+            }
 
             if (m_targetAI == null)
             {
@@ -285,7 +294,8 @@ namespace IAs
 
         protected virtual void DoDead()
         {
-            
+            // SPAWN FX
+            Destroy(gameObject);
         }
 
         protected virtual void DoFlee()
@@ -316,6 +326,33 @@ namespace IAs
             var fleeDestination = (transform.position- m_targetAI.transform.position).normalized;
             
             agent.SetDestination(fleeDestination);
+        }
+
+        public void Hit(int damages)
+        {
+            m_currentHp = Mathf.Max(0, m_currentHp-damages);
+
+            if (m_currentHp == 0)
+            {
+                m_currentState = States.Dead;
+            }
+            
+            // TODO PLAY FX HIT and update UI
+        }
+        
+        public void HitTarget()
+        {
+            if (m_targetAI == null)
+            {
+                return;
+            }
+            
+            var distanceTarget = Vector3.Distance(transform.position, m_targetAI.transform.position);
+
+            if (distanceTarget < m_distanceAttackDistance +1f)
+            {
+                m_targetAI.Hit(m_weapon != null ?m_weapon.damages : 1);
+            }
         }
         
         #endregion

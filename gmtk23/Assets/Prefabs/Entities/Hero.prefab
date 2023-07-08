@@ -508,6 +508,7 @@ MonoBehaviour:
   m_distanceAttackCac: 1.5
   m_distanceAttackDistance: 5.5
   m_fleeTooNearAttackDistance: 3.5
+  attackSpeedRate: 1
   m_animator: {fileID: 6138816389122056634}
   m_weapon: {fileID: 11400000, guid: 423eaff5c55e4104a99e2000fb51e8a5, type: 2}
   m_armor: {fileID: 11400000, guid: f8f53c14aad99e9439a104e876151c5c, type: 2}
@@ -667,6 +668,7 @@ GameObject:
   m_Component:
   - component: {fileID: 24111439227238938}
   - component: {fileID: 6138816389122056634}
+  - component: {fileID: 2038993934520109016}
   m_Layer: 0
   m_Name: Parent
   m_TagString: Untagged
@@ -714,6 +716,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2038993934520109016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4418680634117093554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aab0514c9e1e4384993beb7b0fdb02ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5106643469742342232
 GameObject:
   m_ObjectHideFlags: 0
