@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Items;
 using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 namespace IAs
 {
@@ -34,6 +35,7 @@ namespace IAs
             Dead
         }
 
+        [SerializeField]
         private States m_currentState = States.Idle;
 
         #endregion
@@ -67,8 +69,14 @@ namespace IAs
         protected Jobs m_currentJob;
         
         #endregion
+
+        [SerializeField] private float m_magnitudeWander = 3;
         
         protected NavMeshAgent agent;
+
+        [SerializeField] private Animator m_animator;
+
+        private Vector3 m_positionInit;
         
         private void Awake()
         {
@@ -81,7 +89,8 @@ namespace IAs
         /// </summary>
         protected virtual void Init()
         {
-            
+            RefreshStuffs();
+            m_positionInit = transform.position;
         }
         
         private void Update()
@@ -91,9 +100,29 @@ namespace IAs
 
         #region Items
 
-        protected List<AbstractItem> m_items;
-        
+        [SerializeField] protected Weapon m_weapon;
+        [SerializeField] protected Armor m_armor;
 
+        [SerializeField] private SpriteRenderer m_armorSlot;
+        [SerializeField] private SpriteRenderer m_weaponSlot;
+
+        public void SetWeapon(Weapon weapon)
+        {
+            m_weapon = weapon;
+            m_weaponSlot.sprite = weapon.sprite;
+        }
+        
+        public void SetArmor(Armor armor)
+        {
+            m_armor = armor;
+            m_armorSlot.sprite = armor.sprite;
+        }
+
+        public void RefreshStuffs()
+        {
+            m_armorSlot.sprite = m_armor is null ? null : m_armor.sprite;
+            m_weaponSlot.sprite = m_weapon is null ? null : m_weapon.sprite;
+        }
         
         #endregion
 
@@ -134,8 +163,21 @@ namespace IAs
             }
         }
 
-        protected virtual void DoIdle(){ }
-        protected virtual void DoWander(){ }
+        protected virtual void DoIdle()
+        { 
+            m_animator.Play("Idle");
+            
+        }
+
+        protected virtual void DoWander()
+        {
+            m_animator.Play("Move");   
+            if (agent.remainingDistance < 0.5f)
+            {
+                agent.destination = new Vector3(m_positionInit.x + Random.Range(-m_magnitudeWander, m_magnitudeWander),
+                    m_positionInit.y, m_positionInit.z + Random.Range(-m_magnitudeWander, m_magnitudeWander)); 
+            }
+        }
         protected virtual void DoHunting(){ }
         protected virtual void DoAttacking(){ }
         protected virtual void DoDead(){ }
