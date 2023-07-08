@@ -36,7 +36,7 @@ Transform:
   - {fileID: 5635939971804943090}
   - {fileID: 6264421735141395768}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &6532828714160443847
 Rigidbody:
@@ -111,7 +111,8 @@ MonoBehaviour:
   dashForce: 50
   dashCdTime: 1
   timeInDash: 0.15
-  moveDisableAfterCollidingInDash: 0.075
+  moveDisableAfterCollidingInDash: 0
+  cursorTransform: {fileID: 0}
   dashCooldownParent: {fileID: 821041497170127213}
   dashCooldownImg: {fileID: 7539105983529869765}
   startDashColor: {r: 1, g: 1, b: 1, a: 1}

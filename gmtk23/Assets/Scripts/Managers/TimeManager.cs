@@ -1,6 +1,4 @@
-using System;
 using src.Singletons;
-using UnityEditor;
 using UnityEngine;
 
 public class TimeManager : MonoSingleton<TimeManager> {
@@ -17,10 +15,7 @@ public class TimeManager : MonoSingleton<TimeManager> {
         Time.timeScale = Mathf.Lerp(Time.timeScale, targetTimeScale, decelerationScale);
         Time.fixedDeltaTime = startFixedDeltaTime * Time.timeScale;
     }
-
-    [ContextMenu("Start slow mo")]
+    
     public void StartSlowMotion() => targetTimeScale = slowMoTimeScale;
-
-    [ContextMenu("end slow mo")]
     public void EndSlowMotion() => targetTimeScale = 1;
 }

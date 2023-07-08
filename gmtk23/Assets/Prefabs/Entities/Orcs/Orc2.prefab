@@ -179,6 +179,7 @@ MonoBehaviour:
   m_armor: {fileID: 11400000, guid: f8f53c14aad99e9439a104e876151c5c, type: 2}
   m_armorSlot: {fileID: 1909088213496273547}
   m_weaponSlot: {fileID: 2958384237096503549}
+  m_maskWeaponSlot: {fileID: 1271998650914658561}
 --- !u!136 &280169240051703148
 CapsuleCollider:
   m_ObjectHideFlags: 0

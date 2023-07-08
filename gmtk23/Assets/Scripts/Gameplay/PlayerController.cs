@@ -1,5 +1,6 @@
 ﻿using System;
 using DG.Tweening;
+using Items;
 using src.Singletons;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -17,7 +18,6 @@ namespace Gameplay {
         
         [FormerlySerializedAs("acceleration")]
         [Header("Player Movement")]
-        [SerializeField, Range(0,2)] private float accelerationTime = .2f;
         [SerializeField, Range(0,30)] private float moveSpeed = 2f;
         [SerializeField, Range(0,3)] private float decelerationDashTime = 2f;
         [SerializeField, Range(0,30)] private float drag = 15f;
@@ -37,6 +37,13 @@ namespace Gameplay {
         private Vector3 DashDir = new();
         private float timeSinceStartDash = 0;
         private float timeSinceLastDash = 0;
+
+        [Header("Throw object")]
+        [SerializeField] private Transform cursorTransform = null;
+        [SerializeField] private AbstractItem currentItem = null;
+        [SerializeField] private GameObject itemGam = null;
+        [Space]
+        [SerializeField] private float throwForce = 0;
         
         [Header("Interface")]
         [SerializeField] private Transform dashCooldownParent = null;
@@ -55,10 +62,12 @@ namespace Gameplay {
             inputs = new PlayerMap();
             inputs.Enable();
             inputs.Movement.Dash.started += PerformDash;
+            inputs.Movement.ThrowItem.started += ThrowItem;
         }
         
         private void Update() {
             GetCurrentPlayerVelocity();
+            SetCursorLocation();
             UpdateDashState();
         }
 
@@ -69,6 +78,7 @@ namespace Gameplay {
             SetPlayerVelocity();
         }
         
+        #region Velocity
         /// <summary>
         /// Move the player (movement, dash, ...)
         /// </summary>
@@ -106,6 +116,7 @@ namespace Gameplay {
             velocityChangeTime = 0;
             startVelocity = rb.velocity;
         }
+        #endregion Velocity
 
         #region Dash
         /// <summary>
@@ -174,6 +185,7 @@ namespace Gameplay {
         }
         #endregion
 
+        #region Slow motion
         /// <summary>
         /// Start slow motion
         /// </summary>
@@ -190,12 +202,40 @@ namespace Gameplay {
             playerCam.ChangeSlowMo(false);
             DamageEnemy();
         }
-
-        private void DamageEnemy() {
-            if(enemyDamageable != null) enemyDamageable.ApplyStock();
-            enemyDamageable = null;
+        #endregion Slow motion
+        
+        #region Throw Object
+        /// <summary>
+        /// Throw the current item
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <exception cref="NotImplementedException"></exception>
+        private void ThrowItem(InputAction.CallbackContext obj) {
+            if (currentItem == null) return;
+            GameObject item = Instantiate(itemGam, transform.position, Quaternion.identity);
+            item.GetComponent<ThrowItem>().SetItem(currentItem);
+            item.GetComponent<Rigidbody>().AddForce(CalculateVelocity(), ForceMode.Impulse);
         }
 
+        /// <summary>
+        /// Calculate the velocity of the object
+        /// </summary>
+        /// <param name="time"></param>
+        /// <returns></returns>
+        private Vector3 CalculateVelocity() {
+            Vector3 distance = GetMousePosition() - transform.position;
+            float time = distance.magnitude / throwForce;
+            
+            float VelocityX = distance.magnitude / time;
+            float VelocityY = distance.y / time + 0.5f * Mathf.Abs(Physics.gravity.y) * time;
+            
+            Vector3 finalVel = distance.normalized;
+            finalVel *= VelocityX;
+            finalVel.y = VelocityY;
+            return finalVel;
+        }
+        #endregion Throw Object
+        
         #region UI
         /// <summary>
         /// Update the dash interface of the player
@@ -208,6 +248,13 @@ namespace Gameplay {
                 dashCooldownParent.DOPunchScale(new Vector3(.75f, .75f, .75f), getDashAnimDuration, 1);
                 dashCooldownImg.DOColor(hasDashColor, getDashAnimDuration);
             }
+        }
+        
+        /// <summary>
+        /// Set the position of the cursor to the mouse position
+        /// </summary>
+        private void SetCursorLocation() {
+            cursorTransform.position = GetMousePosition() + new Vector3(0, 0.1f, 0);
         }
         #endregion UI
         
@@ -222,8 +269,24 @@ namespace Gameplay {
         /// </summary>
         /// <returns></returns>
         private Vector3 GetMouseDirFromPlayer() {
+            return (GetMousePosition() - transform.position).normalized;
+        }
+
+        /// <summary>
+        /// Get the position of the mouse on the ground
+        /// </summary>
+        /// <returns></returns>
+        private Vector3 GetMousePosition() {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            return Physics.Raycast(ray, out RaycastHit hit, 100, groundLayer) ? (hit.point - transform.position).normalized : Vector3.zero;
+            return Physics.Raycast(ray, out RaycastHit hit, 100, groundLayer) ? hit.point : Vector3.zero;
+        }
+        
+        /// <summary>
+        /// Damage the enemy after some time
+        /// </summary>
+        private void DamageEnemy() {
+            if(enemyDamageable != null) enemyDamageable.ApplyStock();
+            enemyDamageable = null;
         }
         #endregion Helper
     }

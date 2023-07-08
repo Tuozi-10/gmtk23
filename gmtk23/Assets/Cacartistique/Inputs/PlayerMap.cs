@@ -44,6 +44,15 @@ public partial class @PlayerMap: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ThrowItem"",
+                    ""type"": ""Button"",
+                    ""id"": ""db37a3fa-37a8-4b54-8e18-4d61336f04e6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -112,6 +121,17 @@ public partial class @PlayerMap: IInputActionCollection2, IDisposable
                     ""action"": ""Dash"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bc75a0b0-a5ea-4649-bc00-27e7779e5a63"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ThrowItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -122,6 +142,7 @@ public partial class @PlayerMap: IInputActionCollection2, IDisposable
         m_Movement = asset.FindActionMap("Movement", throwIfNotFound: true);
         m_Movement_MoveDirection = m_Movement.FindAction("MoveDirection", throwIfNotFound: true);
         m_Movement_Dash = m_Movement.FindAction("Dash", throwIfNotFound: true);
+        m_Movement_ThrowItem = m_Movement.FindAction("ThrowItem", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -185,12 +206,14 @@ public partial class @PlayerMap: IInputActionCollection2, IDisposable
     private List<IMovementActions> m_MovementActionsCallbackInterfaces = new List<IMovementActions>();
     private readonly InputAction m_Movement_MoveDirection;
     private readonly InputAction m_Movement_Dash;
+    private readonly InputAction m_Movement_ThrowItem;
     public struct MovementActions
     {
         private @PlayerMap m_Wrapper;
         public MovementActions(@PlayerMap wrapper) { m_Wrapper = wrapper; }
         public InputAction @MoveDirection => m_Wrapper.m_Movement_MoveDirection;
         public InputAction @Dash => m_Wrapper.m_Movement_Dash;
+        public InputAction @ThrowItem => m_Wrapper.m_Movement_ThrowItem;
         public InputActionMap Get() { return m_Wrapper.m_Movement; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -206,6 +229,9 @@ public partial class @PlayerMap: IInputActionCollection2, IDisposable
             @Dash.started += instance.OnDash;
             @Dash.performed += instance.OnDash;
             @Dash.canceled += instance.OnDash;
+            @ThrowItem.started += instance.OnThrowItem;
+            @ThrowItem.performed += instance.OnThrowItem;
+            @ThrowItem.canceled += instance.OnThrowItem;
         }
 
         private void UnregisterCallbacks(IMovementActions instance)
@@ -216,6 +242,9 @@ public partial class @PlayerMap: IInputActionCollection2, IDisposable
             @Dash.started -= instance.OnDash;
             @Dash.performed -= instance.OnDash;
             @Dash.canceled -= instance.OnDash;
+            @ThrowItem.started -= instance.OnThrowItem;
+            @ThrowItem.performed -= instance.OnThrowItem;
+            @ThrowItem.canceled -= instance.OnThrowItem;
         }
 
         public void RemoveCallbacks(IMovementActions instance)
@@ -237,5 +266,6 @@ public partial class @PlayerMap: IInputActionCollection2, IDisposable
     {
         void OnMoveDirection(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
+        void OnThrowItem(InputAction.CallbackContext context);
     }
 }

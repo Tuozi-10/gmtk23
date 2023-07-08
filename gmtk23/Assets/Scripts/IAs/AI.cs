@@ -143,6 +143,7 @@ namespace IAs
 
         [SerializeField] private SpriteRenderer m_armorSlot;
         [SerializeField] private SpriteRenderer m_weaponSlot;
+        [SerializeField] private SpriteRenderer m_maskWeaponSlot;
 
         public void SetWeapon(Weapon weapon)
         {
@@ -160,6 +161,7 @@ namespace IAs
         {
             m_armorSlot.sprite = m_armor == null ? null : m_armor.sprite;
             m_weaponSlot.sprite = m_weapon == null ? null : m_weapon.sprite;
+            if(m_maskWeaponSlot != null) m_maskWeaponSlot.sprite = m_weapon == null ? null : m_weapon.sprite;
             if (m_weapon != null)
             {
                 m_currentJob = m_weapon.AssociatedJob;
