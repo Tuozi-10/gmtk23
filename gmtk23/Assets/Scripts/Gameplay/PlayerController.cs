@@ -33,6 +33,7 @@ namespace Gameplay {
         [SerializeField, Range(0,5)] private float dashCdTime = 1f;
         [SerializeField] private float timeInDash = 1f;
         [SerializeField] private float moveDisableAfterCollidingInDash = .2f;
+        private StockRemove enemyDamageable = null;
         private Vector3 DashDir = new();
         private float timeSinceStartDash = 0;
         private float timeSinceLastDash = 0;
@@ -154,9 +155,10 @@ namespace Gameplay {
         /// <summary>
         /// Method called when colliding with an enemy
         /// </summary>
-        public void StartCollidingWithEnemy() {
+        public void StartCollidingWithEnemy(StockRemove enemy) {
             StartSlowMotion();
             GiveDashToPlayer();
+            if(enemy != null) enemyDamageable = enemy;
             rb.velocity = Vector3.zero;
             movementDisable = moveDisableAfterCollidingInDash;
         }
@@ -186,6 +188,8 @@ namespace Gameplay {
         private void ExitSlowMotion() {
             TimeManager.instance.EndSlowMotion();
             playerCam.ChangeSlowMo(false);
+            if(enemyDamageable != null) enemyDamageable.ApplyStock();
+            enemyDamageable = null;
         }
 
         #region UI
