@@ -16,10 +16,15 @@ namespace src.Pools
 
         public void AddToPool(T toAdd)
         {
-            if (toAdd is GameObject t)
+            if (toAdd is GameObject t )
             {
                 t.SetActive(false);
-            }     
+            }
+            else
+            if (toAdd is ParticleSystem particleSystem)
+            {
+                particleSystem.gameObject.SetActive(false);
+            }
             pool.Enqueue(toAdd);
         }
 

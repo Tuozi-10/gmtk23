@@ -26,6 +26,7 @@ namespace Managers
             }
 
             var effect = instance.m_damagesPool.GetFromPool();
+            effect.gameObject.SetActive(true);
             effect.Stop();
 
             effect.transform.position = position;
