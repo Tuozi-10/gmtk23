@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3751762722540899587}
   - component: {fileID: 7829312122437141706}
   - component: {fileID: 9078685091303054184}
-  m_Layer: 4
+  m_Layer: 8
   m_Name: VFX_WalkDust (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4916,7 +4916,7 @@ GameObject:
   - component: {fileID: 5568187619541334059}
   - component: {fileID: 7631704369342897551}
   - component: {fileID: 5529563707589361697}
-  m_Layer: 4
+  m_Layer: 8
   m_Name: VFX_Damage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9814,7 +9814,7 @@ GameObject:
   - component: {fileID: 3111727391130404401}
   - component: {fileID: 614175381408367195}
   - component: {fileID: 8056951857525928606}
-  m_Layer: 4
+  m_Layer: 8
   m_Name: VFX_WalkDust (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
