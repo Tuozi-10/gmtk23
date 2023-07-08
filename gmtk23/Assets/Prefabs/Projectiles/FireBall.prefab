@@ -183,8 +183,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
-  alignmentspeed: 6
+  alignmentspeed: 8
   target: {fileID: 0}
+  damages: 0
 --- !u!1 &6746659823175163812
 GameObject:
   m_ObjectHideFlags: 0

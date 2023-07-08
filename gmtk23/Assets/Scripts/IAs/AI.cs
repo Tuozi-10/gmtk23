@@ -96,6 +96,7 @@ namespace IAs
         [SerializeField] private float m_fleeTooNearAttackDistance = 3.5f;
 
         [SerializeField] private Arrow m_arrow;
+        [SerializeField] private BulletTest m_fireball;
 
         [SerializeField] private AiHp m_aiHp;
 
@@ -316,6 +317,12 @@ namespace IAs
             head.transform.SetParent(null);
             body.transform.SetParent(null);
 
+            if (m_deadFromFire)
+            {
+                body.GetComponent<SpriteRenderer>().DOColor(new Color(0.3f, .3f, .3f, 255), 0.25f);
+                head.GetComponent<SpriteRenderer>().DOColor(new Color(.3f, .3f, .3f, 255), 0.25f);
+            }
+            
             body.GetComponent<CapsuleCollider>().enabled = true;
             body.GetComponent<Rigidbody>().useGravity = true;
             
@@ -361,7 +368,9 @@ namespace IAs
             agent.SetDestination(fleeDestination);
         }
 
-        public void Hit(int damages)
+        private bool m_deadFromFire;
+
+        public void Hit(int damages, bool fromFire = false)
         {
             m_currentHp = Mathf.Max(0, m_currentHp-damages);
           
@@ -370,6 +379,7 @@ namespace IAs
             
             if (m_currentHp == 0)
             {
+                m_deadFromFire = fromFire;
                 AudioManager.PlaySoundRaleAgonie();
                 m_currentState = States.Dead;
             }
@@ -393,6 +403,12 @@ namespace IAs
                 ShootArrow();
                 return;
             }
+
+            if (m_currentJob == Jobs.Support)
+            {
+                ShootMagic();
+                return;
+            }
             
             var distanceTarget = Vector3.Distance(transform.position, m_targetAI.transform.position);
 
@@ -412,6 +428,18 @@ namespace IAs
             var arrow = Instantiate(m_arrow);
             arrow.transform.position = transform.position;
             arrow.SetUp(targetAI.transform.position - transform.position, team, m_weapon.damages);
+        }
+
+        public void ShootMagic()
+        {
+            if (targetAI == null)
+            {
+                return;
+            }
+            
+            var fireBall = Instantiate(m_fireball);
+            fireBall.transform.position = transform.position + Vector3.up;
+            fireBall.SetUp(targetAI, m_weapon.damages);
         }
         
         public void RefreshHp()

@@ -224,6 +224,7 @@ MonoBehaviour:
   m_distanceAttackDistance: 5.5
   m_fleeTooNearAttackDistance: 3.5
   m_arrow: {fileID: 5435709332488754029, guid: a3fcfe6d65609d845ac5695a1b84b366, type: 3}
+  m_fireball: {fileID: 1127239125271462841, guid: f78a3cca4ecd3574a91602a2a9ceff73, type: 3}
   m_aiHp: {fileID: 6024611266209676894}
   attackSpeedRate: 1
   m_body: {fileID: 8803041132593805763}
