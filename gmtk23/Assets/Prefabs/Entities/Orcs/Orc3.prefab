@@ -696,6 +696,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_fillImage: {fileID: 145949696098094404}
+  m_canvasGroup: {fileID: 0}
 --- !u!225 &8805506176833311487
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1225,6 +1226,7 @@ MonoBehaviour:
   m_distanceAttackCac: 1.5
   m_distanceAttackDistance: 5.5
   m_fleeTooNearAttackDistance: 3.5
+  m_arrow: {fileID: 5435709332488754029, guid: a3fcfe6d65609d845ac5695a1b84b366, type: 3}
   m_aiHp: {fileID: 6680317038357786895}
   attackSpeedRate: 1
   m_animator: {fileID: 542533790069564649}

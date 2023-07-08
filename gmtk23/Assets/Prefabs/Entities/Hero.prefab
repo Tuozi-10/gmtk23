@@ -584,6 +584,7 @@ MonoBehaviour:
   m_distanceAttackCac: 1.5
   m_distanceAttackDistance: 5.5
   m_fleeTooNearAttackDistance: 3.5
+  m_arrow: {fileID: 5435709332488754029, guid: a3fcfe6d65609d845ac5695a1b84b366, type: 3}
   m_aiHp: {fileID: 8160503851723319969}
   attackSpeedRate: 1
   m_animator: {fileID: 6138816389122056634}
@@ -819,6 +820,7 @@ GameObject:
   - component: {fileID: 6136633594980714285}
   - component: {fileID: 6525362594328550864}
   - component: {fileID: 8160503851723319969}
+  - component: {fileID: 3758029192517674503}
   m_Layer: 0
   m_Name: UIWorld
   m_TagString: Untagged
@@ -924,6 +926,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_fillImage: {fileID: 7235843158433402860}
+  m_canvasGroup: {fileID: 0}
+--- !u!225 &3758029192517674503
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4685053946542462471}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &5106643469742342232
 GameObject:
   m_ObjectHideFlags: 0

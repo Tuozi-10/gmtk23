@@ -1,4 +1,5 @@
 using System;
+using Gameplay.Projectiles;
 using Items;
 using Managers;
 using UI;
@@ -92,6 +93,8 @@ namespace IAs
         [SerializeField] private float m_distanceAttackCac = 1.5f;
         [SerializeField] private float m_distanceAttackDistance = 5.5f;
         [SerializeField] private float m_fleeTooNearAttackDistance = 3.5f;
+
+        [SerializeField] private Arrow m_arrow;
 
         [SerializeField] private AiHp m_aiHp;
 
@@ -355,6 +358,12 @@ namespace IAs
             {
                 return;
             }
+
+            if (m_currentJob == Jobs.Shooter)
+            {
+                ShootArrow();
+                return;
+            }
             
             var distanceTarget = Vector3.Distance(transform.position, m_targetAI.transform.position);
 
@@ -364,6 +373,17 @@ namespace IAs
             }
         }
 
+        public void ShootArrow()
+        {
+            if (targetAI == null)
+            {
+                return;
+            }
+            
+            var arrow = Instantiate(m_arrow);
+            arrow.SetUp(targetAI.transform.position - transform.position, team, m_weapon.damages);
+        }
+        
         public void RefreshHp()
         {
             m_aiHp.HpRatio((float)m_currentHp/m_baseHp);
