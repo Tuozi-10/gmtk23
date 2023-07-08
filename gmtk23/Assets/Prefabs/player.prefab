@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6566735785665903607}
   - component: {fileID: 6532828714160443847}
-  - component: {fileID: 4323004550570824684}
   - component: {fileID: 2050516632907233607}
   - component: {fileID: 3601968246803459141}
   m_Layer: 0
@@ -47,7 +46,7 @@ Rigidbody:
   m_GameObject: {fileID: 943239910294108485}
   serializedVersion: 4
   m_Mass: 70
-  m_Drag: 15
+  m_Drag: 10
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -63,31 +62,8 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 2
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 1
---- !u!136 &4323004550570824684
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 943239910294108485}
-  m_Material: {fileID: 13400000, guid: 421e571d9d31a394e9cd4be0cd681cba, type: 2}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.4
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!136 &2050516632907233607
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -108,9 +84,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Height: 1.75
+  m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 1.1, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &3601968246803459141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,13 +103,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   accelerationTime: 0.2
-  moveSpeed: 13
+  moveSpeed: 16
   decelerationDashTime: 0.4
   drag: 15
   currentDashState: 0
-  dashForce: 40
-  dashCdTime: 1
-  timeInDash: 0.2
+  dashForce: 50
+  dashCdTime: 0.8
+  timeInDash: 0.15
+  col: {fileID: 2050516632907233607}
   dashCooldownParent: {fileID: 821041497170127213}
   dashCooldownImg: {fileID: 7539105983529869765}
   startDashColor: {r: 1, g: 1, b: 1, a: 1}

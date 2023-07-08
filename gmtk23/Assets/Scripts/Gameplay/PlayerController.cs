@@ -1,4 +1,5 @@
-﻿using DG.Tweening;
+﻿using System;
+using DG.Tweening;
 using src.Singletons;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -21,8 +22,6 @@ namespace Gameplay {
         [SerializeField, Range(0,3)] private float decelerationDashTime = 2f;
         [SerializeField, Range(0,30)] private float drag = 15f;
         private float velocityChangeTime = 0;
-        private float targetSpeed = 0;
-        private float currentSpeed = 0;
         private Vector2 dir = new();
         private Vector3 startVelocity = new();
 
@@ -49,6 +48,7 @@ namespace Gameplay {
             playerCam = cam.GetComponent<PlayerCamera>();
             rb = GetComponent<Rigidbody>();
             rb.drag = drag;
+            velocityChangeTime = decelerationDashTime;
 
             inputs = new PlayerMap();
             inputs.Enable();
@@ -57,7 +57,6 @@ namespace Gameplay {
         
         private void Update() {
             GetCurrentPlayerVelocity();
-            currentSpeed = Mathf.Lerp(currentSpeed, targetSpeed, accelerationTime);
             UpdateDashState();
         }
 
@@ -72,21 +71,25 @@ namespace Gameplay {
         /// Move the player (movement, dash, ...)
         /// </summary>
         private void SetPlayerVelocity() {
-            if (currentDashState == DashState.isInDash) {
-                rb.velocity = DashDir * dashForce;
-            }
-            else if (currentDashState == DashState.WaitForDash && dir.magnitude != 0 && velocityChangeTime < decelerationDashTime) {
-                rb.velocity = Vector3.Lerp(startVelocity, new Vector3(dir.x, 0, dir.y) * currentSpeed, velocityChangeTime / decelerationDashTime);
-                velocityChangeTime += Time.fixedDeltaTime;
-            }
-            else if (currentDashState != DashState.isInDash && dir.magnitude != 0 && velocityChangeTime >= decelerationDashTime) {
-                targetSpeed = moveSpeed;
-                rb.velocity = new Vector3(dir.x, 0, dir.y) * currentSpeed;
-            }
-            else if (currentDashState != DashState.isInDash && dir.magnitude == 0) {
-                startVelocity = Vector3.zero;
-                currentSpeed = 0;
-                targetSpeed = 0;
+            switch (currentDashState) {
+                case DashState.isInDash:
+                    rb.velocity = DashDir * dashForce;
+                    break;
+                
+                case DashState.WaitForDash when dir.magnitude != 0 && velocityChangeTime < decelerationDashTime:
+                    rb.velocity = Vector3.Lerp(startVelocity, new Vector3(dir.x, 0, dir.y) * moveSpeed, velocityChangeTime / decelerationDashTime);
+                    velocityChangeTime += Time.fixedDeltaTime;
+                    break;
+                
+                default:{
+                    if (currentDashState != DashState.isInDash && dir.magnitude != 0 && velocityChangeTime >= decelerationDashTime) {
+                        rb.velocity = new Vector3(dir.x, 0, dir.y) * moveSpeed;
+                    }
+                    else if (currentDashState != DashState.isInDash && dir.magnitude == 0) {
+                        startVelocity = Vector3.zero;
+                    }
+                    break;
+                }
             }
         }
 
@@ -137,6 +140,11 @@ namespace Gameplay {
                     }
                     break;
             }
+        }
+
+
+        private void OnTriggerEnter(Collider other) {
+            Debug.Log(other.gameObject.name);
         }
 
         #region UI
