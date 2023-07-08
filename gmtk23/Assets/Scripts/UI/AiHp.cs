@@ -9,13 +9,7 @@ namespace UI
     public class AiHp : MonoBehaviour
     {
         [SerializeField] private Image m_fillImage;
-
-        private CanvasGroup m_canvasGroup;
-        
-        private void Awake()
-        {
-            m_canvasGroup = GetComponent<CanvasGroup>();
-        }
+        [SerializeField] private CanvasGroup m_canvasGroup;
 
         private void Update()
         {

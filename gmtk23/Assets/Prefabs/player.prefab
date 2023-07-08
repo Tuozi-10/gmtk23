@@ -109,7 +109,7 @@ MonoBehaviour:
   drag: 15
   currentDashState: 0
   dashForce: 50
-  dashCdTime: 1.5
+  dashCdTime: 1
   timeInDash: 0.15
   moveDisableAfterCollidingInDash: 0.075
   dashCooldownParent: {fileID: 821041497170127213}

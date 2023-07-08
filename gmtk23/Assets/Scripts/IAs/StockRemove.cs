@@ -11,7 +11,7 @@ public class StockRemove : MonoBehaviour {
     private int currentlyActivatedStock = 0;
 
     private void Update() {
-        canvas.transform.eulerAngles = new Vector3(32.1f, 0, 0);
+        canvas.transform.eulerAngles = new Vector3(90f, 0, -180f);
     }
 
     /// <summary>
