@@ -45,6 +45,11 @@ namespace IAs
                     continue;
                 }
 
+                if (ai == null)
+                {
+                    continue;
+                }
+                
                 if (Vector3.Distance(transform.position, ai.transform.position) <
                     Vector3.Distance(transform.position, returnAI.transform.position))
                 {
