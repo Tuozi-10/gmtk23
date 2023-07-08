@@ -1,5 +1,4 @@
-﻿using System;
-using src.Singletons;
+﻿using src.Singletons;
 using UnityEngine;
 
 namespace Gameplay {
@@ -8,11 +7,13 @@ namespace Gameplay {
         private PlayerMap inputs;
         
         [Header("Player Movement")]
-        [SerializeField] private float moveSpeed = 2f;
+        [SerializeField, Range(0,30)] private float moveSpeed = 2f;
+        [SerializeField, Range(0, 30)] private float drag = 15f;
         private Vector2 dir = new();
         
         private void Start() {
             rb = GetComponent<Rigidbody>();
+            rb.drag = drag;
             inputs = new PlayerMap();
             inputs.Enable();
         }
