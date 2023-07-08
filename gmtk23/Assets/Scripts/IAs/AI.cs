@@ -1,5 +1,6 @@
 using System;
 using Items;
+using Managers;
 using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
@@ -337,6 +338,8 @@ namespace IAs
             {
                 m_currentState = States.Dead;
             }
+            
+            FxManagers.RequestDamageFxAtPos(transform.position + Vector3.up );
             
             // TODO PLAY FX HIT and update UI
         }
