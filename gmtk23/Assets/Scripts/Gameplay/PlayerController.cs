@@ -1,6 +1,7 @@
 ﻿using System;
 using DG.Tweening;
 using Items;
+using Managers;
 using src.Singletons;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -129,7 +130,7 @@ namespace Gameplay {
             ExitSlowMotion();
             playerCam.ChangeDashState(true);
             movementDisable = 0;
-            
+            AudioManager.PlaySoundDash();
             DashDir = GetMouseDirFromPlayer();
             timeSinceStartDash = 0;
             timeSinceLastDash = 0;
