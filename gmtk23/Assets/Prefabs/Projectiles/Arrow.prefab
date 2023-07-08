@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   childPivot: {fileID: 57020591956609075}
-  speed: 5
+  speed: 9
 --- !u!1 &7576341981426747081
 GameObject:
   m_ObjectHideFlags: 0

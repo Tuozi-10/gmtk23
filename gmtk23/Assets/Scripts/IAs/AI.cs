@@ -1,4 +1,5 @@
 using System;
+using DG.Tweening;
 using Gameplay.Projectiles;
 using Items;
 using Managers;
@@ -102,6 +103,9 @@ namespace IAs
         
         [SerializeField] private Transform m_body;
         public Transform body => m_body;
+        
+        [SerializeField] private Transform m_head;
+        public Transform head => m_head;
         
         private DetectionManager m_detectionManager;
         
@@ -309,7 +313,21 @@ namespace IAs
 
         protected virtual void DoDead()
         {
+            head.transform.SetParent(null);
+            body.transform.SetParent(null);
+
+            body.GetComponent<CapsuleCollider>().enabled = true;
+            body.GetComponent<Rigidbody>().useGravity = true;
+            
+            head.GetComponent<CapsuleCollider>().enabled = true;
+            head.GetComponent<Rigidbody>().useGravity = true;
+
+            head.DOScale(0, 0.5f).SetDelay(3.5f).OnComplete(()=>Destroy(head.gameObject));
+            body.DOScale(0, 0.5f).SetDelay(3.5f).OnComplete(()=>Destroy(body.gameObject));;
+            
             // SPAWN FX
+            Destroy(m_weaponSlot.gameObject);
+            Destroy(m_armorSlot.gameObject);
             Destroy(gameObject);
         }
 
