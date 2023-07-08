@@ -44,7 +44,7 @@ Material:
     m_Floats:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
-    - _XTiling: -1.88
+    - _XTiling: 0.15
     m_Colors:
     - _WallTop: {r: 0.1254902, g: 0.1254902, b: 0.14901961, a: 0}
   m_BuildTextureStacks: []
