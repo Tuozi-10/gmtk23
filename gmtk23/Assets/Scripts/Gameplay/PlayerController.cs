@@ -6,6 +6,7 @@ using src.Singletons;
 using UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
@@ -58,6 +59,8 @@ namespace Gameplay {
         [SerializeField] private Color startDashColor = new();
         [SerializeField] private Color hasDashColor = new();
         [SerializeField] private float getDashAnimDuration = 0.25f;
+
+        private SortingGroup _sortingGroup;
         
         private void Start() {
             cam = Camera.main;
@@ -72,12 +75,17 @@ namespace Gameplay {
             inputs.Movement.Dash.started += PerformDash;
             inputs.Movement.ThrowItem.started += ThrowItem;
             inputs.Movement.Interact.started += AddItemToInventory;
+            m_currentHp = hp;
+            _sortingGroup = GetComponent<SortingGroup>();
+            m_uiHp.HpRatio(1);
         }
         
         private void Update() {
             GetCurrentPlayerVelocity();
             SetCursorLocation();
             UpdateDashState();
+            _sortingGroup.sortingOrder = -(int)(transform.position.z*30);
+            
         }
 
         /// <summary>
@@ -338,6 +346,34 @@ namespace Gameplay {
             enemyDamageable = null;
         }
         #endregion Helper
+
+        #region hp
+
+        [SerializeField] private AiHp m_uiHp;
+
+        public int hp = 10;
+
+        public int m_currentHp;
+
+        public void Hit(int damages)
+        {
+            m_currentHp -= damages;
+
+            m_currentHp = Mathf.Clamp(m_currentHp, 0, hp);
+            m_uiHp.HpRatio((float)m_currentHp / hp);
+            if (m_currentHp <= 0)
+            {
+                Die();
+            }
+        }
+
+        public void Die()
+        {
+            
+        }
+        
+        #endregion
+
     }
 
     public enum DashState {
