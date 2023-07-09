@@ -8,6 +8,7 @@ using Managers;
 using UI;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Rendering;
 using static Items.Weapon;
 using Random = UnityEngine.Random;
 
@@ -496,7 +497,8 @@ namespace IAs
             
             head.transform.SetParent(null);
             body.transform.SetParent(null);
-
+            body.gameObject.AddComponent<SortingGroup>().sortingLayerName = "Middle";
+            head.gameObject.AddComponent<SortingGroup>().sortingLayerName = "Middle";
             if (m_deadFromFire)
             {
                 body.GetComponent<SpriteRenderer>().DOColor(new Color(0.3f, .3f, .3f, 255), 0.25f);
