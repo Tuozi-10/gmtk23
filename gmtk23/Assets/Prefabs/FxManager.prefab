@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7385850489021561993
 MonoBehaviour:
@@ -47,3 +47,4 @@ MonoBehaviour:
   m_damageFx: {fileID: 7631704369342897551, guid: 2e4bef1a1e2e4484a9f68a685d27848c, type: 3}
   m_humanBloodFx: {fileID: 8912669484092859143, guid: e34369cfc36c66a46abfc03cfe0d22d8, type: 3}
   m_orcBloodFx: {fileID: 7464765596390416045, guid: 6efcff817e8802342910cc051ac56587, type: 3}
+  m_healFx: {fileID: 3065614416510642098, guid: 21e1e05a2b067124c9779414d0a9b4e0, type: 3}

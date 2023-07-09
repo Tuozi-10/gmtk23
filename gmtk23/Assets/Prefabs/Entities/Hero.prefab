@@ -639,6 +639,7 @@ MonoBehaviour:
   m_fleeTooNearAttackDistance: 3.5
   m_arrow: {fileID: 5435709332488754029, guid: a3fcfe6d65609d845ac5695a1b84b366, type: 3}
   m_fireball: {fileID: 1127239125271462841, guid: f78a3cca4ecd3574a91602a2a9ceff73, type: 3}
+  m_healBall: {fileID: 8591885573117207753, guid: 44c7950bc6ab08d43918d58d996cab8c, type: 3}
   m_aiHp: {fileID: 8160503851723319969}
   attackSpeedRate: 1
   damagesBonus: 1

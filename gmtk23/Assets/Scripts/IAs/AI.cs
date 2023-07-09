@@ -461,9 +461,17 @@ namespace IAs
 
         public void Hit(int damages, bool fromFire = false)
         {
-            m_currentHp = Mathf.Max(0, m_currentHp - damages);
+            m_currentHp = Mathf.Clamp(m_currentHp - damages,0, m_baseHp);
 
-            FxManagers.RequestDamageFxAtPos(transform.position + Vector3.up);
+            if (damages > 0)
+            {
+                FxManagers.RequestDamageFxAtPos(transform.position + Vector3.up);
+            }
+            else
+            {
+                FxManagers.RequestHealFxAtPos(transform.position + Vector3.up);
+            }
+            
             RefreshHp();
 
             if (m_currentHp == 0)
@@ -497,7 +505,14 @@ namespace IAs
 
             if (isDistance && m_currentJob == Jobs.Support)
             {
-                ShootMagic();
+                if (m_weapon.weaponType == WeaponType.Baguette)
+                {
+                    ShootMagic();
+                }
+                else
+                {
+                    ShootHeal();
+                }
                 return;
             }
 
@@ -563,7 +578,7 @@ namespace IAs
                 return;
             }
 
-            var fireBall = Instantiate(m_fireball);
+            var fireBall = Instantiate(m_healBall);
             fireBall.transform.position = transform.position + Vector3.up;
             fireBall.SetUp(targetAI, (int) (m_weapon.damages * damagesBonus));
         }
