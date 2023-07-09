@@ -523,6 +523,13 @@ namespace IAs
             RefreshStuffs();
             m_currentState = States.Wander;
         }
+        
+        public void RemoveArmor()
+        {
+            m_skill = Skills.NoSkill;
+            m_armor = null;
+            RefreshStuffs();
+        }
 
         public void ShootArrow()
         {
