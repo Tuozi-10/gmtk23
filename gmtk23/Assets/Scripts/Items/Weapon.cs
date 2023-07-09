@@ -1,4 +1,6 @@
-﻿using IAs;
+﻿using System;
+using System.Collections.Generic;
+using IAs;
 using UnityEngine;
 
 namespace Items
@@ -7,10 +9,9 @@ namespace Items
     public class Weapon : AbstractItem
     {
         public AI.Jobs AssociatedJob = AI.Jobs.Cac;
-        public int damages;
+        public List<int> damages;
         public WeaponType weaponType;
-        
-        
+
         public enum WeaponType
         {
             Sword,
@@ -21,6 +22,5 @@ namespace Items
             Sceptre,
             Baguette
         }
-        
     }
 }

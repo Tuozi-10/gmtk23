@@ -16,5 +16,5 @@ MonoBehaviour:
   price: 1
   sprite: {fileID: -333667763, guid: 9bc3416dfb93f5743b63d129a9f4c0de, type: 3}
   AssociatedJob: 0
-  damages: 2
+  damages: 010000000200000003000000
   weaponType: 6
