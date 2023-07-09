@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
 using DG.Tweening;
+using Gameplay;
 using Items;
 using src.Singletons;
 using UnityEngine;
+using UnityEngine.Diagnostics;
 using UnityEngine.UI;
 
 namespace UI
@@ -128,7 +130,7 @@ namespace UI
         }
         public ICatchable TryAddItem(ICatchable item, GameObject catchGam) {
             if (items.Count >= slots.Count) {
-                catchGam.GetComponent<ThrowItem>().SetItem(items[currentSelectedSlot] as AbstractItem);
+                catchGam.GetComponent<ThrowItem>().SetItem(items[currentSelectedSlot] as AbstractItem, null);
                 items[currentSelectedSlot] = item;
                 UpdateInventoryUI();
                 
@@ -136,6 +138,7 @@ namespace UI
             }
             
             items.Add(item);
+            PlayerController.instance.ResetPressEText();
             Destroy(catchGam);
             UpdateInventoryUI();
             return null;
@@ -154,11 +157,11 @@ namespace UI
         /// </summary>
         /// <param name="forceDir"></param>
         /// <param name="itemA"></param>
-        public void DropAbstractItem(Vector3 forceDir, Vector3 pos, AbstractItem itemA) {
+        public void DropAbstractItem(Vector3 forceDir, Vector3 pos, GameObject notGrab, AbstractItem itemA) {
             Debug.Log("ok");
             GameObject item = Instantiate(itemGam, pos, Quaternion.identity);
             item.GetComponent<Rigidbody>().AddForce(forceDir, ForceMode.Impulse);
-            item.GetComponent<ThrowItem>().SetItem(itemA);
+            item.GetComponent<ThrowItem>().SetItem(itemA, notGrab);
         }
     }
 }

@@ -183,14 +183,14 @@ namespace IAs
         [SerializeField] private SpriteRenderer m_armorSlot;
         [SerializeField] private SpriteRenderer m_weaponSlot;
         [SerializeField] private SpriteRenderer m_maskWeaponSlot;
+        [SerializeField] private SpriteRenderer m_maskArmorSlot;
 
         private int m_level;
         private int level => Mathf.Clamp(m_level, 0, 2);
         
         public bool SetWeapon(Weapon weapon)
         {
-            if (!CanEquipWeapon(weapon))
-            {
+            if (!CanEquipWeapon(weapon)) {
                 return false;
             }
 
@@ -203,17 +203,45 @@ namespace IAs
                 m_level = 0;
             }
             
+            Inventory.instance.DropAbstractItem(transform.forward * 20, transform.position + transform.forward, gameObject, m_weapon);
             m_weapon = weapon;
             RefreshStuffs();
             return true;
         }
 
-        public void SetArmor(Armor armor)
+        public bool SetArmor(Armor armor)
         {
+            if (armor != null && m_weapon != null)
+            {
+                if (!CanEquipWeaponWithSkill(m_weapon, armor.m_skill))
+                {
+                    return false;
+                }
+            }
+            
+            Inventory.instance.DropAbstractItem(transform.forward * 20, transform.position + transform.forward, gameObject, m_armor);
             m_armor = armor;
             RefreshStuffs();
+            return true;
         }
 
+        public bool CanEquipWeaponWithSkill(Weapon weapon, Skills skill)
+        {
+            return skill switch
+            {
+                Skills.Barbarian => weapon.weaponType is WeaponType.Axe or WeaponType.Bow or WeaponType.Kebab or
+                    WeaponType.Sceptre,
+                Skills.Templar => weapon.weaponType is WeaponType.Axe or WeaponType.Sword or WeaponType.Kebab or
+                    WeaponType.Masse,
+                Skills.Archer => weapon.weaponType is WeaponType.Bow or WeaponType.Baguette or WeaponType.Sword or
+                    WeaponType.Sceptre,
+                Skills.Sorcier => weapon.weaponType is WeaponType.Kebab or WeaponType.Baguette or WeaponType.Sceptre,
+                Skills.Healer => weapon.weaponType is WeaponType.Bow or WeaponType.Baguette or WeaponType.Kebab or
+                    WeaponType.Sceptre or WeaponType.Masse,
+                _ => true
+            };
+        }
+        
         public bool CanEquipWeapon(Weapon weapon)
         {
             return m_skill switch
@@ -233,9 +261,9 @@ namespace IAs
 
         public void RefreshStuffs()
         {
-            if (m_armorSlot != null)
-            {
+            if (m_armorSlot != null) {
                 m_armorSlot.sprite = m_armor == null ? null : m_armor.sprite;
+                if(m_maskArmorSlot != null) m_maskArmorSlot.sprite = m_armor == null ? null : m_armor.sprite;
             }
             
             m_weaponSlot.sprite = m_weapon == null ? null : m_weapon.sprite;
@@ -265,7 +293,7 @@ namespace IAs
 
             if (ToolsItemsList.Count == 0) return;
             int random = Random.Range(0, ToolsItemsList.Count);
-            Inventory.instance.DropAbstractItem(Vector3.zero, transform.position - PlayerController.instance.DashDir * 2, ToolsItemsList[random]);
+            Inventory.instance.DropAbstractItem(Vector3.zero, transform.position - PlayerController.instance.DashDir * 2, gameObject,ToolsItemsList[random]);
             
             if(ToolsItemsList[random] is Weapon) RemoveWeapon();
             else RemoveArmor();

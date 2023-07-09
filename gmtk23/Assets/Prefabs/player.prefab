@@ -103,7 +103,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
-  moveSpeed: 11
+  moveSpeed: 15
   decelerationDashTime: 0.1
   drag: 19
   currentDashState: 0
