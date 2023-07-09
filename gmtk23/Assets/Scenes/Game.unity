@@ -33706,6 +33706,14 @@ PrefabInstance:
       value: 85
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: rangeNumberSpawn.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: rangeNumberSpawn.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnFix.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -33725,6 +33733,22 @@ PrefabInstance:
       propertyPath: mobsToSpawnFix.Array.data[3]
       value: 
       objectReference: {fileID: 1171809527445398212, guid: d398816c71f78024b98bb37bf199d0da, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnRandom.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnRandom.Array.data[0]
+      value: 
+      objectReference: {fileID: 849520306477512543, guid: 1cdfbb975a21e5347815b9178319613e, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnRandom.Array.data[1]
+      value: 
+      objectReference: {fileID: 1171809527445398212, guid: d398816c71f78024b98bb37bf199d0da, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnRandom.Array.data[2]
+      value: 
+      objectReference: {fileID: 991483508670082476, guid: 092b7f73596d7964da2fb55e6b1eef78, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -38273,15 +38297,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: spawnRandom
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: timerToRespawn
       value: 85
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: mobsToSpawnFix.Array.size
+      propertyPath: rangeNumberSpawn.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: rangeNumberSpawn.y
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnFix.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnFix.Array.data[0]
@@ -38293,6 +38325,34 @@ PrefabInstance:
       objectReference: {fileID: 849520306477512543, guid: 1cdfbb975a21e5347815b9178319613e, type: 3}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnFix.Array.data[2]
+      value: 
+      objectReference: {fileID: 991483508670082476, guid: 092b7f73596d7964da2fb55e6b1eef78, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnRandom.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnRandom.Array.data[0]
+      value: 
+      objectReference: {fileID: 7230543936245105794, guid: 2cc0ac299d7eac446855744f1ee62abc, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnRandom.Array.data[1]
+      value: 
+      objectReference: {fileID: 849520306477512543, guid: 1cdfbb975a21e5347815b9178319613e, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnRandom.Array.data[2]
+      value: 
+      objectReference: {fileID: 849520306477512543, guid: 1cdfbb975a21e5347815b9178319613e, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnRandom.Array.data[3]
+      value: 
+      objectReference: {fileID: 991483508670082476, guid: 092b7f73596d7964da2fb55e6b1eef78, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnRandom.Array.data[4]
+      value: 
+      objectReference: {fileID: 991483508670082476, guid: 092b7f73596d7964da2fb55e6b1eef78, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnRandom.Array.data[5]
       value: 
       objectReference: {fileID: 991483508670082476, guid: 092b7f73596d7964da2fb55e6b1eef78, type: 3}
     m_RemovedComponents: []
@@ -66120,11 +66180,11 @@ PrefabInstance:
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnFix.Array.data[0]
       value: 
-      objectReference: {fileID: 7230543936245105794, guid: 2cc0ac299d7eac446855744f1ee62abc, type: 3}
+      objectReference: {fileID: 1171809527445398212, guid: 73316f88110dd7e48800756576c5d4ed, type: 3}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnFix.Array.data[1]
       value: 
-      objectReference: {fileID: 1171809527445398212, guid: d398816c71f78024b98bb37bf199d0da, type: 3}
+      objectReference: {fileID: 7230543936245105794, guid: 8ebafa0c32efd1843acc6255bb4088f1, type: 3}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnFix.Array.data[2]
       value: 
@@ -84363,7 +84423,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: spawnRandom
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: timerToRespawn
@@ -97885,13 +97945,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startEntry: {fileID: 1635251535}
-  firstHeroPack: {fileID: 8013534098508413402, guid: bc66422c7a83f9144b609f0a5481cd95, type: 3}
+  firstHeroPack: {fileID: 8013534098508413402, guid: 64b72790d8872a74caa33ce955826286, type: 3}
   firstTimerBeforeSpawn: 30
-  timeBetweenRespawn: 120
+  timeBetweenRespawn: 60
   numberOfPackMinToHave: 4
   packHeroList:
-  - {fileID: 8013534098508413402, guid: eac8ab09841dc7648aecd23c05e281b8, type: 3}
-  - {fileID: 8013534098508413402, guid: eac8ab09841dc7648aecd23c05e281b8, type: 3}
+  - {fileID: 8013534098508413402, guid: 511739661658a024b818aad956058f0d, type: 3}
+  - {fileID: 8013534098508413402, guid: dfe0cd6055112e54ab0507d9588751fd, type: 3}
+  - {fileID: 8013534098508413402, guid: 11c71019782025e4fb13130135ac3409, type: 3}
+  - {fileID: 8013534098508413402, guid: bffdf9859f547b24f88d932d0eebf320, type: 3}
+  - {fileID: 8013534098508413402, guid: 01a7f19a15b350b4f8ac25944389694b, type: 3}
+  - {fileID: 8013534098508413402, guid: b0193dee15d184344b0913e03e290406, type: 3}
+  - {fileID: 8013534098508413402, guid: 64b72790d8872a74caa33ce955826286, type: 3}
+  - {fileID: 8013534098508413402, guid: bc66422c7a83f9144b609f0a5481cd95, type: 3}
   possibleSpawnPoint: []
   isTutorial: 0
   packToSpawn: 0
@@ -137854,7 +137920,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: spawnRandom
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: timerToRespawn
@@ -137862,15 +137928,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: rangeNumberSpawn.x
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: rangeNumberSpawn.y
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnFix.Array.size
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnFix.Array.data[0]
@@ -137888,6 +137954,26 @@ PrefabInstance:
       propertyPath: mobsToSpawnFix.Array.data[3]
       value: 
       objectReference: {fileID: 5403377550633065276, guid: 512716a55d14c7543b2e1230f2440543, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnRandom.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnRandom.Array.data[0]
+      value: 
+      objectReference: {fileID: 1171809527445398212, guid: d398816c71f78024b98bb37bf199d0da, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnRandom.Array.data[1]
+      value: 
+      objectReference: {fileID: 991483508670082476, guid: 092b7f73596d7964da2fb55e6b1eef78, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnRandom.Array.data[2]
+      value: 
+      objectReference: {fileID: 5403377550633065276, guid: 512716a55d14c7543b2e1230f2440543, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnRandom.Array.data[3]
+      value: 
+      objectReference: {fileID: 849520306477512543, guid: 1cdfbb975a21e5347815b9178319613e, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

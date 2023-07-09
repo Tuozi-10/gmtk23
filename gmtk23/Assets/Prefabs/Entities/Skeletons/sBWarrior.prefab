@@ -1034,7 +1034,7 @@ GameObject:
   - component: {fileID: 1090667841125855940}
   - component: {fileID: 4016936262826195250}
   m_Layer: 10
-  m_Name: Skeleton1
+  m_Name: sBWarrior
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1096,22 +1096,22 @@ MonoBehaviour:
   m_currentJob: 0
   m_baseHp: 8
   currentPack: {fileID: 0}
-  m_speedSmall: 3.5
-  m_speedMedium: 2.5
-  m_speedFat: 1.5
+  m_speedSmall: 3
+  m_speedMedium: 2
+  m_speedFat: 1
   m_magnitudeWander: 3
-  m_radiusAgro: 12
-  m_distanceForget: 6
+  m_radiusAgro: 10
+  m_distanceForget: 3
   m_triggerDetection: {fileID: 220916662720952824}
-  m_distanceAttackCac: 1.5
-  m_distanceAttackDistance: 5.5
-  m_fleeTooNearAttackDistance: 3.5
+  m_distanceAttackCac: 3
+  m_distanceAttackDistance: 5
+  m_fleeTooNearAttackDistance: 1
   m_arrow: {fileID: 5435709332488754029, guid: a3fcfe6d65609d845ac5695a1b84b366, type: 3}
   m_fireball: {fileID: 1127239125271462841, guid: f78a3cca4ecd3574a91602a2a9ceff73, type: 3}
   m_healBall: {fileID: 8591885573117207753, guid: 44c7950bc6ab08d43918d58d996cab8c, type: 3}
   m_aiHp: {fileID: 9126435367830442390}
-  attackSpeedRate: 1
-  damagesBonus: 1
+  attackSpeedRate: 1.2
+  damagesBonus: 1.2
   scaleShockWave: 0.65
   m_stunMasseDuration: 1
   m_body: {fileID: 2991035087833635177}
