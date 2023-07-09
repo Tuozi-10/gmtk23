@@ -15,5 +15,5 @@ MonoBehaviour:
   m_size: {x: 1, y: 1}
   level: 0
   sprite:
-  - {fileID: -468011916, guid: fcb7e460134436045a5bbaea70d25de1, type: 3}
+  - {fileID: 1073136603, guid: 64dbc6ac89b8b6d42ae37932ae3ca4ad, type: 3}
   m_skill: 5

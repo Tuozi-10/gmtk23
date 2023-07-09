@@ -199,7 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bfa39a2a09d4251861bce6f9acfded3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tracking: {fileID: 0}
+  tracking: {fileID: 3957086511909275415}
   heroPack: 1
   m_ais: []
   packMobManagerLink: {fileID: 0}
@@ -281,7 +281,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 423eaff5c55e4104a99e2000fb51e8a5, type: 2}
     - target: {fileID: 6595715620328899424, guid: 65c480d2cba0efb4599a3f8384517f80, type: 3}
       propertyPath: m_radiusAgro
-      value: 6
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 6595715620328899424, guid: 65c480d2cba0efb4599a3f8384517f80, type: 3}
       propertyPath: m_currentState
@@ -292,8 +292,24 @@ PrefabInstance:
       value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6595715620328899424, guid: 65c480d2cba0efb4599a3f8384517f80, type: 3}
+      propertyPath: m_distanceForget
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595715620328899424, guid: 65c480d2cba0efb4599a3f8384517f80, type: 3}
       propertyPath: m_magnitudeWander
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595715620328899424, guid: 65c480d2cba0efb4599a3f8384517f80, type: 3}
+      propertyPath: m_distanceAttackCac
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595715620328899424, guid: 65c480d2cba0efb4599a3f8384517f80, type: 3}
+      propertyPath: m_distanceAttackDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595715620328899424, guid: 65c480d2cba0efb4599a3f8384517f80, type: 3}
+      propertyPath: m_fleeTooNearAttackDistance
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -387,7 +403,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: a8b246c6bb8f2a9459aabd69b0a68636, type: 2}
     - target: {fileID: 6595715620328899424, guid: 65c480d2cba0efb4599a3f8384517f80, type: 3}
       propertyPath: m_baseHp
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6595715620328899424, guid: 65c480d2cba0efb4599a3f8384517f80, type: 3}
       propertyPath: m_weapon
@@ -395,7 +411,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 53a48a78f509ded45bc543971e93617a, type: 2}
     - target: {fileID: 6595715620328899424, guid: 65c480d2cba0efb4599a3f8384517f80, type: 3}
       propertyPath: m_radiusAgro
-      value: 6
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6595715620328899424, guid: 65c480d2cba0efb4599a3f8384517f80, type: 3}
       propertyPath: m_currentState
@@ -406,8 +422,24 @@ PrefabInstance:
       value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6595715620328899424, guid: 65c480d2cba0efb4599a3f8384517f80, type: 3}
+      propertyPath: m_distanceForget
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595715620328899424, guid: 65c480d2cba0efb4599a3f8384517f80, type: 3}
+      propertyPath: m_currentBodyType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595715620328899424, guid: 65c480d2cba0efb4599a3f8384517f80, type: 3}
       propertyPath: m_magnitudeWander
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595715620328899424, guid: 65c480d2cba0efb4599a3f8384517f80, type: 3}
+      propertyPath: m_distanceAttackDistance
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595715620328899424, guid: 65c480d2cba0efb4599a3f8384517f80, type: 3}
+      propertyPath: m_fleeTooNearAttackDistance
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -500,9 +532,29 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: f3afb892304f5e840855d7fb8f0fa77a, type: 2}
     - target: {fileID: 6595715620328899424, guid: 65c480d2cba0efb4599a3f8384517f80, type: 3}
+      propertyPath: m_baseHp
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595715620328899424, guid: 65c480d2cba0efb4599a3f8384517f80, type: 3}
       propertyPath: m_weapon
       value: 
-      objectReference: {fileID: 11400000, guid: 423eaff5c55e4104a99e2000fb51e8a5, type: 2}
+      objectReference: {fileID: 11400000, guid: df1c4cc7766b59844af42b37fdaebbce, type: 2}
+    - target: {fileID: 6595715620328899424, guid: 65c480d2cba0efb4599a3f8384517f80, type: 3}
+      propertyPath: m_radiusAgro
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595715620328899424, guid: 65c480d2cba0efb4599a3f8384517f80, type: 3}
+      propertyPath: m_distanceForget
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595715620328899424, guid: 65c480d2cba0efb4599a3f8384517f80, type: 3}
+      propertyPath: m_distanceAttackDistance
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595715620328899424, guid: 65c480d2cba0efb4599a3f8384517f80, type: 3}
+      propertyPath: m_fleeTooNearAttackDistance
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -579,7 +631,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 99bd3e75bad8e2c4da54c17a4d3265bd, type: 2}
     - target: {fileID: 6595715620328899424, guid: 65c480d2cba0efb4599a3f8384517f80, type: 3}
       propertyPath: m_baseHp
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6595715620328899424, guid: 65c480d2cba0efb4599a3f8384517f80, type: 3}
       propertyPath: m_weapon
@@ -587,7 +639,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 5075ba7346d025c4b8eb8e8784a973e2, type: 2}
     - target: {fileID: 6595715620328899424, guid: 65c480d2cba0efb4599a3f8384517f80, type: 3}
       propertyPath: m_radiusAgro
-      value: 6
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6595715620328899424, guid: 65c480d2cba0efb4599a3f8384517f80, type: 3}
       propertyPath: m_currentState
@@ -598,8 +650,24 @@ PrefabInstance:
       value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6595715620328899424, guid: 65c480d2cba0efb4599a3f8384517f80, type: 3}
+      propertyPath: m_currentBodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595715620328899424, guid: 65c480d2cba0efb4599a3f8384517f80, type: 3}
       propertyPath: m_magnitudeWander
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595715620328899424, guid: 65c480d2cba0efb4599a3f8384517f80, type: 3}
+      propertyPath: m_distanceAttackCac
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595715620328899424, guid: 65c480d2cba0efb4599a3f8384517f80, type: 3}
+      propertyPath: m_distanceAttackDistance
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595715620328899424, guid: 65c480d2cba0efb4599a3f8384517f80, type: 3}
+      propertyPath: m_fleeTooNearAttackDistance
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -697,7 +765,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: a660220498d171f438829aeb528b5a86, type: 2}
     - target: {fileID: 6595715620328899424, guid: 65c480d2cba0efb4599a3f8384517f80, type: 3}
       propertyPath: m_baseHp
-      value: 10
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 6595715620328899424, guid: 65c480d2cba0efb4599a3f8384517f80, type: 3}
       propertyPath: m_weapon
@@ -705,7 +773,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 6c17c2359fd70d8489b98d57a27e4c79, type: 2}
     - target: {fileID: 6595715620328899424, guid: 65c480d2cba0efb4599a3f8384517f80, type: 3}
       propertyPath: m_radiusAgro
-      value: 6
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 6595715620328899424, guid: 65c480d2cba0efb4599a3f8384517f80, type: 3}
       propertyPath: m_currentState
@@ -716,7 +784,23 @@ PrefabInstance:
       value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6595715620328899424, guid: 65c480d2cba0efb4599a3f8384517f80, type: 3}
+      propertyPath: m_distanceForget
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595715620328899424, guid: 65c480d2cba0efb4599a3f8384517f80, type: 3}
+      propertyPath: m_currentBodyType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595715620328899424, guid: 65c480d2cba0efb4599a3f8384517f80, type: 3}
       propertyPath: m_magnitudeWander
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595715620328899424, guid: 65c480d2cba0efb4599a3f8384517f80, type: 3}
+      propertyPath: m_distanceAttackDistance
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595715620328899424, guid: 65c480d2cba0efb4599a3f8384517f80, type: 3}
+      propertyPath: m_fleeTooNearAttackDistance
       value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
