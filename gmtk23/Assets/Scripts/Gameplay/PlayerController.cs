@@ -61,6 +61,7 @@ namespace Gameplay {
         [SerializeField] private float getDashAnimDuration = 0.25f;
 
         private SortingGroup _sortingGroup;
+        private Vector3 m_spawnPosition;
         
         private void Start() {
             cam = Camera.main;
@@ -69,6 +70,7 @@ namespace Gameplay {
             rb.drag = drag;
             velocityChangeTime = decelerationDashTime;
             textGetItem.GetComponent<CanvasGroup>().alpha = 0;
+            m_spawnPosition = transform.position;
             
             inputs = new PlayerMap();
             inputs.Enable();
@@ -78,6 +80,13 @@ namespace Gameplay {
             m_currentHp = hp;
             _sortingGroup = GetComponent<SortingGroup>();
             m_uiHp.HpRatio(1);
+        }
+
+        public void Respawn()
+        {
+            m_currentHp = hp;
+            m_uiHp.HpRatio(1);
+           GetComponent<Rigidbody>() .position = m_spawnPosition;
         }
         
         private void Update() {
@@ -369,7 +378,7 @@ namespace Gameplay {
 
         public void Die()
         {
-            
+            TesMortManager.Respawn();
         }
         
         #endregion
