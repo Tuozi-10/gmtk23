@@ -23,7 +23,7 @@ namespace IAs
 
         private void Update()
         {
-            m_sortingGroup.sortingOrder = -(int)(transform.position.z*10);
+            m_sortingGroup.sortingOrder = -(int)(transform.position.z*30);
             transform.eulerAngles = Vector3.zero;
 
             if (m_agent == null)

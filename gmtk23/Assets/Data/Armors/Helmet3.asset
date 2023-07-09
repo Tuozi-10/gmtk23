@@ -15,3 +15,4 @@ MonoBehaviour:
   m_size: {x: 1, y: 1}
   price: 1
   sprite: {fileID: -468011916, guid: fcb7e460134436045a5bbaea70d25de1, type: 3}
+  m_skill: 3

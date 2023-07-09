@@ -3,6 +3,7 @@ using DG.Tweening;
 using Items;
 using Managers;
 using src.Singletons;
+using UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
@@ -35,16 +36,21 @@ namespace Gameplay {
         [SerializeField] private float timeInDash = 1f;
         [SerializeField] private float moveDisableAfterCollidingInDash = .2f;
         private StockRemove enemyDamageable = null;
-        private Vector3 DashDir = new();
+        private Vector3 dashDir = new();
+        public Vector3 DashDir => dashDir;
         private float timeSinceStartDash = 0;
         private float timeSinceLastDash = 0;
 
         [Header("Throw object")]
         [SerializeField] private Transform cursorTransform = null;
-        [SerializeField] private AbstractItem currentItem = null;
         [SerializeField] private GameObject itemGam = null;
-        [Space]
         [SerializeField] private float throwForce = 0;
+        private GameObject gamItemCatchable = null;
+        private ICatchable inAreaCatchable = null;
+        
+        [Header("Inventory")]
+        [SerializeField] private Inventory playerInv = new();
+        [SerializeField] private GameObject textGetItem = null;
         
         [Header("Interface")]
         [SerializeField] private Transform dashCooldownParent = null;
@@ -64,6 +70,7 @@ namespace Gameplay {
             inputs.Enable();
             inputs.Movement.Dash.started += PerformDash;
             inputs.Movement.ThrowItem.started += ThrowItem;
+            inputs.Movement.Interact.started += AddItemToInventory;
         }
         
         private void Update() {
@@ -86,7 +93,7 @@ namespace Gameplay {
         private void SetPlayerVelocity() {
             switch (currentDashState) {
                 case DashState.isInDash:
-                    rb.velocity = DashDir * dashForce;
+                    rb.velocity = dashDir * dashForce;
                     break;
                 
                 case DashState.WaitForDash when velocityChangeTime < decelerationDashTime:
@@ -131,7 +138,7 @@ namespace Gameplay {
             playerCam.ChangeDashState(true);
             movementDisable = 0;
             AudioManager.PlaySoundDash();
-            DashDir = GetMouseDirFromPlayer();
+            dashDir = GetMouseDirFromPlayer();
             timeSinceStartDash = 0;
             timeSinceLastDash = 0;
             currentDashState = DashState.isInDash;
@@ -164,13 +171,18 @@ namespace Gameplay {
             }
         }
 
+
+        public void StopMovement() {
+            rb.velocity = Vector3.zero;
+            movementDisable = moveDisableAfterCollidingInDash;
+        }
+        
+        
         /// <summary>
         /// Method called when colliding with an enemy
         /// </summary>
         public void StartCollidingWithEnemy(StockRemove enemy) {
             GiveDashToPlayer();
-            rb.velocity = Vector3.zero;
-            movementDisable = moveDisableAfterCollidingInDash;
             if(enemy != null) enemyDamageable = enemy;
             if (movementDisable == 0) DamageEnemy();
         }
@@ -212,10 +224,11 @@ namespace Gameplay {
         /// <param name="obj"></param>
         /// <exception cref="NotImplementedException"></exception>
         private void ThrowItem(InputAction.CallbackContext obj) {
-            if (currentItem == null) return;
+            if (playerInv.items.Count <= playerInv.CurrentSelectedSlot) return;
             GameObject item = Instantiate(itemGam, transform.position, Quaternion.identity);
-            item.GetComponent<ThrowItem>().SetItem(currentItem);
+            item.GetComponent<ThrowItem>().SetItem(playerInv.items[playerInv.CurrentSelectedSlot] as AbstractItem);
             item.GetComponent<Rigidbody>().AddForce(CalculateVelocity(), ForceMode.Impulse);
+            playerInv.RemoveItem();
         }
 
         /// <summary>
@@ -234,6 +247,34 @@ namespace Gameplay {
             finalVel *= VelocityX;
             finalVel.y = VelocityY;
             return finalVel;
+        }
+
+        /// <summary>
+        /// Change Object State
+        /// </summary>
+        /// <param name="catchable"></param>
+        /// <param name="add"></param>
+        public void ChangeObjectState(ICatchable catchable, GameObject catchGam, bool add) {
+            if (add) {
+                inAreaCatchable = catchable;
+                gamItemCatchable = catchGam;
+            }
+            else if (inAreaCatchable == catchable) {
+                inAreaCatchable = null;
+                gamItemCatchable = null;
+            }
+            
+            textGetItem.SetActive(inAreaCatchable != null);
+        }
+
+        /// <summary>
+        /// Add the item in your inventory
+        /// </summary>
+        /// <param name="obj"></param>
+        private void AddItemToInventory(InputAction.CallbackContext obj) {
+            if (gamItemCatchable == null) return;
+            inAreaCatchable = playerInv.TryAddItem(inAreaCatchable, gamItemCatchable);
+            textGetItem.SetActive(inAreaCatchable != null);
         }
         #endregion Throw Object
         

@@ -24,7 +24,7 @@ namespace IAs
             }
         }
 
-        public bool TryGetFromType(AI.Team desiredTeam, out AI returnAI)
+        public bool TryGetFromType(AI.Team desiredTeam, out AI returnAI, AI from)
         {
             returnAI = null;
             if (m_inRadius.Count == 0)
@@ -34,7 +34,7 @@ namespace IAs
             
             foreach (var ai in m_inRadius)
             {
-                if (ai.team != desiredTeam)
+                if (ai.team != desiredTeam || from == ai)
                 {
                     continue;
                 }
