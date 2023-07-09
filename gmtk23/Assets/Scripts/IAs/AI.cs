@@ -82,6 +82,8 @@ namespace IAs
         private int m_currentHp;
         [SerializeField] private int m_baseHp = 5;
 
+        public bool FullLife => m_currentHp >= m_baseHp;
+        
         #endregion
 
         #region skill
@@ -121,6 +123,9 @@ namespace IAs
         [SerializeField] private float attackSpeedRate = 1f;
 
         [SerializeField] private float damagesBonus = 1f;
+
+        [SerializeField] private float scaleShockWave = 1;
+        [SerializeField] private float m_stunMasseDuration = 1;
 
         [SerializeField] private Transform m_body;
         public Transform body => m_body;
@@ -290,6 +295,10 @@ namespace IAs
 
         public void Stun(float duration)
         {
+            if (m_currentHp <= 0 || m_currentState == States.Dead)
+            {
+                return;
+            }
             timeEndStun = Time.time + duration;
             m_currentState = States.Stun;
             // TODO AFF FX
@@ -405,8 +414,6 @@ namespace IAs
                 m_currentState = States.Wander;
                 return;
             }
-
-            
             
             var distanceTarget = Vector3.Distance(transform.position, m_targetAI.transform.position);
 
@@ -559,9 +566,18 @@ namespace IAs
             if (distanceTarget < m_distanceAttackDistance + 1f)
             {
                 m_targetAI.Hit(m_weapon != null ? (int) (m_weapon.damages * damagesBonus) : 1);
-                if (m_weapon.weaponType is WeaponType.Baguette or WeaponType.Sceptre or WeaponType.Bow)
+
+                if (m_weapon.weaponType == Weapon.WeaponType.Axe && m_skill == Skills.Barbarian)
                 {
-                    // TODO BREAK FX
+                    FxManagers.RequestHitShockWaveFxAtPos(m_weaponSlot.transform.position, scaleShockWave, m_currentTeam  == Team.Hero ? Team.Orc : Team.Hero, (int) (m_weapon.damages * damagesBonus));
+                }
+                else if (m_weapon.weaponType == WeaponType.Masse && m_skill == Skills.Templar)
+                {     
+                    FxManagers.RequestHitShockWaveFxAtPos(m_weaponSlot.transform.position, scaleShockWave, m_currentTeam  == Team.Hero ? Team.Orc : Team.Hero, (int) (m_weapon.damages * damagesBonus));
+                    m_targetAI.Stun(m_stunMasseDuration);
+                }
+                else if (m_weapon.weaponType is WeaponType.Baguette or WeaponType.Sceptre or WeaponType.Bow)
+                {
                     m_currentJob = Jobs.Cac;
                     RemoveWeapon();
                     m_currentState = States.Flee;
@@ -618,7 +634,7 @@ namespace IAs
 
             var fireBall = Instantiate(m_healBall);
             fireBall.transform.position = transform.position + Vector3.up;
-            fireBall.SetUp(targetAI, (int) (m_weapon.damages * damagesBonus));
+            fireBall.SetUp(targetAI, (int) (m_weapon.damages * damagesBonus), m_skill == Skills.Sorcier);
         }
 
         public void RefreshHp()

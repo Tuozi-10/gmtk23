@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7651935591459528197}
   - component: {fileID: 8591885573117207753}
+  - component: {fileID: 2837532517565091874}
+  - component: {fileID: 8819094772180745950}
   m_Layer: 8
   m_Name: HealBall
   m_TagString: Untagged
@@ -34,7 +36,7 @@ Transform:
   - {fileID: 2742249770800908266}
   - {fileID: 7601591334725696920}
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8591885573117207753
 MonoBehaviour:
@@ -52,6 +54,54 @@ MonoBehaviour:
   alignmentspeed: 8
   target: {fileID: 0}
   damages: 0
+--- !u!135 &2837532517565091874
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698076876859784308}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 3.53
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &8819094772180745950
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698076876859784308}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4270082355263355185
 GameObject:
   m_ObjectHideFlags: 0

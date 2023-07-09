@@ -2015,6 +2015,8 @@ MonoBehaviour:
   m_aiHp: {fileID: 219020450638531709}
   attackSpeedRate: 1
   damagesBonus: 1
+  scaleShockWave: 1
+  m_stunMasseDuration: 1
   m_body: {fileID: 4520866103857049419}
   m_head: {fileID: 4113658156796542098}
   m_animator: {fileID: 542533790069564649}
