@@ -50,3 +50,4 @@ MonoBehaviour:
   m_healFx: {fileID: 3065614416510642098, guid: 21e1e05a2b067124c9779414d0a9b4e0, type: 3}
   m_healShockWaveFx: {fileID: 3382617291673004042, guid: 3e80eee0665391549922e113b8199c09, type: 3}
   m_hitShockWaveFx: {fileID: 5782523095389917714, guid: 623cc72ed4006e444ab5eb95726c6b91, type: 3}
+  m_dashEffect: {fileID: 3529327406880737584, guid: 1c452afc87e9b95458ca2f0bedeb589c, type: 3}

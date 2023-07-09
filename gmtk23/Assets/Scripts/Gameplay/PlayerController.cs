@@ -41,6 +41,7 @@ namespace Gameplay {
         public Vector3 DashDir => dashDir;
         private float timeSinceStartDash = 0;
         private float timeSinceLastDash = 0;
+        [SerializeField] private ParticleSystem dashWalkEffect;
 
         [Header("Throw object")]
         [SerializeField] private Transform cursorTransform = null;
@@ -160,6 +161,7 @@ namespace Gameplay {
             ExitSlowMotion();
             playerCam.ChangeDashState(true);
             movementDisable = 0;
+            FxManagers.RequestDashFxAtPos(transform.position+Vector3.up);
             AudioManager.PlaySoundDash();
             dashDir = GetMouseDirFromPlayer();
             timeSinceStartDash = 0;
@@ -313,6 +315,8 @@ namespace Gameplay {
         private void UpdateDashCooldownUI(bool dashEnable = false) {
             dashCooldownImg.color = startDashColor;
             dashCooldownImg.fillAmount = timeSinceLastDash / dashCdTime;
+            var mainModule = dashWalkEffect.main;
+            mainModule.startColor = new ParticleSystem.MinMaxGradient(Color.Lerp(hasDashColor,Color.white, dashCooldownImg.fillAmount));
             if (dashEnable) {
                 dashCooldownParent.DORewind();
                 dashCooldownParent.DOPunchScale(new Vector3(.75f, .75f, .75f), getDashAnimDuration, 1);

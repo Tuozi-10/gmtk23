@@ -15,6 +15,7 @@ namespace Managers
         [SerializeField] private ParticleSystem m_healFx;
         [SerializeField] private ParticleSystem m_healShockWaveFx;
         [SerializeField] private ParticleSystem m_hitShockWaveFx;
+        [SerializeField] private ParticleSystem m_dashEffect;
 
         private Pool<ParticleSystem> m_damagesPool;
         private Pool<ParticleSystem> m_orcBloodPool;
@@ -22,6 +23,7 @@ namespace Managers
         private Pool<ParticleSystem> m_healPool;
         private Pool<ParticleSystem> m_healShockWavePool;
         private Pool<ParticleSystem> m_hitShockWavePool;
+        private Pool<ParticleSystem> m_dashEffectPool;
 
         private void Start()
         {
@@ -31,6 +33,7 @@ namespace Managers
             m_healPool = new Pool<ParticleSystem>(m_healFx);
             m_healShockWavePool = new Pool<ParticleSystem>(m_healShockWaveFx);
             m_hitShockWavePool = new Pool<ParticleSystem>(m_hitShockWaveFx);
+            m_dashEffectPool = new Pool<ParticleSystem>(m_dashEffect);
         }
 
         public static void RequestDamageFxAtPos(Vector3 position)
@@ -130,6 +133,25 @@ namespace Managers
             effect.Play();
             effect.GetComponent<ShockWave>().SetUp(team, damages);
             instance.StartCoroutine( instance.m_hitShockWavePool.AddToPoolLatter(effect, .7f));
+        }
+        
+        public static void RequestDashFxAtPos(Vector3 position)
+        {
+            if (instance == null)
+            {
+                Logs.Log("Fx manager instance null ...", LogType.Error);
+                return;
+            }
+
+            var effect = instance.m_dashEffectPool.GetFromPool();
+            effect.gameObject.SetActive(true);
+            effect.Stop();
+
+            effect.transform.position = position;
+            
+            effect.Play();
+            
+            instance.StartCoroutine(instance.m_dashEffectPool.AddToPoolLatter(effect, 2f));
         }
     }
 }

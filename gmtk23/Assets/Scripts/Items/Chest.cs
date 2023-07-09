@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Items;
+using Managers;
 using UI;
 using UnityEngine;
 
@@ -19,7 +20,7 @@ public class Chest : MonoBehaviour {
         
         int random = Random.Range(0, items.Count);
         Inventory.instance.DropAbstractItem((- DashDir + Vector3.up).normalized * throwForce, transform.position, null, new Item(0, items[random]));
-
+        FxManagers.RequestDashFxAtPos(transform.position+Vector3.up);
         Destroy(gameObject);
     }
 }
