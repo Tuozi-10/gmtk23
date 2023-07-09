@@ -882,6 +882,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1256078974}
     m_Modifications:
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Name
       value: MobSpawner (23)
       objectReference: {fileID: 0}
@@ -8079,6 +8083,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1256078974}
     m_Modifications:
+    - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Name
       value: MobSpawner (17)
@@ -26029,6 +26037,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1256078974}
     m_Modifications:
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Name
       value: MobSpawner (16)
       objectReference: {fileID: 0}
@@ -28288,6 +28300,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1256078974}
     m_Modifications:
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Name
       value: MobSpawner (5)
       objectReference: {fileID: 0}
@@ -29430,6 +29446,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1256078974}
     m_Modifications:
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Name
       value: MobSpawner (12)
       objectReference: {fileID: 0}
@@ -29663,6 +29683,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1256078974}
     m_Modifications:
+    - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Name
       value: MobSpawner (6)
@@ -31623,6 +31647,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1256078974}
     m_Modifications:
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Name
       value: MobSpawner (19)
       objectReference: {fileID: 0}
@@ -31669,6 +31697,10 @@ PrefabInstance:
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnFix.Array.size
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -33196,6 +33228,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1256078974}
     m_Modifications:
+    - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Name
       value: MobSpawner (2)
@@ -37729,6 +37765,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1256078974}
     m_Modifications:
+    - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Name
       value: MobSpawner (3)
@@ -44243,6 +44283,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1256078974}
     m_Modifications:
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Name
       value: MobSpawner (7)
       objectReference: {fileID: 0}
@@ -49266,6 +49310,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1256078974}
     m_Modifications:
+    - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Name
       value: MobSpawner (13)
@@ -64464,6 +64512,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1256078974}
     m_Modifications:
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Name
       value: MobSpawner (22)
       objectReference: {fileID: 0}
@@ -65298,6 +65350,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1256078974}
     m_Modifications:
+    - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Name
       value: MobSpawner (4)
@@ -71479,6 +71535,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1256078974}
     m_Modifications:
+    - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Name
       value: MobSpawner (14)
@@ -88627,6 +88687,13 @@ MonoBehaviour:
   m_hitMe: []
   m_mobStep: []
   m_raleAgonie: []
+  m_hitBones: []
+  m_fireBall: []
+  m_fireBallExplosion: []
+  m_AoE: []
+  m_hitFlesh: []
+  m_ShootArrow: []
+  m_ArrowImpact: []
   m_audioSource: {fileID: 1401257315}
 --- !u!4 &1401257317
 Transform:
@@ -89987,6 +90054,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1256078974}
     m_Modifications:
+    - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Name
       value: MobSpawner (1)
@@ -93663,6 +93734,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1256078974}
     m_Modifications:
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Name
       value: MobSpawner (8)
       objectReference: {fileID: 0}
@@ -93672,7 +93747,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 59
+      value: 56.9
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -97337,6 +97412,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1256078974}
     m_Modifications:
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Name
       value: MobSpawner (18)
       objectReference: {fileID: 0}
@@ -99692,6 +99771,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1256078974}
     m_Modifications:
+    - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Name
       value: MobSpawner (20)
@@ -103878,6 +103961,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1256078974}
     m_Modifications:
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Name
       value: MobSpawner (21)
       objectReference: {fileID: 0}
@@ -108002,6 +108089,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1256078974}
     m_Modifications:
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Name
       value: MobSpawner (11)
       objectReference: {fileID: 0}
@@ -112079,6 +112170,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1256078974}
     m_Modifications:
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Name
       value: MobSpawner (24)
       objectReference: {fileID: 0}
@@ -115483,6 +115578,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1256078974}
     m_Modifications:
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Name
       value: MobSpawner (10)
       objectReference: {fileID: 0}
@@ -118371,6 +118470,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1256078974}
     m_Modifications:
+    - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Name
       value: MobSpawner (9)
@@ -133825,6 +133928,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1256078974}
     m_Modifications:
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Name
       value: MobSpawner (15)
       objectReference: {fileID: 0}
@@ -136268,6 +136375,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1256078974}
     m_Modifications:
+    - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Name
       value: MobSpawner

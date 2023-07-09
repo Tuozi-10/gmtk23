@@ -182,6 +182,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 99bd3e75bad8e2c4da54c17a4d3265bd, type: 2}
   - {fileID: 11400000, guid: a660220498d171f438829aeb528b5a86, type: 2}
   - {fileID: 11400000, guid: a8b246c6bb8f2a9459aabd69b0a68636, type: 2}
+  - {fileID: 11400000, guid: a8b246c6bb8f2a9459aabd69b0a68636, type: 2}
   chestOpen: {fileID: 530514063, guid: 9228658676c5a344d9cff5f16319e985, type: 3}
   col: {fileID: 5758748126326138477}
   throwForce: 4
