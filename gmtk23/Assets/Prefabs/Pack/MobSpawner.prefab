@@ -49,7 +49,7 @@ MonoBehaviour:
   spread: 6
   timerToRespawn: 5
   detectionRangeFactor: 0
-  spawnRandom: 0
+  spawnRandom: 1
   isMenu: 0
   rangeNumberSpawn: {x: 4, y: 7}
   mobsToSpawnRandom:

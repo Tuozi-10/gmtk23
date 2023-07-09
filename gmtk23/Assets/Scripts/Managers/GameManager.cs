@@ -15,6 +15,11 @@ namespace Managers
         
         public void LoadScene(Scenes sceneIndex)
         {
+            if (sceneIndex == Scenes.Game)
+            {
+                Destroy(PackHeroManager.instance.gameObject);
+                PackHeroManager.instance = null;
+            }
             SceneManager.LoadScene((int)sceneIndex);
         }
         
