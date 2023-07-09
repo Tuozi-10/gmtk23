@@ -36,6 +36,18 @@ namespace Managers
             m_dashEffectPool = new Pool<ParticleSystem>(m_dashEffect);
         }
 
+        public static void Purge()
+        { 
+            instance.StopAllCoroutines();
+            
+            instance.m_damagesPool = new Pool<ParticleSystem>(instance.m_damageFx);
+            instance.m_orcBloodPool = new Pool<ParticleSystem>(instance.m_orcBloodFx);
+            instance.m_humanBloodPool = new Pool<ParticleSystem>(instance.m_humanBloodFx);
+            instance.m_healPool = new Pool<ParticleSystem>(instance.m_healFx);
+            instance.m_healShockWavePool = new Pool<ParticleSystem>(instance.m_healShockWaveFx);
+            instance.m_hitShockWavePool = new Pool<ParticleSystem>(instance.m_hitShockWaveFx);
+        }
+        
         public static void RequestDamageFxAtPos(Vector3 position)
         {
             if (instance == null)

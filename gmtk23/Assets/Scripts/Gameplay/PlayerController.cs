@@ -250,7 +250,7 @@ namespace Gameplay {
         /// <exception cref="NotImplementedException"></exception>
         private void ThrowItem(InputAction.CallbackContext obj) {
             if (playerInv.items.Count <= playerInv.CurrentSelectedSlot) return;
-            Inventory.instance.DropAbstractItem(CalculateVelocity(), transform.position, null, playerInv.items[playerInv.CurrentSelectedSlot]);
+            Inventory.instance.DropAbstractItem(CalculateVelocity(), transform.position + Vector3.up, null, playerInv.items[playerInv.CurrentSelectedSlot]);
             playerInv.RemoveItem();
         }
 
@@ -260,11 +260,10 @@ namespace Gameplay {
         /// <param name="time"></param>
         /// <returns></returns>
         private Vector3 CalculateVelocity() {
-            Vector3 distance = GetMousePosition() - transform.position;
-            float time = distance.magnitude / throwForce;
+            Vector3 distance = GetMousePosition() - (transform.position + Vector3.up);
             
-            float VelocityX = distance.magnitude / time;
-            float VelocityY = distance.y / time + 0.5f * Mathf.Abs(Physics.gravity.y) * time;
+            float VelocityX = distance.magnitude / throwForce;
+            float VelocityY = distance.y / throwForce + 0.5f * Mathf.Abs(Physics.gravity.y) * throwForce;
             
             Vector3 finalVel = distance.normalized;
             finalVel *= VelocityX;

@@ -200,8 +200,8 @@ namespace IAs
                 m_level = Mathf.Clamp(m_level + 1, 0, 2);
             }
             else {
-                m_level = weapon.level;
                 if(m_weapon) Inventory.instance.DropAbstractItem(Vector3.zero, transform.position + transform.forward + Vector3.up, gameObject, new Item(m_level, m_weapon));
+                m_level = weapon.level;
             }
             
             m_weapon = weapon.item as Weapon;
@@ -209,20 +209,19 @@ namespace IAs
             return true;
         }
 
-        public bool SetArmor(Armor armor)
+        public void SetArmor(Armor armor)
         {
-            if (armor != null && m_weapon != null)
-            {
-                if (!CanEquipWeaponWithSkill(m_weapon, armor.m_skill))
-                {
-                    return false;
-                }
-            }
-            
             Inventory.instance.DropAbstractItem(Vector3.zero, transform.position + transform.forward + Vector3.up, gameObject, new Item(0, m_armor));
             m_armor = armor;
             RefreshStuffs();
-            return true;
+            
+            if (m_weapon != null)
+            {
+                if (!CanEquipWeapon(m_weapon))
+                {
+                    RemoveWeapon();
+                }
+            }
         }
 
         public bool CanEquipWeaponWithSkill(Weapon weapon, Skills skill)
@@ -589,7 +588,18 @@ namespace IAs
             {
                 m_deadFromFire = fromFire;
                 AudioManager.PlaySoundRaleAgonie();
-                FxManagers.RequestBloodFxAtPos(transform.position, team == Team.Orc && gameObject.name.Contains("Orc"));
+
+                var orc = gameObject.name.Contains("Orc");
+                if (orc || team == Team.Hero)
+                {
+                    AudioManager.PlaySoundHitFlesh();
+                }
+                else
+                {
+                    AudioManager.PlaySoundHitBones();
+                }
+                
+                FxManagers.RequestBloodFxAtPos(transform.position, team == Team.Orc && orc);
 
                 m_currentState = States.Dead;
             }
@@ -639,6 +649,7 @@ namespace IAs
                 }
                 else if (m_weapon.weaponType == WeaponType.Masse && m_skill == Skills.Templar)
                 {     
+                    AudioManager.PlaySoundAoE();
                     FxManagers.RequestHitShockWaveFxAtPos(m_weaponSlot.transform.position, scaleShockWave, m_currentTeam  == Team.Hero ? Team.Orc : Team.Hero, (int) (m_weapon.damages[level] * damagesBonus));
                     m_targetAI.Stun(m_stunMasseDuration);
                 }
@@ -673,6 +684,8 @@ namespace IAs
                 return;
             }
 
+            AudioManager.PlaySoundShootArrow();
+            
             var arrow = Instantiate(m_arrow);
             arrow.transform.position = transform.position;
             arrow.SetUp(targetAI.transform.position - transform.position, team,
@@ -686,6 +699,8 @@ namespace IAs
                 return;
             }
 
+            AudioManager.PlaySoundFireBall();
+            
             var fireBall = Instantiate(m_fireball);
             fireBall.transform.position = transform.position + Vector3.up;
             fireBall.SetUp(targetAI, (int) (m_weapon.damages[level] * damagesBonus));
