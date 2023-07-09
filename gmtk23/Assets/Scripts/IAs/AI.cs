@@ -111,6 +111,7 @@ namespace IAs
 
         [SerializeField] private Arrow m_arrow;
         [SerializeField] private BulletTest m_fireball;
+        [SerializeField] private BulletTest m_healBall;
 
         [SerializeField] private AiHp m_aiHp;
 
@@ -509,11 +510,18 @@ namespace IAs
                 {
                     // TODO BREAK FX
                     m_currentJob = Jobs.Cac;
-                    m_weapon = null;
-                    RefreshStuffs();
+                    RemoveWeapon();
                     m_currentState = States.Flee;
                 }
             }
+        }
+
+        public void RemoveWeapon()
+        {
+            m_currentJob = Jobs.Cac;
+            m_weapon = null;
+            RefreshStuffs();
+            m_currentState = States.Wander;
         }
 
         public void ShootArrow()
@@ -530,6 +538,18 @@ namespace IAs
         }
 
         public void ShootMagic()
+        {
+            if (targetAI == null)
+            {
+                return;
+            }
+
+            var fireBall = Instantiate(m_fireball);
+            fireBall.transform.position = transform.position + Vector3.up;
+            fireBall.SetUp(targetAI, (int) (m_weapon.damages * damagesBonus));
+        }
+        
+        public void ShootHeal()
         {
             if (targetAI == null)
             {
