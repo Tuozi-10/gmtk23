@@ -950,6 +950,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PackHero
       objectReference: {fileID: 0}
+    - target: {fileID: 8013534098508413402, guid: eac8ab09841dc7648aecd23c05e281b8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8646602149707600874, guid: eac8ab09841dc7648aecd23c05e281b8, type: 3}
       propertyPath: m_radiusAgro
       value: 18.07
@@ -8247,6 +8251,37 @@ Transform:
   m_Father: {fileID: 1372950369}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1572773593
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1572773594}
+  m_Layer: 0
+  m_Name: GameObject (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1572773594
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572773593}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -39.8, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1577147265
 GameObject:
   m_ObjectHideFlags: 0
@@ -8809,6 +8844,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5103858114972288929, guid: 13215c36b7795bb44a8f2fec687f0be0, type: 3}
   m_PrefabInstance: {fileID: 1655525917}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1657643045
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1657643047}
+  - component: {fileID: 1657643046}
+  m_Layer: 0
+  m_Name: PackHeroManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1657643046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657643045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c36d04d922e28424da7187b0be7c9fe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startEntry: {fileID: 1572773594}
+  firstHeroPack: {fileID: 8013534098508413402, guid: eac8ab09841dc7648aecd23c05e281b8, type: 3}
+  firstTimerBeforeSpawn: 10
+  timeBetweenRespawn: 3
+  numberOfPackMinToHave: 7
+  packHeroList:
+  - {fileID: 8013534098508413402, guid: eac8ab09841dc7648aecd23c05e281b8, type: 3}
+  - {fileID: 8013534098508413402, guid: eac8ab09841dc7648aecd23c05e281b8, type: 3}
+  - {fileID: 8013534098508413402, guid: eac8ab09841dc7648aecd23c05e281b8, type: 3}
+  - {fileID: 8013534098508413402, guid: eac8ab09841dc7648aecd23c05e281b8, type: 3}
+  - {fileID: 8013534098508413402, guid: eac8ab09841dc7648aecd23c05e281b8, type: 3}
+  - {fileID: 8013534098508413402, guid: eac8ab09841dc7648aecd23c05e281b8, type: 3}
+  numberOfPackInGame: []
+--- !u!4 &1657643047
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657643045}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1696102013
 GameObject:
   m_ObjectHideFlags: 0

@@ -21,5 +21,30 @@ namespace IAs
                 ai.currentPack = this;
             }
         }
+
+        public void Update()
+        {
+            List<AI> toremove = new();
+            foreach (var ai in m_ais)
+            {
+                if (ai == null)
+                {
+                    toremove.Add(ai);
+                }
+            }
+
+            foreach (var t in toremove)
+            {
+                m_ais.Remove(t);
+            }
+
+            if (m_ais.Count > 0)
+            {
+                return; 
+            }
+            
+            Destroy(gameObject);
+            PackHeroManager.instance.numberOfPackInGame.Remove(this);
+        }
     }
 }
