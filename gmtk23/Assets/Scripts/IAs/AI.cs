@@ -38,6 +38,7 @@ namespace IAs
             Chasing,
             Attacking,
             Flee,
+            Stun,
             Dead
         }
 
@@ -273,29 +274,36 @@ namespace IAs
         {
             switch (m_currentState)
             {
-                case States.Idle:
-                    DoIdle();
-                    break;
-                case States.Wander:
-                    DoWander();
-                    break;
-                case States.Chasing:
-                    DoChasing();
-                    break;
-                case States.Attacking:
-                    DoAttacking();
-                    break;
-                case States.Flee:
-                    DoFlee();
-                    break;
-                case States.Dead:
-                    DoDead();
-                    break;
+                case States.Idle: DoIdle(); break;
+                case States.Wander: DoWander(); break;
+                case States.Chasing: DoChasing(); break;
+                case States.Attacking: DoAttacking(); break;
+                case States.Flee: DoFlee(); break;
+                case States.Stun: DoStun(); break;
+                case States.Dead: DoDead(); break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
         }
 
+        private float timeEndStun;
+
+        public void Stun(float duration)
+        {
+            timeEndStun = Time.time + duration;
+            m_currentState = States.Stun;
+            // TODO AFF FX
+        }
+        
+        protected virtual void DoStun()
+        {
+            if (Time.time > timeEndStun)
+            {
+                // TODO REMOVE FX
+                m_currentState = States.Wander;
+            }
+        }
+        
         protected virtual void DoIdle()
         {
             m_animator.speed = 1f;
