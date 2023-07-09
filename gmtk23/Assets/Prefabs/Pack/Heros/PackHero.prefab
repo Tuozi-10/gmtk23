@@ -94,6 +94,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c11ecd13fb432940955edb4408367c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_currentRoad:
+    id: 0
+    waypointsParent: {fileID: 0}
+    waypoints: []
+  m_currentRoadId: 0
 --- !u!1 &8013534098508413402
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,8 +198,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bfa39a2a09d4251861bce6f9acfded3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tracking: {fileID: 0}
   heroPack: 1
   m_ais: []
+  packMobManagerLink: {fileID: 0}
 --- !u!1001 &3203843562491891850
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -273,7 +280,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6595715620328899424, guid: 65c480d2cba0efb4599a3f8384517f80, type: 3}
       propertyPath: m_currentState
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6595715620328899424, guid: 65c480d2cba0efb4599a3f8384517f80, type: 3}
       propertyPath: scaleShockWave
@@ -387,7 +394,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6595715620328899424, guid: 65c480d2cba0efb4599a3f8384517f80, type: 3}
       propertyPath: m_currentState
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6595715620328899424, guid: 65c480d2cba0efb4599a3f8384517f80, type: 3}
       propertyPath: scaleShockWave
@@ -505,7 +512,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6595715620328899424, guid: 65c480d2cba0efb4599a3f8384517f80, type: 3}
       propertyPath: m_currentState
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6595715620328899424, guid: 65c480d2cba0efb4599a3f8384517f80, type: 3}
       propertyPath: scaleShockWave
@@ -623,7 +630,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6595715620328899424, guid: 65c480d2cba0efb4599a3f8384517f80, type: 3}
       propertyPath: m_currentState
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6595715620328899424, guid: 65c480d2cba0efb4599a3f8384517f80, type: 3}
       propertyPath: scaleShockWave

@@ -65,7 +65,8 @@ namespace Gameplay {
             rb = GetComponent<Rigidbody>();
             rb.drag = drag;
             velocityChangeTime = decelerationDashTime;
-
+            textGetItem.GetComponent<CanvasGroup>().alpha = 0;
+            
             inputs = new PlayerMap();
             inputs.Enable();
             inputs.Movement.Dash.started += PerformDash;
@@ -258,13 +259,15 @@ namespace Gameplay {
             if (add) {
                 inAreaCatchable = catchable;
                 gamItemCatchable = catchGam;
+                textGetItem.transform.parent = catchGam.transform;
+                textGetItem.transform.localPosition = Vector3.up;
+                textGetItem.GetComponent<CanvasGroup>().DOFade(1, 0.25f);
             }
             else if (inAreaCatchable == catchable) {
                 inAreaCatchable = null;
                 gamItemCatchable = null;
+                textGetItem.GetComponent<CanvasGroup>().DOFade(0, 0.25f).OnComplete(() => textGetItem.transform.parent = null);
             }
-            
-            textGetItem.SetActive(inAreaCatchable != null);
         }
 
         /// <summary>
@@ -273,8 +276,18 @@ namespace Gameplay {
         /// <param name="obj"></param>
         private void AddItemToInventory(InputAction.CallbackContext obj) {
             if (gamItemCatchable == null) return;
+            textGetItem.transform.parent = null;
             inAreaCatchable = playerInv.TryAddItem(inAreaCatchable, gamItemCatchable);
-            textGetItem.SetActive(inAreaCatchable != null);
+            
+            if (inAreaCatchable == null) {
+                textGetItem.GetComponent<CanvasGroup>().alpha = 0;
+                textGetItem.transform.parent = null;
+            }
+            else {
+                textGetItem.transform.parent = gamItemCatchable.transform;
+                textGetItem.transform.localPosition = Vector3.up;
+                textGetItem.GetComponent<CanvasGroup>().alpha = 1;
+            }
         }
         #endregion Throw Object
         

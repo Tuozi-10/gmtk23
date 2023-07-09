@@ -42,7 +42,7 @@ namespace IAs
             Dead
         }
 
-        [SerializeField] private States m_currentState = States.Idle;
+        [SerializeField] protected States m_currentState = States.Idle;
 
         #endregion
 
@@ -79,8 +79,8 @@ namespace IAs
 
         #region Hp
 
-        private int m_currentHp;
-        [SerializeField] private int m_baseHp = 5;
+        protected int m_currentHp;
+        [SerializeField] protected int m_baseHp = 5;
 
         public bool FullLife => m_currentHp >= m_baseHp;
         
@@ -104,7 +104,7 @@ namespace IAs
 
         #region pack
 
-        private Pack m_currentPack;
+        public Pack currentPack;
 
         #endregion
         
@@ -117,8 +117,8 @@ namespace IAs
         [SerializeField] private float m_distanceForget;
         [SerializeField] private SphereCollider m_triggerDetection;
         [SerializeField] private float m_distanceAttackCac = 1.5f;
-        [SerializeField] private float m_distanceAttackDistance = 5.5f;
-        [SerializeField] private float m_fleeTooNearAttackDistance = 3.5f;
+        [SerializeField] protected float m_distanceAttackDistance = 5.5f;
+        [SerializeField] protected float m_fleeTooNearAttackDistance = 3.5f;
 
         [SerializeField] private Arrow m_arrow;
         [SerializeField] private BulletTest m_fireball;
@@ -126,7 +126,7 @@ namespace IAs
 
         [SerializeField] private AiHp m_aiHp;
 
-        [SerializeField] private float attackSpeedRate = 1f;
+        [SerializeField] protected float attackSpeedRate = 1f;
 
         [SerializeField] private float damagesBonus = 1f;
 
@@ -143,7 +143,7 @@ namespace IAs
 
         protected NavMeshAgent agent;
 
-        [Space, SerializeField] private Animator m_animator;
+        [Space, SerializeField] protected Animator m_animator;
 
         private Vector3 m_positionInit;
 
@@ -184,6 +184,9 @@ namespace IAs
         [SerializeField] private SpriteRenderer m_weaponSlot;
         [SerializeField] private SpriteRenderer m_maskWeaponSlot;
 
+        private int m_level;
+        private int level => Mathf.Clamp(m_level, 0, 2);
+        
         public bool SetWeapon(Weapon weapon)
         {
             if (!CanEquipWeapon(weapon))
@@ -191,6 +194,15 @@ namespace IAs
                 return false;
             }
 
+            if (m_weapon != null && weapon != null && m_weapon.weaponType == weapon.weaponType)
+            {
+                m_level++;
+            }
+            else
+            {
+                m_level = 0;
+            }
+            
             m_weapon = weapon;
             RefreshStuffs();
             return true;
@@ -221,7 +233,11 @@ namespace IAs
 
         public void RefreshStuffs()
         {
-            m_armorSlot.sprite = m_armor == null ? null : m_armor.sprite;
+            if (m_armorSlot != null)
+            {
+                m_armorSlot.sprite = m_armor == null ? null : m_armor.sprite;
+            }
+            
             m_weaponSlot.sprite = m_weapon == null ? null : m_weapon.sprite;
             if (m_maskWeaponSlot != null) m_maskWeaponSlot.sprite = m_weapon == null ? null : m_weapon.sprite;
 
@@ -333,13 +349,16 @@ namespace IAs
             CheckTargets();
         }
 
+        private float wanderStartTime;
+        
         protected virtual void DoWander()
         {
             m_animator.Play("Move");
             m_animator.speed = agent.velocity.magnitude > 0.5f ? 1f : agent.velocity.magnitude;
-            if (agent.remainingDistance < 0.5f)
+            if (agent.remainingDistance < 0.5f || Time.time -  wanderStartTime > 3f )
             {
-                Vector3 center = m_currentPack != null ? m_currentPack.transform.position : m_positionInit;
+                wanderStartTime = Time.time;
+                Vector3 center = ( currentPack != null && currentPack.tracking != null) ? currentPack.tracking.transform.position : m_positionInit;
                 
                 agent.destination = new Vector3(center.x + Random.Range(-m_magnitudeWander, m_magnitudeWander),
                     center.y, center.z + Random.Range(-m_magnitudeWander, m_magnitudeWander));
@@ -403,10 +422,10 @@ namespace IAs
             Move();
         }
 
-        private bool isDistance => !isCacOnly && m_currentJob is Jobs.Shooter or Jobs.Support;
+        protected bool isDistance => !isCacOnly && m_currentJob is Jobs.Shooter or Jobs.Support;
         private bool isCacOnly => m_skill is Skills.Barbarian or Skills.Templar or Skills.NoSkill;
 
-        private float m_lastAttack;
+        protected float m_lastAttack;
 
         protected virtual void DoAttacking()
         {
@@ -441,6 +460,11 @@ namespace IAs
 
         protected virtual void DoDead()
         {
+            if (head == null)
+            {
+                return;
+            }
+            
             head.transform.SetParent(null);
             body.transform.SetParent(null);
 
@@ -458,15 +482,19 @@ namespace IAs
 
             head.DOScale(0, 0.5f).SetDelay(3.5f).OnComplete(() => Destroy(head.gameObject));
             body.DOScale(0, 0.5f).SetDelay(3.5f).OnComplete(() => Destroy(body.gameObject));
-            ;
+            if (currentPack != null && currentPack.packMobManagerLink != null) currentPack.packMobManagerLink.JsuisDead();
 
             // SPAWN FX
             Destroy(m_weaponSlot.gameObject);
-            Destroy(m_armorSlot.gameObject);
+            if (m_armorSlot != null)
+            {
+                Destroy(m_armorSlot.gameObject);
+            }
+
             Destroy(gameObject);
         }
 
-        private bool isHealer =>
+        protected bool isHealer =>
             m_skill is Skills.Healer && m_weapon != null && m_weapon.weaponType == WeaponType.Sceptre;
         
         protected virtual void DoFlee()
@@ -572,15 +600,15 @@ namespace IAs
 
             if (distanceTarget < m_distanceAttackDistance + 1f)
             {
-                m_targetAI.Hit(m_weapon != null ? (int) (m_weapon.damages * damagesBonus) : 1);
+                m_targetAI.Hit(m_weapon != null ? (int) (m_weapon.damages[level] * damagesBonus) : 1);
 
                 if (m_weapon.weaponType == Weapon.WeaponType.Axe && m_skill == Skills.Barbarian)
                 {
-                    FxManagers.RequestHitShockWaveFxAtPos(m_weaponSlot.transform.position, scaleShockWave, m_currentTeam  == Team.Hero ? Team.Orc : Team.Hero, (int) (m_weapon.damages * damagesBonus));
+                    FxManagers.RequestHitShockWaveFxAtPos(m_weaponSlot.transform.position, scaleShockWave, m_currentTeam  == Team.Hero ? Team.Orc : Team.Hero, (int) (m_weapon.damages[level] * damagesBonus));
                 }
                 else if (m_weapon.weaponType == WeaponType.Masse && m_skill == Skills.Templar)
                 {     
-                    FxManagers.RequestHitShockWaveFxAtPos(m_weaponSlot.transform.position, scaleShockWave, m_currentTeam  == Team.Hero ? Team.Orc : Team.Hero, (int) (m_weapon.damages * damagesBonus));
+                    FxManagers.RequestHitShockWaveFxAtPos(m_weaponSlot.transform.position, scaleShockWave, m_currentTeam  == Team.Hero ? Team.Orc : Team.Hero, (int) (m_weapon.damages[level] * damagesBonus));
                     m_targetAI.Stun(m_stunMasseDuration);
                 }
                 else if (m_weapon.weaponType is WeaponType.Baguette or WeaponType.Sceptre or WeaponType.Bow)
@@ -617,7 +645,7 @@ namespace IAs
             var arrow = Instantiate(m_arrow);
             arrow.transform.position = transform.position;
             arrow.SetUp(targetAI.transform.position - transform.position, team,
-                (int) (m_weapon.damages * damagesBonus));
+                (int) (m_weapon.damages[level] * damagesBonus));
         }
 
         public void ShootMagic()
@@ -629,7 +657,7 @@ namespace IAs
 
             var fireBall = Instantiate(m_fireball);
             fireBall.transform.position = transform.position + Vector3.up;
-            fireBall.SetUp(targetAI, (int) (m_weapon.damages * damagesBonus));
+            fireBall.SetUp(targetAI, (int) (m_weapon.damages[level] * damagesBonus));
         }
         
         public void ShootHeal()
@@ -641,7 +669,7 @@ namespace IAs
 
             var fireBall = Instantiate(m_healBall);
             fireBall.transform.position = transform.position + Vector3.up;
-            fireBall.SetUp(targetAI, (int) (m_weapon.damages * damagesBonus), m_skill == Skills.Sorcier);
+            fireBall.SetUp(targetAI, (int) (m_weapon.damages[level] * damagesBonus), m_skill == Skills.Sorcier);
         }
 
         public void RefreshHp()

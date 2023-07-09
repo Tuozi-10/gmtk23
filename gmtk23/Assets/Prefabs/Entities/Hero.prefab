@@ -627,6 +627,7 @@ MonoBehaviour:
   m_currentTeam: 1
   m_currentJob: 0
   m_baseHp: 10
+  currentPack: {fileID: 0}
   m_speedSmall: 3.5
   m_speedMedium: 2.5
   m_speedFat: 1.5

@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using IAs;
@@ -12,6 +13,7 @@ public class StockRemove : MonoBehaviour {
 
     private void Update() {
         canvas.transform.eulerAngles = new Vector3(90f, 0, -180f);
+        canvas.localScale = new Vector3(canvas.parent.localScale.x * 0.004f, 0.004f, 0.004f);
     }
 
     /// <summary>
@@ -30,18 +32,17 @@ public class StockRemove : MonoBehaviour {
 
         if (currentlyActivatedStock == stocksImg.Count) {
             GetComponent<AI>().RemoveRandomItem();
-            ResetStock();
+            StartCoroutine(ResetStock());
         }
     }
 
     /// <summary>
     /// Reset the stocks
     /// </summary>
-    private void ResetStock() {
-        Sequence seq = DOTween.Sequence();
-        seq.AppendInterval(0.25f);
+    private IEnumerator ResetStock() {
+        yield return new WaitForSeconds(1);
         foreach (var img in stocksImg) {
-            seq.Append(img.DOColor(new Color(70, 70, 70), 0)); 
+            img.color = new Color(70/255f, 70/255f, 70/255f);
         }
         currentlyActivatedStock = 0;
     }

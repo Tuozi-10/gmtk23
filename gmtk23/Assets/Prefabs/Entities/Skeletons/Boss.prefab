@@ -1934,7 +1934,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8143396485827778640}
   - component: {fileID: 8855583277068472402}
-  - component: {fileID: 2023993339090307057}
+  - component: {fileID: 1176566121715769214}
   - component: {fileID: 6871027793488920897}
   - component: {fileID: 2480349842257352960}
   m_Layer: 0
@@ -1958,7 +1958,7 @@ Transform:
   m_Children:
   - {fileID: 1336555294946256437}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &8855583277068472402
 NavMeshAgent:
@@ -1982,7 +1982,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &2023993339090307057
+--- !u!114 &1176566121715769214
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1991,19 +1991,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 7739469178168399630}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 998d50aac576a8444802844e4ec8c277, type: 3}
+  m_Script: {fileID: 11500000, guid: 26f8bfd4400141a2a810c002086fc2b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_currentBodyType: 0
-  m_currentState: 0
+  m_currentState: 3
   m_currentTeam: 0
   m_currentJob: 0
-  m_baseHp: 5
+  m_baseHp: 25
+  currentPack: {fileID: 0}
   m_speedSmall: 3.5
   m_speedMedium: 2.5
   m_speedFat: 1.5
   m_magnitudeWander: 3
-  m_radiusAgro: 3
+  m_radiusAgro: 15
   m_distanceForget: 0
   m_triggerDetection: {fileID: 3692144422256304561}
   m_distanceAttackCac: 1.5
@@ -2013,15 +2014,15 @@ MonoBehaviour:
   m_fireball: {fileID: 1127239125271462841, guid: f78a3cca4ecd3574a91602a2a9ceff73, type: 3}
   m_healBall: {fileID: 8591885573117207753, guid: 44c7950bc6ab08d43918d58d996cab8c, type: 3}
   m_aiHp: {fileID: 219020450638531709}
-  attackSpeedRate: 1
-  damagesBonus: 1
-  scaleShockWave: 1
+  attackSpeedRate: 2
+  damagesBonus: 2
+  scaleShockWave: 2
   m_stunMasseDuration: 1
   m_body: {fileID: 4520866103857049419}
   m_head: {fileID: 4113658156796542098}
   m_animator: {fileID: 542533790069564649}
   m_weapon: {fileID: 11400000, guid: 53a48a78f509ded45bc543971e93617a, type: 2}
-  m_armor: {fileID: 11400000, guid: f8f53c14aad99e9439a104e876151c5c, type: 2}
+  m_armor: {fileID: 11400000, guid: a8b246c6bb8f2a9459aabd69b0a68636, type: 2}
   m_armorSlot: {fileID: 0}
   m_weaponSlot: {fileID: 2708312295284526935}
   m_maskWeaponSlot: {fileID: 3228338165206088188}
