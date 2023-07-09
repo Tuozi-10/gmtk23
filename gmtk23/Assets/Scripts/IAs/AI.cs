@@ -458,7 +458,7 @@ namespace IAs
 
             head.DOScale(0, 0.5f).SetDelay(3.5f).OnComplete(() => Destroy(head.gameObject));
             body.DOScale(0, 0.5f).SetDelay(3.5f).OnComplete(() => Destroy(body.gameObject));
-            ;
+            if (m_currentPack != null) m_currentPack.packMobManagerLink.JsuisDead();
 
             // SPAWN FX
             Destroy(m_weaponSlot.gameObject);

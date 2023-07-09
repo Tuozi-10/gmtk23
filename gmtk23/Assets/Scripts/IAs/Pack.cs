@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace IAs
 {
     public class Pack : MonoBehaviour
     {
         [SerializeField] private bool heroPack;
-        [SerializeField] private List<AI> m_ais;
+         public List<AI> m_ais;
+        [SerializeField] public PackMobManager packMobManagerLink;
         
         private void Awake()
         {
