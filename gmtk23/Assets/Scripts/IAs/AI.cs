@@ -282,6 +282,13 @@ namespace IAs
         {
             m_animator.speed = 1f;
             m_animator.Play("Idle");
+            
+            if (m_weapon is null)
+            {
+                CheckWeapons();
+                return;
+            }
+            
             CheckTargets();
         }
 
@@ -307,7 +314,7 @@ namespace IAs
 
         private void CheckWeapons()
         {
-            // TODO
+            // TODO collect weapons
         }
 
         private void CheckTargets()
@@ -367,12 +374,14 @@ namespace IAs
                 m_animator.Play(!isDistance ? "AttackCac" : "AttackDistance");
             }
 
-            if (m_targetAI == null)
+            if (m_targetAI == null || (m_targetAI.m_currentHp >= m_targetAI.m_baseHp && isHealer))
             {
                 m_currentState = States.Wander;
                 return;
             }
 
+            
+            
             var distanceTarget = Vector3.Distance(transform.position, m_targetAI.transform.position);
 
             if (distanceTarget > (!isDistance ? m_distanceAttackCac : m_distanceAttackDistance) + 0.5f)
@@ -417,9 +426,12 @@ namespace IAs
             Destroy(gameObject);
         }
 
+        private bool isHealer =>
+            m_skill is Skills.Healer && m_weapon != null && m_weapon.weaponType == WeaponType.Sceptre;
+        
         protected virtual void DoFlee()
         {
-            if (m_targetAI == null)
+            if (m_targetAI == null )
             {
                 m_currentState = States.Wander;
                 return;
