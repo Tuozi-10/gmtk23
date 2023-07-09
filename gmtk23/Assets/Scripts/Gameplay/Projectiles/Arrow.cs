@@ -34,14 +34,21 @@ namespace Gameplay.Projectiles
                 return;
             }
             
-            var AI = other.GetComponent<AI>();
-            if (AI.team == m_team)
+            if (other.GetComponent<PlayerController>() != null && m_team == AI.Team.Hero)
+            {
+                PlayerController.instance.Hit(m_damages);      
+                Destroy(this);
+                return;
+            }
+            
+            var ai = other.GetComponent<AI>();
+            if (ai.team == m_team)
             {
                 return;
             }
                 
-            AI.Hit(m_damages);
-            transform.SetParent(AI.body);
+            ai.Hit(m_damages);
+            transform.SetParent(ai.body);
             Destroy(this);
         }
     }

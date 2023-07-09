@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Gameplay;
 using IAs;
 using Managers;
 using UnityEngine;
@@ -59,6 +60,13 @@ public class BulletTest : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+
+        if (other.GetComponent<PlayerController>() != null && target.team == AI.Team.Hero)
+        {
+            PlayerController.instance.Hit(damages);
+            return;
+        }
+        
         if (other.GetComponent<AI>())
         {
             var otherAI =other.GetComponent<AI>();
