@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: Hammer
   m_EditorClassIdentifier: 
   m_size: {x: 1, y: 1}
-  price: 1
-  sprite: {fileID: 2008432345, guid: 64dbc6ac89b8b6d42ae37932ae3ca4ad, type: 3}
+  level: 0
+  sprite:
+  - {fileID: -1153604461, guid: ac63ce093c7cf3c4199411561f652290, type: 3}
+  - {fileID: 1485045510, guid: ac63ce093c7cf3c4199411561f652290, type: 3}
+  - {fileID: 2138661113, guid: ac63ce093c7cf3c4199411561f652290, type: 3}
   AssociatedJob: 1
   damages: 010000000200000003000000
   weaponType: 4

@@ -1,4 +1,3 @@
-using System;
 using Gameplay;
 using UnityEngine;
 
@@ -21,7 +20,7 @@ public class PlayerDetection : MonoBehaviour {
             }
         }
         else if (other.gameObject.CompareTag("Catchable")) {
-            PlayerController.instance.ChangeObjectState(other.GetComponent<ThrowItem>().Item, other.gameObject, true);
+            PlayerController.instance.ChangeObjectState(other.GetComponent<ThrowItem>(), true);
         }
     }
 
@@ -31,7 +30,7 @@ public class PlayerDetection : MonoBehaviour {
     /// <param name="other"></param>
     private void OnTriggerExit(Collider other) {
         if (other.gameObject.CompareTag("Catchable")) {
-            PlayerController.instance.ChangeObjectState(other.GetComponent<ThrowItem>().Item, other.gameObject, false);
+            PlayerController.instance.ChangeObjectState(other.GetComponent<ThrowItem>(), false);
         }
     }
 }

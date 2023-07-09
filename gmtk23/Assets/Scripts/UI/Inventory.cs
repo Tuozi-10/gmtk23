@@ -12,7 +12,7 @@ namespace UI
     public class Inventory : MonoSingleton<Inventory> {
         [SerializeField] private GameObject itemGam = null;
         
-        public List<ICatchable> items = new();
+        [SerializeField] public List<Item> items = new();
         [SerializeField] private List<RectTransform> slots = new();
         [SerializeField] private List<Image> slotsImg = new();
         [SerializeField] private RectTransform selectedSlot = new();
@@ -22,8 +22,6 @@ namespace UI
         [SerializeField] private Vector2 slotSizeUnSelected = new(70, 70);
         private PlayerMap inputs;
 
-        public AbstractItem addItem = null;
-        
         /// <summary>
         /// Init value
         /// </summary>
@@ -77,8 +75,6 @@ namespace UI
             UpdateSelectedSlotUI(lastSlotValue);
         }
         
-        
-        
         /// <summary>
         /// Change the current selected slot
         /// </summary>
@@ -102,9 +98,9 @@ namespace UI
                     slots[index].GetComponent<CanvasGroup>().DOFade(1, .25f);
                     
                     slotsImg[index].enabled = true;
-                    slotsImg[index].sprite = items[index] switch {
-                        Weapon w => w.sprite,
-                        Armor a => a.sprite,
+                    slotsImg[index].sprite = items[index].item switch {
+                        Weapon w => w.sprite[items[index].level],
+                        Armor a => a.sprite[0],
                         _ => slotsImg[index].sprite
                     };
                 }
@@ -115,31 +111,23 @@ namespace UI
             }
         }
         
-        
-        
         /// <summary>
-        /// Try to add an item to the inventory
+        /// try to add an item to the inventory
         /// </summary>
         /// <param name="item"></param>
+        /// <param name="catchGam"></param>
         /// <returns></returns>
-        [ContextMenu("Add item")]
-        private void TryAddItem() {
-            if (items.Count >= slots.Count) return;
-            items.Add(addItem);
-            UpdateInventoryUI();
-        }
-        public ICatchable TryAddItem(ICatchable item, GameObject catchGam) {
+        public ThrowItem TryAddItem(Item item, ThrowItem catchGam) {
             if (items.Count >= slots.Count) {
-                catchGam.GetComponent<ThrowItem>().SetItem(items[currentSelectedSlot] as AbstractItem, null);
+                catchGam.SetItem(items[currentSelectedSlot], null);
                 items[currentSelectedSlot] = item;
                 UpdateInventoryUI();
-                
-                return catchGam.GetComponent<ThrowItem>().Item;
+                return catchGam;
             }
             
             items.Add(item);
             PlayerController.instance.ResetPressEText();
-            Destroy(catchGam);
+            Destroy(catchGam.gameObject);
             UpdateInventoryUI();
             return null;
         }
@@ -157,11 +145,10 @@ namespace UI
         /// </summary>
         /// <param name="forceDir"></param>
         /// <param name="itemA"></param>
-        public void DropAbstractItem(Vector3 forceDir, Vector3 pos, GameObject notGrab, AbstractItem itemA) {
-            Debug.Log("ok");
+        public void DropAbstractItem(Vector3 forceDir, Vector3 pos, GameObject notGrab, Item dropItem) {
             GameObject item = Instantiate(itemGam, pos, Quaternion.identity);
-            item.GetComponent<Rigidbody>().AddForce(forceDir, ForceMode.Impulse);
-            item.GetComponent<ThrowItem>().SetItem(itemA, notGrab);
+            if(forceDir.magnitude > 0) item.GetComponent<Rigidbody>().AddForce(forceDir, ForceMode.Impulse);
+            item.GetComponent<ThrowItem>().SetItem(dropItem, notGrab);
         }
     }
 }

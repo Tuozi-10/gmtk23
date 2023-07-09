@@ -14,6 +14,11 @@ public class PackHeroManager : MonoSingleton<PackHeroManager>
     [SerializeField] private float timeBetweenRespawn;
     [SerializeField, Range(0,50)] private int numberOfPackMinToHave;
     [SerializeField] private List<GameObject> packHeroList = new List<GameObject>();
+    
+    [Header("C'est pour le tuto wesh")]
+    [SerializeField] private List<Transform> possibleSpawnPoint;
+    [SerializeField] private bool isTutorial;
+    [SerializeField] private float packToSpawn;
 
     private float timer;
     private bool isTuto;
@@ -25,8 +30,25 @@ public class PackHeroManager : MonoSingleton<PackHeroManager>
         isTuto = true;
         
         var newPack = Instantiate(firstHeroPack, startEntry.position, Quaternion.identity);
-        newPack.GetComponent<Pack>().tracking.m_currentRoad = RoadManager.GetRandomRoad();
-        
+        switch (isTutorial)
+        {
+            case false:
+                newPack.GetComponent<Pack>().tracking.m_currentRoad = RoadManager.GetRandomRoad();
+                break;
+            case true:
+            {
+                for (int i = 0; i < packToSpawn; i++)
+                {
+                    var ran = Random.Range(0, packHeroList.Count);
+                    var rand = Random.Range(0, possibleSpawnPoint.Count);
+                    GameObject ElPacko = Instantiate(packHeroList[ran], possibleSpawnPoint[rand].position, Quaternion.identity);
+                    numberOfPackInGame.Add(ElPacko.GetComponent<Pack>());
+                }
+
+                break;
+            }
+        }
+
         numberOfPackInGame.Add(newPack.GetComponent<Pack>());
     }
 
@@ -42,16 +64,35 @@ public class PackHeroManager : MonoSingleton<PackHeroManager>
     private void GetRandomPack(Vector3 position)
     {
         var ran = Random.Range(0, packHeroList.Count);
-        var newPack = Instantiate(packHeroList[ran], position, Quaternion.identity, transform);
-        newPack.GetComponent<Pack>().tracking.m_currentRoad = RoadManager.GetRandomRoad();
+
+        if (isTutorial)
+        {
+            var rand = Random.Range(0, possibleSpawnPoint.Count);
+            GameObject ElPacko = Instantiate(packHeroList[ran], possibleSpawnPoint[rand].position, Quaternion.identity);
+            numberOfPackInGame.Add(ElPacko.GetComponent<Pack>());
+        }
+        else
+        {
+            var newPack = Instantiate(packHeroList[ran], position, Quaternion.identity, transform);
+            newPack.GetComponent<Pack>().tracking.m_currentRoad = RoadManager.GetRandomRoad();
         
-        numberOfPackInGame.Add(newPack.GetComponent<Pack>());
+            numberOfPackInGame.Add(newPack.GetComponent<Pack>());
+        }
     }
 
     private void CheckForRespawn()
     {
         if (numberOfPackInGame.Count > numberOfPackMinToHave) return;
-        GetRandomPack(startEntry.position);
+
+        switch (isTutorial)
+        {
+            case true :
+                GetRandomPack(transform.position);
+                break;
+            case false :
+                GetRandomPack(startEntry.position);
+                break;
+        }
         timer = 0;
 
         if (isTuto) isTuto = false;

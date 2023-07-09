@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: Wand
   m_EditorClassIdentifier: 
   m_size: {x: 1, y: 1}
-  price: 1
-  sprite: {fileID: -333667763, guid: 9bc3416dfb93f5743b63d129a9f4c0de, type: 3}
+  level: 0
+  sprite:
+  - {fileID: -31332096, guid: ac63ce093c7cf3c4199411561f652290, type: 3}
+  - {fileID: -1318267802, guid: ac63ce093c7cf3c4199411561f652290, type: 3}
+  - {fileID: 1864798936, guid: ac63ce093c7cf3c4199411561f652290, type: 3}
   AssociatedJob: 0
   damages: 010000000200000003000000
   weaponType: 6
