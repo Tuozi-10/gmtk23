@@ -42,7 +42,7 @@ namespace IAs
             Dead
         }
 
-        [SerializeField] private States m_currentState = States.Idle;
+        [SerializeField] protected States m_currentState = States.Idle;
 
         #endregion
 
@@ -79,8 +79,8 @@ namespace IAs
 
         #region Hp
 
-        private int m_currentHp;
-        [SerializeField] private int m_baseHp = 5;
+        protected int m_currentHp;
+        [SerializeField] protected int m_baseHp = 5;
 
         public bool FullLife => m_currentHp >= m_baseHp;
         
@@ -117,8 +117,8 @@ namespace IAs
         [SerializeField] private float m_distanceForget;
         [SerializeField] private SphereCollider m_triggerDetection;
         [SerializeField] private float m_distanceAttackCac = 1.5f;
-        [SerializeField] private float m_distanceAttackDistance = 5.5f;
-        [SerializeField] private float m_fleeTooNearAttackDistance = 3.5f;
+        [SerializeField] protected float m_distanceAttackDistance = 5.5f;
+        [SerializeField] protected float m_fleeTooNearAttackDistance = 3.5f;
 
         [SerializeField] private Arrow m_arrow;
         [SerializeField] private BulletTest m_fireball;
@@ -126,7 +126,7 @@ namespace IAs
 
         [SerializeField] private AiHp m_aiHp;
 
-        [SerializeField] private float attackSpeedRate = 1f;
+        [SerializeField] protected float attackSpeedRate = 1f;
 
         [SerializeField] private float damagesBonus = 1f;
 
@@ -143,7 +143,7 @@ namespace IAs
 
         protected NavMeshAgent agent;
 
-        [Space, SerializeField] private Animator m_animator;
+        [Space, SerializeField] protected Animator m_animator;
 
         private Vector3 m_positionInit;
 
@@ -233,7 +233,11 @@ namespace IAs
 
         public void RefreshStuffs()
         {
-            m_armorSlot.sprite = m_armor == null ? null : m_armor.sprite;
+            if (m_armorSlot != null)
+            {
+                m_armorSlot.sprite = m_armor == null ? null : m_armor.sprite;
+            }
+            
             m_weaponSlot.sprite = m_weapon == null ? null : m_weapon.sprite;
             if (m_maskWeaponSlot != null) m_maskWeaponSlot.sprite = m_weapon == null ? null : m_weapon.sprite;
 
@@ -418,10 +422,10 @@ namespace IAs
             Move();
         }
 
-        private bool isDistance => !isCacOnly && m_currentJob is Jobs.Shooter or Jobs.Support;
+        protected bool isDistance => !isCacOnly && m_currentJob is Jobs.Shooter or Jobs.Support;
         private bool isCacOnly => m_skill is Skills.Barbarian or Skills.Templar or Skills.NoSkill;
 
-        private float m_lastAttack;
+        protected float m_lastAttack;
 
         protected virtual void DoAttacking()
         {
@@ -482,11 +486,15 @@ namespace IAs
 
             // SPAWN FX
             Destroy(m_weaponSlot.gameObject);
-            Destroy(m_armorSlot.gameObject);
+            if (m_armorSlot != null)
+            {
+                Destroy(m_armorSlot.gameObject);
+            }
+
             Destroy(gameObject);
         }
 
-        private bool isHealer =>
+        protected bool isHealer =>
             m_skill is Skills.Healer && m_weapon != null && m_weapon.weaponType == WeaponType.Sceptre;
         
         protected virtual void DoFlee()
