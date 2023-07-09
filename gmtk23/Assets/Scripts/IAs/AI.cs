@@ -184,6 +184,9 @@ namespace IAs
         [SerializeField] private SpriteRenderer m_weaponSlot;
         [SerializeField] private SpriteRenderer m_maskWeaponSlot;
 
+        private int m_level;
+        private int level => Mathf.Clamp(m_level, 0, 2);
+        
         public bool SetWeapon(Weapon weapon)
         {
             if (!CanEquipWeapon(weapon))
@@ -191,6 +194,15 @@ namespace IAs
                 return false;
             }
 
+            if (m_weapon != null && weapon != null && m_weapon.weaponType == weapon.weaponType)
+            {
+                m_level++;
+            }
+            else
+            {
+                m_level = 0;
+            }
+            
             m_weapon = weapon;
             RefreshStuffs();
             return true;
@@ -580,15 +592,15 @@ namespace IAs
 
             if (distanceTarget < m_distanceAttackDistance + 1f)
             {
-                m_targetAI.Hit(m_weapon != null ? (int) (m_weapon.damages[0] * damagesBonus) : 1);
+                m_targetAI.Hit(m_weapon != null ? (int) (m_weapon.damages[level] * damagesBonus) : 1);
 
                 if (m_weapon.weaponType == Weapon.WeaponType.Axe && m_skill == Skills.Barbarian)
                 {
-                    FxManagers.RequestHitShockWaveFxAtPos(m_weaponSlot.transform.position, scaleShockWave, m_currentTeam  == Team.Hero ? Team.Orc : Team.Hero, (int) (m_weapon.damages[0] * damagesBonus));
+                    FxManagers.RequestHitShockWaveFxAtPos(m_weaponSlot.transform.position, scaleShockWave, m_currentTeam  == Team.Hero ? Team.Orc : Team.Hero, (int) (m_weapon.damages[level] * damagesBonus));
                 }
                 else if (m_weapon.weaponType == WeaponType.Masse && m_skill == Skills.Templar)
                 {     
-                    FxManagers.RequestHitShockWaveFxAtPos(m_weaponSlot.transform.position, scaleShockWave, m_currentTeam  == Team.Hero ? Team.Orc : Team.Hero, (int) (m_weapon.damages[0] * damagesBonus));
+                    FxManagers.RequestHitShockWaveFxAtPos(m_weaponSlot.transform.position, scaleShockWave, m_currentTeam  == Team.Hero ? Team.Orc : Team.Hero, (int) (m_weapon.damages[level] * damagesBonus));
                     m_targetAI.Stun(m_stunMasseDuration);
                 }
                 else if (m_weapon.weaponType is WeaponType.Baguette or WeaponType.Sceptre or WeaponType.Bow)
@@ -625,7 +637,7 @@ namespace IAs
             var arrow = Instantiate(m_arrow);
             arrow.transform.position = transform.position;
             arrow.SetUp(targetAI.transform.position - transform.position, team,
-                (int) (m_weapon.damages[0] * damagesBonus));
+                (int) (m_weapon.damages[level] * damagesBonus));
         }
 
         public void ShootMagic()
@@ -637,7 +649,7 @@ namespace IAs
 
             var fireBall = Instantiate(m_fireball);
             fireBall.transform.position = transform.position + Vector3.up;
-            fireBall.SetUp(targetAI, (int) (m_weapon.damages[0] * damagesBonus));
+            fireBall.SetUp(targetAI, (int) (m_weapon.damages[level] * damagesBonus));
         }
         
         public void ShootHeal()
@@ -649,7 +661,7 @@ namespace IAs
 
             var fireBall = Instantiate(m_healBall);
             fireBall.transform.position = transform.position + Vector3.up;
-            fireBall.SetUp(targetAI, (int) (m_weapon.damages[0] * damagesBonus), m_skill == Skills.Sorcier);
+            fireBall.SetUp(targetAI, (int) (m_weapon.damages[level] * damagesBonus), m_skill == Skills.Sorcier);
         }
 
         public void RefreshHp()
