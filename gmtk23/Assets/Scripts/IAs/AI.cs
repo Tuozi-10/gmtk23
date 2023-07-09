@@ -209,7 +209,7 @@ namespace IAs
             return true;
         }
 
-        public bool SetArmor(Armor armor)
+        public void SetArmor(Armor armor)
         {
             Inventory.instance.DropAbstractItem(Vector3.zero, transform.position + transform.forward + Vector3.up, gameObject, new Item(0, m_armor));
             m_armor = armor;
