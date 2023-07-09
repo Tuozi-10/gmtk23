@@ -11,7 +11,8 @@ public class RoadManager : MonoSingleton<RoadManager>
 
     public static Road GetRandomRoad()
     {
-        return instance.roads[ Random.Range(0, instance.roads.Count - 1)];
+        if (instance != null) return instance.roads[Random.Range(0, instance.roads.Count - 1)];
+        else return null;
     }
     
     [ContextMenu("Get Waypoints")]
