@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace src.Pools
 {
@@ -23,7 +25,15 @@ namespace src.Pools
             else
             if (toAdd is ParticleSystem particleSystem)
             {
-                particleSystem.gameObject.SetActive(false);
+                try
+                {
+
+                    particleSystem.gameObject.SetActive(false);
+                }
+                catch (Exception e)
+                {
+                    return;
+                }
             }
             pool.Enqueue(toAdd);
         }

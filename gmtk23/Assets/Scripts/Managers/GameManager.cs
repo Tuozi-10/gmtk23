@@ -17,6 +17,7 @@ namespace Managers
         {
             if (sceneIndex == Scenes.Game)
             {
+                FxManagers.Purge();
                 Destroy(PackHeroManager.instance.gameObject);
                 PackHeroManager.instance = null;
             }
