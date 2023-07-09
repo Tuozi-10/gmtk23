@@ -23,12 +23,13 @@ public class PackMobManager : MonoBehaviour
     [Header("Fix Spawn Parameters")] [SerializeField]
     private List<GameObject> mobsToSpawnFix = new List<GameObject>();
 
-    private List<GameObject> _mobsSpawned = new List<GameObject>();
+    public List<GameObject> _mobsSpawned = new List<GameObject>();
     private bool isSpawnable;
 
     private void Start()
     {
         isSpawnable = true;
+        
         switch (spawnRandom)
         {
             case true : SpawnRandomMobPack();
@@ -40,7 +41,10 @@ public class PackMobManager : MonoBehaviour
 
     private void Update()
     {
+        ClearList();
+        
         if (_mobsSpawned.Count > 0 || !isSpawnable) return;
+        
         isSpawnable = false;
         StartCoroutine(NewPackIn());
     }
@@ -57,6 +61,7 @@ public class PackMobManager : MonoBehaviour
 
             var newMob = Instantiate(mobsToSpawnRandom[ran], spreadVector, Quaternion.identity, transform);
             _mobsSpawned.Add(newMob);
+            newMob.GetComponent<AI>().currentPack = packLink;
             packLink.m_ais.Add(newMob.GetComponent<AI>());
         }
 
@@ -73,6 +78,7 @@ public class PackMobManager : MonoBehaviour
             
             var newMob = Instantiate(mob, spreadVector, Quaternion.identity, transform);
             _mobsSpawned.Add(newMob);
+            newMob.GetComponent<AI>().currentPack = packLink;
             packLink.m_ais.Add(newMob.GetComponent<AI>());
         }
         
@@ -82,7 +88,6 @@ public class PackMobManager : MonoBehaviour
     IEnumerator NewPackIn()
     {
         yield return new WaitForSeconds(timerToRespawn);
-        Debug.Log("New Wave");
         switch (spawnRandom)
         {
             case true : SpawnRandomMobPack();
@@ -94,13 +99,27 @@ public class PackMobManager : MonoBehaviour
 
     public void JsuisDead()
     {
-        foreach (var mob in _mobsSpawned)
-            _mobsSpawned.Remove(mob);
+        for (int i = 0; i < _mobsSpawned.Count; i++)
+        {
+            if (_mobsSpawned[i] == null) _mobsSpawned.Remove(_mobsSpawned[i]);
+        }
     }
-
-    [ContextMenu("Clear List")]
+    
     private void ClearList()
     {
-        _mobsSpawned.Clear();
+        List<GameObject> toremove = new();
+        foreach (var ai in _mobsSpawned)
+        {
+            if (ai == null)
+            {
+                toremove.Add(ai);
+            }
+        }
+
+        foreach (var t in toremove)
+        {
+            _mobsSpawned.Remove(t);
+        }
+        
     }
 }

@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1014998596800146313
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2851601046212043030}
+  - component: {fileID: 3877319111645899152}
+  - component: {fileID: 2989738997096954458}
+  m_Layer: 0
+  m_Name: MobSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2851601046212043030
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1014998596800146313}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3877319111645899152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1014998596800146313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c75747fff3b3c9f49a8e5969c60ffe24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  packLink: {fileID: 2989738997096954458}
+  spread: 6
+  timerToRespawn: 5
+  detectionRangeFactor: 0
+  spawnRandom: 0
+  isMenu: 0
+  rangeNumberSpawn: {x: 4, y: 7}
+  mobsToSpawnRandom:
+  - {fileID: 4617658047369064734, guid: f10865ea320876c4ca98aab5eca527ee, type: 3}
+  - {fileID: 689053203717064684, guid: 7556056ada8407346b9f9a89418aba29, type: 3}
+  - {fileID: 7739469178168399630, guid: b010e910210f31e48be8d2bd8102cedd, type: 3}
+  - {fileID: 4617658047369064734, guid: c140bf625d847064a8ba96448d685f82, type: 3}
+  - {fileID: 689053203717064684, guid: 80f459291eba34344ba2d9a7fdb3ba7d, type: 3}
+  - {fileID: 7739469178168399630, guid: f2a8b6723e1ec7f43a876435626c2926, type: 3}
+  mobsToSpawnFix: []
+  _mobsSpawned: []
+--- !u!114 &2989738997096954458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1014998596800146313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bfa39a2a09d4251861bce6f9acfded3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tracking: {fileID: 0}
+  heroPack: 0
+  m_ais: []
+  packMobManagerLink: {fileID: 3877319111645899152}

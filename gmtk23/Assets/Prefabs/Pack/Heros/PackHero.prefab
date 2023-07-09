@@ -198,7 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bfa39a2a09d4251861bce6f9acfded3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tracking: {fileID: 0}
+  tracking: {fileID: 3957086511909275415}
   heroPack: 1
   m_ais: []
   packMobManagerLink: {fileID: 0}

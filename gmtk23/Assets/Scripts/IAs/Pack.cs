@@ -43,6 +43,8 @@ namespace IAs
                 return; 
             }
             
+            if (!heroPack) return;
+            
             Destroy(gameObject);
             PackHeroManager.instance.numberOfPackInGame.Remove(this);
         }
