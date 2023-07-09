@@ -102,6 +102,12 @@ namespace IAs
 
         #endregion
 
+        #region pack
+
+        private Pack m_currentPack;
+
+        #endregion
+        
         [Space, SerializeField] private float m_speedSmall = 3.5f;
         [SerializeField] private float m_speedMedium = 2.5f;
         [SerializeField] private float m_speedFat = 1.5f;
@@ -333,10 +339,11 @@ namespace IAs
             m_animator.speed = agent.velocity.magnitude > 0.5f ? 1f : agent.velocity.magnitude;
             if (agent.remainingDistance < 0.5f)
             {
-                agent.destination = new Vector3(m_positionInit.x + Random.Range(-m_magnitudeWander, m_magnitudeWander),
-                    m_positionInit.y, m_positionInit.z + Random.Range(-m_magnitudeWander, m_magnitudeWander));
+                Vector3 center = m_currentPack != null ? m_currentPack.transform.position : m_positionInit;
+                
+                agent.destination = new Vector3(center.x + Random.Range(-m_magnitudeWander, m_magnitudeWander),
+                    center.y, center.z + Random.Range(-m_magnitudeWander, m_magnitudeWander));
             }
-
 
             if (m_weapon is null)
             {
