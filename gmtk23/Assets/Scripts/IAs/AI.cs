@@ -441,6 +441,11 @@ namespace IAs
 
         protected virtual void DoDead()
         {
+            if (head == null)
+            {
+                return;
+            }
+            
             head.transform.SetParent(null);
             body.transform.SetParent(null);
 
@@ -458,7 +463,7 @@ namespace IAs
 
             head.DOScale(0, 0.5f).SetDelay(3.5f).OnComplete(() => Destroy(head.gameObject));
             body.DOScale(0, 0.5f).SetDelay(3.5f).OnComplete(() => Destroy(body.gameObject));
-            if (currentPack != null) currentPack.packMobManagerLink.JsuisDead();
+            if (currentPack != null && currentPack.packMobManagerLink != null) currentPack.packMobManagerLink.JsuisDead();
 
             // SPAWN FX
             Destroy(m_weaponSlot.gameObject);
