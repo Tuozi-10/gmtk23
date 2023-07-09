@@ -11,9 +11,60 @@ namespace Managers
         [SerializeField] private List<AudioClip> m_hitMe;
         [SerializeField] private List<AudioClip> m_mobStep;
         [SerializeField] private List<AudioClip> m_raleAgonie;
+        [SerializeField] private List<AudioClip> m_hitBones;
+        [SerializeField] private List<AudioClip> m_fireBall;
+        [SerializeField] private List<AudioClip> m_fireBallExplosion;
+        [SerializeField] private List<AudioClip> m_AoE;
+        [SerializeField] private List<AudioClip> m_hitFlesh;
+        [SerializeField] private List<AudioClip> m_ShootArrow;
+        [SerializeField] private List<AudioClip> m_ArrowImpact;
 
         [SerializeField]
         private AudioSource m_audioSource;
+        
+        
+        public static void PlaySoundFireBall()
+        {
+            if(instance == null) return;
+            instance.m_audioSource.PlayOneShot(GetRandomSoundFromList(instance.m_fireBall));
+        }   
+        
+        public static void PlaySoundFireBallExplosion()
+        {
+            if(instance == null) return;
+            instance.m_audioSource.PlayOneShot(GetRandomSoundFromList(instance.m_fireBallExplosion));
+        }   
+        
+        public static void PlaySoundAoE()
+        {
+            if(instance == null) return;
+            instance.m_audioSource.PlayOneShot(GetRandomSoundFromList(instance.m_AoE));
+        }  
+        
+        public static void PlaySoundHitFlesh()
+        {
+            if(instance == null) return;
+            instance.m_audioSource.PlayOneShot(GetRandomSoundFromList(instance.m_hitFlesh));
+        }   
+        
+        public static void PlaySoundShootArrow()
+        {
+            if(instance == null) return;
+            instance.m_audioSource.PlayOneShot(GetRandomSoundFromList(instance.m_ShootArrow));
+        }
+        
+        public static void PlaySoundImpact()
+        {
+            if(instance == null) return;
+            instance.m_audioSource.PlayOneShot(GetRandomSoundFromList(instance.m_ArrowImpact));
+        }
+        
+        public static void PlaySoundHitBones()
+        {
+            if(instance == null) return;
+            instance.m_audioSource.PlayOneShot(GetRandomSoundFromList(instance.m_hitBones));
+        }
+
         
         public static void PlaySoundDash()
         {

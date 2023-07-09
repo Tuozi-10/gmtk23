@@ -1,5 +1,6 @@
 using System;
 using IAs;
+using Managers;
 using UnityEngine;
 
 namespace Gameplay.Projectiles
@@ -36,6 +37,7 @@ namespace Gameplay.Projectiles
             
             if (other.GetComponent<PlayerController>() != null && m_team == AI.Team.Hero)
             {
+                AudioManager.PlaySoundImpact();
                 PlayerController.instance.Hit(m_damages);      
                 Destroy(this);
                 return;

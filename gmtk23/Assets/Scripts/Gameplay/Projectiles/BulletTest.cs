@@ -54,6 +54,7 @@ public class BulletTest : MonoBehaviour
             FxManagers.RequestHealShockWaveFxAtPos(transform.position, 1f, target.team, damages);
         }
         
+        AudioManager.PlaySoundFireBallExplosion();
         target.Hit(damages, true);
         Destroy(gameObject);
     }
