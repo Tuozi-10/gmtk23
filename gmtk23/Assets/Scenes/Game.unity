@@ -39126,7 +39126,7 @@ PrefabInstance:
       objectReference: {fileID: 986159157}
     - target: {fileID: 3601968246803459141, guid: d4f96952bb91da54a92d16f3af962bbc, type: 3}
       propertyPath: throwForce
-      value: 5
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3601968246803459141, guid: d4f96952bb91da54a92d16f3af962bbc, type: 3}
       propertyPath: textGetItem
@@ -123269,7 +123269,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
