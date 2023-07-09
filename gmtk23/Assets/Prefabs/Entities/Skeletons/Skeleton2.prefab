@@ -229,6 +229,8 @@ MonoBehaviour:
   m_aiHp: {fileID: 6024611266209676894}
   attackSpeedRate: 1
   damagesBonus: 1.25
+  scaleShockWave: 0.75
+  m_stunMasseDuration: 1
   m_body: {fileID: 8803041132593805763}
   m_head: {fileID: 9180352400818170059}
   m_animator: {fileID: 795981990323912947}

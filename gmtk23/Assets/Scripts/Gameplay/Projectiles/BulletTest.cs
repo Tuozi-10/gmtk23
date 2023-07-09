@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using IAs;
@@ -13,9 +14,10 @@ public class BulletTest : MonoBehaviour
     
     void Update()
     {
-        if (target == null)
+        if (target == null || damages<0 && target.FullLife)
         {
-            FxManagers.RequestDamageFxAtPos(transform.position);
+            if(damages> 0) FxManagers.RequestDamageFxAtPos(transform.position);
+           else FxManagers.RequestHealFxAtPos(transform.position);
             Destroy(transform.gameObject);
             return;
         }
@@ -30,15 +32,40 @@ public class BulletTest : MonoBehaviour
         }
     }
 
-    public void SetUp(AI newTarget, int dmg )
+    public void SetUp(AI newTarget, int dmg, bool zone = true)
     {
         damages = dmg;
         target = newTarget;
+        m_zone = zone;
     }
+
+    private bool m_zone;
     
     private void Impact()
     {
+
+        if (damages > 0)
+        {
+            FxManagers.RequestHitShockWaveFxAtPos(transform.position, 1f, target.team, damages);
+        }
+        else if(m_zone)
+        {
+            FxManagers.RequestHealShockWaveFxAtPos(transform.position, 1f, target.team, damages);
+        }
+        
         target.Hit(damages, true);
         Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<AI>())
+        {
+            var otherAI =other.GetComponent<AI>();
+            if (otherAI.team == target.team && target != otherAI)
+            {
+                other.GetComponent<AI>().Hit(damages, true);
+            }
+        }
     }
 }
