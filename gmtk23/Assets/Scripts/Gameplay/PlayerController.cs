@@ -60,6 +60,9 @@ namespace Gameplay {
         [SerializeField] private Color hasDashColor = new();
         [SerializeField] private float getDashAnimDuration = 0.25f;
 
+        [SerializeField] private Transform ParentBody;
+        [SerializeField] private Animator m_animator;
+        
         private SortingGroup _sortingGroup;
         private Vector3 m_spawnPosition;
         
@@ -94,7 +97,9 @@ namespace Gameplay {
             SetCursorLocation();
             UpdateDashState();
             _sortingGroup.sortingOrder = -(int)(transform.position.z*30);
-            
+            if(rb.velocity.magnitude > 0.2f)
+            ParentBody.localScale = new Vector3(rb.velocity.x > 0 ? 1 : -1, 1, 1);
+            m_animator.Play(rb.velocity.magnitude > 0.65f ? "Move": "Idle");
         }
 
         /// <summary>
