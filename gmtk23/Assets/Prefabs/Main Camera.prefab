@@ -33,7 +33,7 @@ Transform:
   m_Children:
   - {fileID: 936930751027818147}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 57.248, y: 0, z: 0}
 --- !u!20 &129916256364567386
 Camera:
@@ -45,7 +45,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.1254902, g: 0.1254902, b: 0.14901961, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -70,7 +70,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8
+  orthographic size: 11
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -107,10 +107,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_positionFromPlayer: {x: 0, y: 11.41, z: -7.31}
-  m_speedFollow: 0.5
-  m_speedFollowInDash: 0.5
+  m_speedFollow: 0.1
+  m_speedFollowInDash: 0.07
   slowMoFOV: 70
-  zoomFOV: 0.3
+  zoomFOV: 0.0025
 --- !u!1 &3068958956189931347
 GameObject:
   m_ObjectHideFlags: 0
@@ -121,7 +121,6 @@ GameObject:
   m_Component:
   - component: {fileID: 936930751027818147}
   - component: {fileID: 5055465766161447362}
-  - component: {fileID: 5038167176093221118}
   m_Layer: 0
   m_Name: PixelEffectCamera
   m_TagString: MainCamera
@@ -180,7 +179,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8
+  orthographic size: 10.65
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -196,23 +195,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &5038167176093221118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3068958956189931347}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb973767976ff1d4a896b46ef50cafc0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_positionFromPlayer: {x: 0, y: 11.41, z: -7.31}
-  m_speedFollow: 0.5
-  m_speedFollowInDash: 0.5
-  slowMoFOV: 70
-  zoomFOV: 0.3
 --- !u!1 &8274135874336341371
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,7 +223,7 @@ Transform:
   m_GameObject: {fileID: 8274135874336341371}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 28.45, y: 16, z: 1}
+  m_LocalScale: {x: 37.86, y: 21.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 936930751027818147}

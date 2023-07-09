@@ -2026,6 +2026,7 @@ MonoBehaviour:
   m_armorSlot: {fileID: 0}
   m_weaponSlot: {fileID: 2708312295284526935}
   m_maskWeaponSlot: {fileID: 3228338165206088188}
+  m_maskArmorSlot: {fileID: 0}
 --- !u!136 &6871027793488920897
 CapsuleCollider:
   m_ObjectHideFlags: 0

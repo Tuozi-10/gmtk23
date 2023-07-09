@@ -226,9 +226,7 @@ namespace Gameplay {
         /// <exception cref="NotImplementedException"></exception>
         private void ThrowItem(InputAction.CallbackContext obj) {
             if (playerInv.items.Count <= playerInv.CurrentSelectedSlot) return;
-            GameObject item = Instantiate(itemGam, transform.position, Quaternion.identity);
-            item.GetComponent<ThrowItem>().SetItem(playerInv.items[playerInv.CurrentSelectedSlot] as AbstractItem);
-            item.GetComponent<Rigidbody>().AddForce(CalculateVelocity(), ForceMode.Impulse);
+            Inventory.instance.DropAbstractItem(CalculateVelocity(), transform.position, null, playerInv.items[playerInv.CurrentSelectedSlot] as AbstractItem);
             playerInv.RemoveItem();
         }
 
@@ -270,24 +268,20 @@ namespace Gameplay {
             }
         }
 
+        public void ResetPressEText() {
+            textGetItem.transform.parent = null;
+            textGetItem.GetComponent<CanvasGroup>().alpha = 0;
+        }
+
         /// <summary>
         /// Add the item in your inventory
         /// </summary>
         /// <param name="obj"></param>
         private void AddItemToInventory(InputAction.CallbackContext obj) {
             if (gamItemCatchable == null) return;
-            textGetItem.transform.parent = null;
             inAreaCatchable = playerInv.TryAddItem(inAreaCatchable, gamItemCatchable);
-            
-            if (inAreaCatchable == null) {
-                textGetItem.GetComponent<CanvasGroup>().alpha = 0;
-                textGetItem.transform.parent = null;
-            }
-            else {
-                textGetItem.transform.parent = gamItemCatchable.transform;
-                textGetItem.transform.localPosition = Vector3.up;
-                textGetItem.GetComponent<CanvasGroup>().alpha = 1;
-            }
+
+            if (inAreaCatchable == null) ResetPressEText();
         }
         #endregion Throw Object
         

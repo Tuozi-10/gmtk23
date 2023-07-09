@@ -18,7 +18,7 @@ public class Chest : MonoBehaviour {
         hasSpawn = true;
         
         int random = Random.Range(0, items.Count);
-        Inventory.instance.DropAbstractItem((- DashDir + Vector3.up).normalized * throwForce, transform.position, items[random]);
+        Inventory.instance.DropAbstractItem((- DashDir + Vector3.up).normalized * throwForce, transform.position, null, items[random]);
 
         Destroy(gameObject);
     }
