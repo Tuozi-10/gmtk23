@@ -9,6 +9,7 @@ public class ThrowItem : MonoBehaviour {
     [SerializeField] private SpriteRenderer itemSprite = null;
     private GameObject notGrabbableNow = null;
     public bool canLevelUp = true;
+    public bool canBeTake = true;
 
     private void Start() {
         canLevelUp = true;
@@ -19,9 +20,10 @@ public class ThrowItem : MonoBehaviour {
     /// </summary>
     /// <param name="collision"></param>
     private void OnTriggerEnter(Collider collision) {
-        if (collision.gameObject.CompareTag("Enemy") && notGrabbableNow != collision.gameObject) {
+        if (collision.gameObject.CompareTag("Enemy") && notGrabbableNow != collision.gameObject && canBeTake) {
             if (item == null) return;
-
+            canBeTake = false;
+            
             bool hasGrabItem = true;
             if(item.item is Weapon) hasGrabItem = collision.gameObject.GetComponent<AI>().SetWeapon(item);
             else if(item.item is Armor armor) collision.gameObject.GetComponent<AI>().SetArmor(armor);
@@ -29,6 +31,9 @@ public class ThrowItem : MonoBehaviour {
             if (hasGrabItem) {
                 PlayerController.instance.ResetPressEText();
                 Destroy(gameObject);
+            }
+            else {
+                canBeTake = true;
             }
         }
         else if (collision.gameObject.CompareTag("Catchable") && canLevelUp && collision.gameObject.GetComponent<ThrowItem>().item.item == item.item && item.level < 2) {

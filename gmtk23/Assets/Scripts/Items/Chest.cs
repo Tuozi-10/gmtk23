@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class Chest : MonoBehaviour {
     [SerializeField] private List<AbstractItem> items = new();
-    [SerializeField] private GameObject itemGam = null;
+    [SerializeField] private Sprite chestOpen = null;
+    [SerializeField] private Collider col = null;
     [SerializeField] private float throwForce = 1000f;
     private bool hasSpawn = false;
     
@@ -18,8 +19,8 @@ public class Chest : MonoBehaviour {
         hasSpawn = true;
         
         int random = Random.Range(0, items.Count);
-        Inventory.instance.DropAbstractItem((- DashDir + Vector3.up).normalized * throwForce, transform.position, null, new Item(0, items[random]));
-
-        Destroy(gameObject);
+        col.enabled = false;
+        Inventory.instance.DropAbstractItem((-transform.forward + Vector3.up) * throwForce, transform.position, null, new Item(0, items[random]));
+        GetComponentInChildren<SpriteRenderer>().sprite = chestOpen;
     }
 }

@@ -115,7 +115,7 @@ MonoBehaviour:
   moveDisableAfterCollidingInDash: 0
   cursorTransform: {fileID: 0}
   itemGam: {fileID: 6383024165104640568, guid: 0186ef8abf89b4041a4c5fa81ad928c0, type: 3}
-  throwForce: 5
+  throwForce: 1.5
   playerInv: {fileID: 0}
   textGetItem: {fileID: 0}
   dashCooldownParent: {fileID: 821041497170127213}

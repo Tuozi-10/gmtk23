@@ -200,8 +200,8 @@ namespace IAs
                 m_level = Mathf.Clamp(m_level + 1, 0, 2);
             }
             else {
-                m_level = weapon.level;
                 if(m_weapon) Inventory.instance.DropAbstractItem(Vector3.zero, transform.position + transform.forward + Vector3.up, gameObject, new Item(m_level, m_weapon));
+                m_level = weapon.level;
             }
             
             m_weapon = weapon.item as Weapon;
