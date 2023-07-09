@@ -40,7 +40,7 @@ Transform:
   - {fileID: 4517641786931000878}
   - {fileID: 8134979214876287863}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &6532828714160443847
 Rigidbody:
@@ -124,7 +124,7 @@ MonoBehaviour:
   dashCooldownParent: {fileID: 821041497170127213}
   dashCooldownImg: {fileID: 7539105983529869765}
   startDashColor: {r: 1, g: 1, b: 1, a: 1}
-  hasDashColor: {r: 1, g: 0.6511762, b: 0.13679248, a: 1}
+  hasDashColor: {r: 0.62432456, g: 1, b: 0.1372549, a: 1}
   getDashAnimDuration: 0.25
   ParentBody: {fileID: 5381113046009864564}
   m_animator: {fileID: 2220904278458849127}
