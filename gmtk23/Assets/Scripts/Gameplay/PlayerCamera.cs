@@ -20,9 +20,7 @@ namespace Gameplay
             baseFOV = GetComponent<Camera>().fieldOfView;
         }
         
-        void Update()
-        {
-            return;
+        void Update() {
             transform.DOMove(PlayerController.instance.transform.position + m_positionFromPlayer, isInDash ? m_speedFollowInDash : m_speedFollow).SetEase(Ease.Linear);
             GetComponent<Camera>().fieldOfView = Mathf.Lerp(GetComponent<Camera>().fieldOfView, targetFOV, zoomFOV);
         }

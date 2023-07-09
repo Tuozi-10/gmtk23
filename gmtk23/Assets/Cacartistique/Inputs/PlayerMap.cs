@@ -53,6 +53,15 @@ public partial class @PlayerMap: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""de7ad3b6-7ca3-49dd-902c-a35c78c10431"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -124,12 +133,204 @@ public partial class @PlayerMap: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""8a69dab1-4079-40bb-97fc-0d335cccfa17"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""bc75a0b0-a5ea-4649-bc00-27e7779e5a63"",
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""ThrowItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d93211af-f480-48c3-9587-ac4583cb592b"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Inventory"",
+            ""id"": ""05165839-f4c4-4980-908a-cb4587017b82"",
+            ""actions"": [
+                {
+                    ""name"": ""ScrollInventory"",
+                    ""type"": ""Value"",
+                    ""id"": ""e982e6d2-5233-4cb5-9622-f2af16a55348"",
+                    ""expectedControlType"": ""Analog"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Slot1"",
+                    ""type"": ""Button"",
+                    ""id"": ""b9a156c7-bc4b-4475-b701-40c55469b6f3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Slot2"",
+                    ""type"": ""Button"",
+                    ""id"": ""e7e82965-4ada-4e4b-b7be-9f1effcde137"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Slot3"",
+                    ""type"": ""Button"",
+                    ""id"": ""37728793-83ec-4981-b1aa-327f43f91c63"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Slot4"",
+                    ""type"": ""Button"",
+                    ""id"": ""b77dac2e-6027-405b-8ee0-0819c9108dd4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Slot5"",
+                    ""type"": ""Button"",
+                    ""id"": ""08d1b540-9eb2-4695-9ec2-4ba31fc70d2b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Slot6"",
+                    ""type"": ""Button"",
+                    ""id"": ""0dcb5a50-9780-4455-8a11-1d3f3edd6d94"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""81f18d1b-03b6-4877-b5d0-6fcdf1d12895"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ScrollInventory"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""44a41ac0-3cc4-491c-a4fe-3177a0ace5de"",
+                    ""path"": ""<Mouse>/scroll/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ScrollInventory"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""253953f4-728d-48a4-9bee-0e7f765f0454"",
+                    ""path"": ""<Mouse>/scroll/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ScrollInventory"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""89181a74-c551-4672-ba7e-f7c4154b91ae"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Slot1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c47fde58-dc86-4aac-9694-d3cb6135fb75"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Slot2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a9279450-9939-4077-a73a-2448fd9e3713"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Slot3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""20f9671e-647c-4bd9-b139-e3373e7c30b6"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Slot4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""71b3a900-81d8-4f9d-b429-b55b60e77ca7"",
+                    ""path"": ""<Keyboard>/5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Slot5"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4bd8940d-fd18-4bb7-b130-19d6b2e6d58c"",
+                    ""path"": ""<Keyboard>/6"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Slot6"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -143,6 +344,16 @@ public partial class @PlayerMap: IInputActionCollection2, IDisposable
         m_Movement_MoveDirection = m_Movement.FindAction("MoveDirection", throwIfNotFound: true);
         m_Movement_Dash = m_Movement.FindAction("Dash", throwIfNotFound: true);
         m_Movement_ThrowItem = m_Movement.FindAction("ThrowItem", throwIfNotFound: true);
+        m_Movement_Interact = m_Movement.FindAction("Interact", throwIfNotFound: true);
+        // Inventory
+        m_Inventory = asset.FindActionMap("Inventory", throwIfNotFound: true);
+        m_Inventory_ScrollInventory = m_Inventory.FindAction("ScrollInventory", throwIfNotFound: true);
+        m_Inventory_Slot1 = m_Inventory.FindAction("Slot1", throwIfNotFound: true);
+        m_Inventory_Slot2 = m_Inventory.FindAction("Slot2", throwIfNotFound: true);
+        m_Inventory_Slot3 = m_Inventory.FindAction("Slot3", throwIfNotFound: true);
+        m_Inventory_Slot4 = m_Inventory.FindAction("Slot4", throwIfNotFound: true);
+        m_Inventory_Slot5 = m_Inventory.FindAction("Slot5", throwIfNotFound: true);
+        m_Inventory_Slot6 = m_Inventory.FindAction("Slot6", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -207,6 +418,7 @@ public partial class @PlayerMap: IInputActionCollection2, IDisposable
     private readonly InputAction m_Movement_MoveDirection;
     private readonly InputAction m_Movement_Dash;
     private readonly InputAction m_Movement_ThrowItem;
+    private readonly InputAction m_Movement_Interact;
     public struct MovementActions
     {
         private @PlayerMap m_Wrapper;
@@ -214,6 +426,7 @@ public partial class @PlayerMap: IInputActionCollection2, IDisposable
         public InputAction @MoveDirection => m_Wrapper.m_Movement_MoveDirection;
         public InputAction @Dash => m_Wrapper.m_Movement_Dash;
         public InputAction @ThrowItem => m_Wrapper.m_Movement_ThrowItem;
+        public InputAction @Interact => m_Wrapper.m_Movement_Interact;
         public InputActionMap Get() { return m_Wrapper.m_Movement; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -232,6 +445,9 @@ public partial class @PlayerMap: IInputActionCollection2, IDisposable
             @ThrowItem.started += instance.OnThrowItem;
             @ThrowItem.performed += instance.OnThrowItem;
             @ThrowItem.canceled += instance.OnThrowItem;
+            @Interact.started += instance.OnInteract;
+            @Interact.performed += instance.OnInteract;
+            @Interact.canceled += instance.OnInteract;
         }
 
         private void UnregisterCallbacks(IMovementActions instance)
@@ -245,6 +461,9 @@ public partial class @PlayerMap: IInputActionCollection2, IDisposable
             @ThrowItem.started -= instance.OnThrowItem;
             @ThrowItem.performed -= instance.OnThrowItem;
             @ThrowItem.canceled -= instance.OnThrowItem;
+            @Interact.started -= instance.OnInteract;
+            @Interact.performed -= instance.OnInteract;
+            @Interact.canceled -= instance.OnInteract;
         }
 
         public void RemoveCallbacks(IMovementActions instance)
@@ -262,10 +481,115 @@ public partial class @PlayerMap: IInputActionCollection2, IDisposable
         }
     }
     public MovementActions @Movement => new MovementActions(this);
+
+    // Inventory
+    private readonly InputActionMap m_Inventory;
+    private List<IInventoryActions> m_InventoryActionsCallbackInterfaces = new List<IInventoryActions>();
+    private readonly InputAction m_Inventory_ScrollInventory;
+    private readonly InputAction m_Inventory_Slot1;
+    private readonly InputAction m_Inventory_Slot2;
+    private readonly InputAction m_Inventory_Slot3;
+    private readonly InputAction m_Inventory_Slot4;
+    private readonly InputAction m_Inventory_Slot5;
+    private readonly InputAction m_Inventory_Slot6;
+    public struct InventoryActions
+    {
+        private @PlayerMap m_Wrapper;
+        public InventoryActions(@PlayerMap wrapper) { m_Wrapper = wrapper; }
+        public InputAction @ScrollInventory => m_Wrapper.m_Inventory_ScrollInventory;
+        public InputAction @Slot1 => m_Wrapper.m_Inventory_Slot1;
+        public InputAction @Slot2 => m_Wrapper.m_Inventory_Slot2;
+        public InputAction @Slot3 => m_Wrapper.m_Inventory_Slot3;
+        public InputAction @Slot4 => m_Wrapper.m_Inventory_Slot4;
+        public InputAction @Slot5 => m_Wrapper.m_Inventory_Slot5;
+        public InputAction @Slot6 => m_Wrapper.m_Inventory_Slot6;
+        public InputActionMap Get() { return m_Wrapper.m_Inventory; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(InventoryActions set) { return set.Get(); }
+        public void AddCallbacks(IInventoryActions instance)
+        {
+            if (instance == null || m_Wrapper.m_InventoryActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_InventoryActionsCallbackInterfaces.Add(instance);
+            @ScrollInventory.started += instance.OnScrollInventory;
+            @ScrollInventory.performed += instance.OnScrollInventory;
+            @ScrollInventory.canceled += instance.OnScrollInventory;
+            @Slot1.started += instance.OnSlot1;
+            @Slot1.performed += instance.OnSlot1;
+            @Slot1.canceled += instance.OnSlot1;
+            @Slot2.started += instance.OnSlot2;
+            @Slot2.performed += instance.OnSlot2;
+            @Slot2.canceled += instance.OnSlot2;
+            @Slot3.started += instance.OnSlot3;
+            @Slot3.performed += instance.OnSlot3;
+            @Slot3.canceled += instance.OnSlot3;
+            @Slot4.started += instance.OnSlot4;
+            @Slot4.performed += instance.OnSlot4;
+            @Slot4.canceled += instance.OnSlot4;
+            @Slot5.started += instance.OnSlot5;
+            @Slot5.performed += instance.OnSlot5;
+            @Slot5.canceled += instance.OnSlot5;
+            @Slot6.started += instance.OnSlot6;
+            @Slot6.performed += instance.OnSlot6;
+            @Slot6.canceled += instance.OnSlot6;
+        }
+
+        private void UnregisterCallbacks(IInventoryActions instance)
+        {
+            @ScrollInventory.started -= instance.OnScrollInventory;
+            @ScrollInventory.performed -= instance.OnScrollInventory;
+            @ScrollInventory.canceled -= instance.OnScrollInventory;
+            @Slot1.started -= instance.OnSlot1;
+            @Slot1.performed -= instance.OnSlot1;
+            @Slot1.canceled -= instance.OnSlot1;
+            @Slot2.started -= instance.OnSlot2;
+            @Slot2.performed -= instance.OnSlot2;
+            @Slot2.canceled -= instance.OnSlot2;
+            @Slot3.started -= instance.OnSlot3;
+            @Slot3.performed -= instance.OnSlot3;
+            @Slot3.canceled -= instance.OnSlot3;
+            @Slot4.started -= instance.OnSlot4;
+            @Slot4.performed -= instance.OnSlot4;
+            @Slot4.canceled -= instance.OnSlot4;
+            @Slot5.started -= instance.OnSlot5;
+            @Slot5.performed -= instance.OnSlot5;
+            @Slot5.canceled -= instance.OnSlot5;
+            @Slot6.started -= instance.OnSlot6;
+            @Slot6.performed -= instance.OnSlot6;
+            @Slot6.canceled -= instance.OnSlot6;
+        }
+
+        public void RemoveCallbacks(IInventoryActions instance)
+        {
+            if (m_Wrapper.m_InventoryActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IInventoryActions instance)
+        {
+            foreach (var item in m_Wrapper.m_InventoryActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_InventoryActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public InventoryActions @Inventory => new InventoryActions(this);
     public interface IMovementActions
     {
         void OnMoveDirection(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
         void OnThrowItem(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
+    }
+    public interface IInventoryActions
+    {
+        void OnScrollInventory(InputAction.CallbackContext context);
+        void OnSlot1(InputAction.CallbackContext context);
+        void OnSlot2(InputAction.CallbackContext context);
+        void OnSlot3(InputAction.CallbackContext context);
+        void OnSlot4(InputAction.CallbackContext context);
+        void OnSlot5(InputAction.CallbackContext context);
+        void OnSlot6(InputAction.CallbackContext context);
     }
 }

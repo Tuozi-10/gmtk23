@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using DG.Tweening;
+using IAs;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -28,10 +29,23 @@ public class StockRemove : MonoBehaviour {
         }
 
         if (currentlyActivatedStock == stocksImg.Count) {
-            Debug.Log("THE ENEMY IS STUN");
+            GetComponent<AI>().RemoveRandomItem();
+            ResetStock();
         }
     }
 
+    /// <summary>
+    /// Reset the stocks
+    /// </summary>
+    private void ResetStock() {
+        Sequence seq = DOTween.Sequence();
+        seq.AppendInterval(0.25f);
+        foreach (var img in stocksImg) {
+            seq.Append(img.DOColor(new Color(70, 70, 70), 0)); 
+        }
+        currentlyActivatedStock = 0;
+    }
+    
     /// <summary>
     /// Activate the first stock of an enemy
     /// </summary>

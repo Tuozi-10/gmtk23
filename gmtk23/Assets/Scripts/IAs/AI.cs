@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using DG.Tweening;
+using Gameplay;
 using Gameplay.Projectiles;
 using Items;
 using Managers;
@@ -225,6 +227,22 @@ namespace IAs
             m_currentJob = Jobs.Cac; // default, hit with hands ? or flee ?
         }
 
+        /// <summary>
+        /// Remove a random item
+        /// </summary>
+        public void RemoveRandomItem() {
+            List<AbstractItem> ToolsItemsList = new();
+            if(m_weapon != null) ToolsItemsList.Add(m_weapon);
+            if(m_armor != null) ToolsItemsList.Add(m_armor);
+
+            if (ToolsItemsList.Count == 0) return;
+            int random = Random.Range(0, ToolsItemsList.Count);
+            Inventory.instance.DropAbstractItem(Vector3.zero, transform.position - PlayerController.instance.DashDir * 2, ToolsItemsList[random]);
+            
+            if(ToolsItemsList[random] is Weapon) RemoveWeapon();
+            else RemoveArmor();
+        }
+        
         #endregion
 
         #region Movement

@@ -103,9 +103,8 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
-  accelerationTime: 0.2
-  moveSpeed: 14
-  decelerationDashTime: 0.4
+  moveSpeed: 11
+  decelerationDashTime: 0.25
   drag: 15
   currentDashState: 0
   dashForce: 50
@@ -113,6 +112,9 @@ MonoBehaviour:
   timeInDash: 0.15
   moveDisableAfterCollidingInDash: 0
   cursorTransform: {fileID: 0}
+  currentItem: {fileID: 0}
+  itemGam: {fileID: 0}
+  throwForce: 0
   dashCooldownParent: {fileID: 821041497170127213}
   dashCooldownImg: {fileID: 7539105983529869765}
   startDashColor: {r: 1, g: 1, b: 1, a: 1}
