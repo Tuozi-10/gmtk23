@@ -1136,7 +1136,7 @@ MonoBehaviour:
   m_speedMedium: 2.5
   m_speedFat: 1.5
   m_magnitudeWander: 3
-  m_radiusAgro: 3
+  m_radiusAgro: 12
   m_distanceForget: 6
   m_triggerDetection: {fileID: 220916662720952824}
   m_distanceAttackCac: 1.5
