@@ -104,7 +104,7 @@ namespace IAs
 
         #region pack
 
-        private Pack m_currentPack;
+        public Pack currentPack;
 
         #endregion
         
@@ -339,7 +339,7 @@ namespace IAs
             m_animator.speed = agent.velocity.magnitude > 0.5f ? 1f : agent.velocity.magnitude;
             if (agent.remainingDistance < 0.5f)
             {
-                Vector3 center = m_currentPack != null ? m_currentPack.transform.position : m_positionInit;
+                Vector3 center = ( currentPack != null && currentPack.tracking != null) ? currentPack.tracking.transform.position : m_positionInit;
                 
                 agent.destination = new Vector3(center.x + Random.Range(-m_magnitudeWander, m_magnitudeWander),
                     center.y, center.z + Random.Range(-m_magnitudeWander, m_magnitudeWander));

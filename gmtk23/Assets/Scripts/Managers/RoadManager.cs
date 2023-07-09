@@ -1,12 +1,19 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using src.Singletons;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
-public class RoadManager : MonoBehaviour
+public class RoadManager : MonoSingleton<RoadManager>
 {
     [SerializeField] private List<Road> roads;
 
+    public static Road GetRandomRoad()
+    {
+        return instance.roads[ Random.Range(0, instance.roads.Count - 1)];
+    }
+    
     [ContextMenu("Get Waypoints")]
     private void GetWaypointsFromRoad()
     {

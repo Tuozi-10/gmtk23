@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bfa39a2a09d4251861bce6f9acfded3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tracking: {fileID: 0}
   heroPack: 0
   m_ais: []
 --- !u!1001 &5692354774795075133
