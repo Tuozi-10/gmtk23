@@ -209,13 +209,39 @@ namespace IAs
             return true;
         }
 
-        public void SetArmor(Armor armor)
+        public bool SetArmor(Armor armor)
         {
+            if (armor != null && m_weapon != null)
+            {
+                if (!CanEquipWeaponWithSkill(m_weapon, armor.m_skill))
+                {
+                    return false;
+                }
+            }
+            
             Inventory.instance.DropAbstractItem(transform.forward * 20, transform.position + transform.forward, gameObject, m_armor);
             m_armor = armor;
             RefreshStuffs();
+            return true;
         }
 
+        public bool CanEquipWeaponWithSkill(Weapon weapon, Skills skill)
+        {
+            return skill switch
+            {
+                Skills.Barbarian => weapon.weaponType is WeaponType.Axe or WeaponType.Bow or WeaponType.Kebab or
+                    WeaponType.Sceptre,
+                Skills.Templar => weapon.weaponType is WeaponType.Axe or WeaponType.Sword or WeaponType.Kebab or
+                    WeaponType.Masse,
+                Skills.Archer => weapon.weaponType is WeaponType.Bow or WeaponType.Baguette or WeaponType.Sword or
+                    WeaponType.Sceptre,
+                Skills.Sorcier => weapon.weaponType is WeaponType.Kebab or WeaponType.Baguette or WeaponType.Sceptre,
+                Skills.Healer => weapon.weaponType is WeaponType.Bow or WeaponType.Baguette or WeaponType.Kebab or
+                    WeaponType.Sceptre or WeaponType.Masse,
+                _ => true
+            };
+        }
+        
         public bool CanEquipWeapon(Weapon weapon)
         {
             return m_skill switch
