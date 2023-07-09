@@ -1,3 +1,4 @@
+using System;
 using Gameplay;
 using IAs;
 using Items;
@@ -62,9 +63,17 @@ public class ThrowItem : MonoBehaviour {
     /// </summary>
     /// <param name="item"></param>
     public void SetItem(Item itemSet, GameObject notGrab) {
+        
         item = itemSet;
-        itemSprite.sprite = item.item.sprite[Mathf.Clamp(item.level, 0, item.item.sprite.Count - 1)];
-        notGrabbableNow = notGrab;
+        try
+        {
+            itemSprite.sprite = item.item.sprite[Mathf.Clamp(item.level, 0, item.item.sprite.Count - 1)];
+            notGrabbableNow = notGrab;
+        }
+        catch (Exception e)
+        {
+            
+        }
     }
 }
 
