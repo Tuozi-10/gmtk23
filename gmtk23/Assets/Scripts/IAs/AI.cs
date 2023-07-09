@@ -333,12 +333,15 @@ namespace IAs
             CheckTargets();
         }
 
+        private float wanderStartTime;
+        
         protected virtual void DoWander()
         {
             m_animator.Play("Move");
             m_animator.speed = agent.velocity.magnitude > 0.5f ? 1f : agent.velocity.magnitude;
-            if (agent.remainingDistance < 0.5f)
+            if (agent.remainingDistance < 0.5f || Time.time -  wanderStartTime > 3f )
             {
+                wanderStartTime = Time.time;
                 Vector3 center = ( currentPack != null && currentPack.tracking != null) ? currentPack.tracking.transform.position : m_positionInit;
                 
                 agent.destination = new Vector3(center.x + Random.Range(-m_magnitudeWander, m_magnitudeWander),
