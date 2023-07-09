@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Helmet1
   m_EditorClassIdentifier: 
   m_size: {x: 1, y: 1}
-  price: 1
-  sprite: {fileID: -268100067, guid: fcb7e460134436045a5bbaea70d25de1, type: 3}
+  level: 0
+  sprite:
+  - {fileID: -268100067, guid: fcb7e460134436045a5bbaea70d25de1, type: 3}
+  m_skill: 1
