@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: Sword
   m_EditorClassIdentifier: 
   m_size: {x: 1, y: 1}
-  price: 1
-  sprite: {fileID: 272742516, guid: 7158d6fd0ff450c42b5e496603875a1b, type: 3}
+  level: 0
+  sprite:
+  - {fileID: -2052672659, guid: ac63ce093c7cf3c4199411561f652290, type: 3}
+  - {fileID: 628395385, guid: ac63ce093c7cf3c4199411561f652290, type: 3}
+  - {fileID: 622413671, guid: ac63ce093c7cf3c4199411561f652290, type: 3}
   AssociatedJob: 1
   damages: 010000000200000003000000
   weaponType: 0
