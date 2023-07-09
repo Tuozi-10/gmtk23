@@ -828,7 +828,7 @@ PrefabInstance:
     - target: {fileID: 6302071160736076620, guid: bbbf81cc3381ca04d876e3cf2555dea3, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: d6fd3efcda8b3334986b79487b1a8dc9, type: 3}
     - target: {fileID: 8044789864692701355, guid: bbbf81cc3381ca04d876e3cf2555dea3, type: 3}
       propertyPath: m_Name
       value: GameManager
