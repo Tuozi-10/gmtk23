@@ -58,7 +58,7 @@ namespace Managers
             
             effect.Play();
             
-            instance.StartCoroutine( orcBlood ? instance.m_orcBloodPool.AddToPoolLatter(effect, 0.5f) : instance.m_humanBloodPool.AddToPoolLatter(effect, 0.5f));
+            instance.StartCoroutine( orcBlood ? instance.m_orcBloodPool.AddToPoolLatter(effect, 10) : instance.m_humanBloodPool.AddToPoolLatter(effect, 10));
         }
         
     }

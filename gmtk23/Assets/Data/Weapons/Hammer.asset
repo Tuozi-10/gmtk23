@@ -17,3 +17,4 @@ MonoBehaviour:
   sprite: {fileID: 2008432345, guid: 64dbc6ac89b8b6d42ae37932ae3ca4ad, type: 3}
   AssociatedJob: 1
   damages: 1
+  weaponType: 4

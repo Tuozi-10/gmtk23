@@ -212,13 +212,13 @@ MonoBehaviour:
   m_currentState: 0
   m_currentTeam: 0
   m_currentJob: 0
-  m_baseHp: 5
+  m_baseHp: 10
   m_speedSmall: 3.5
   m_speedMedium: 2.5
   m_speedFat: 1.5
   m_magnitudeWander: 3
   m_radiusAgro: 3
-  m_distanceForget: 0
+  m_distanceForget: 6
   m_triggerDetection: {fileID: 2564381427587372277}
   m_distanceAttackCac: 1.5
   m_distanceAttackDistance: 5.5
@@ -227,6 +227,7 @@ MonoBehaviour:
   m_fireball: {fileID: 1127239125271462841, guid: f78a3cca4ecd3574a91602a2a9ceff73, type: 3}
   m_aiHp: {fileID: 6024611266209676894}
   attackSpeedRate: 1
+  damagesBonus: 1.25
   m_body: {fileID: 8803041132593805763}
   m_head: {fileID: 9180352400818170059}
   m_animator: {fileID: 795981990323912947}

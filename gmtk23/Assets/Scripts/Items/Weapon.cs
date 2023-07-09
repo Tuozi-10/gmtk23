@@ -8,6 +8,19 @@ namespace Items
     {
         public AI.Jobs AssociatedJob = AI.Jobs.Cac;
         public int damages;
-
+        public WeaponType weaponType;
+        
+        
+        public enum WeaponType
+        {
+            Sword,
+            Axe,
+            Bow,
+            Kebab,
+            Masse,
+            Sceptre,
+            Baguette
+        }
+        
     }
 }
