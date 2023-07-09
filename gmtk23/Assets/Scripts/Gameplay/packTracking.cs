@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using IAs;
 using UnityEngine;
 
@@ -18,7 +19,21 @@ namespace Gameplay
 
         public void Update()
         {
-            if (countMobs > 0)
+            List<AI> toremove = new();
+            foreach (var ai in m_enemies)
+            {
+                if (ai == null)
+                {
+                    toremove.Add(ai);
+                }
+            }
+
+            foreach (var t in toremove)
+            {
+                m_enemies.Remove(t);
+            }
+            
+            if (m_enemies.Count > 0)
             {
                 return; // clean area first
             }
@@ -47,7 +62,7 @@ namespace Gameplay
             }
         }
 
-        private int countMobs;
+        private HashSet<AI> m_enemies = new();
         
         private void OnTriggerEnter(Collider other)
         {
@@ -56,7 +71,7 @@ namespace Gameplay
                 var ai = other.GetComponent<AI>();
                 if (ai.team == AI.Team.Orc)
                 {
-                    countMobs++;
+                    m_enemies.Add(ai);
                 }
             }
         }
@@ -68,7 +83,7 @@ namespace Gameplay
                 var ai = other.GetComponent<AI>();
                 if (ai.team == AI.Team.Orc)
                 {
-                    countMobs--;
+                    m_enemies.Remove(ai);
                 }
             }
         }

@@ -201,6 +201,7 @@ MonoBehaviour:
   tracking: {fileID: 0}
   heroPack: 1
   m_ais: []
+  packMobManagerLink: {fileID: 0}
 --- !u!1001 &3203843562491891850
 PrefabInstance:
   m_ObjectHideFlags: 0
