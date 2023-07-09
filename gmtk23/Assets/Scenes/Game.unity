@@ -884,7 +884,7 @@ PrefabInstance:
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Icon
       value: 
-      objectReference: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
+      objectReference: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Name
       value: MobSpawner (23)
@@ -895,7 +895,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 102.1
+      value: 102.87
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -903,7 +903,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 148.1
+      value: 158.6
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -935,7 +935,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: spread
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: timerToRespawn
@@ -943,24 +943,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: rangeNumberSpawn.x
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: rangeNumberSpawn.y
-      value: 8
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.size
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnRandom.Array.data[0]
+      value: 
+      objectReference: {fileID: 7230543936245105794, guid: 133e7448ab93c894694f1df8948092ad, type: 3}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.data[1]
       value: 
-      objectReference: {fileID: 689053203717064684, guid: 7556056ada8407346b9f9a89418aba29, type: 3}
+      objectReference: {fileID: 7230543936245105794, guid: 2cc0ac299d7eac446855744f1ee62abc, type: 3}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.data[2]
       value: 
-      objectReference: {fileID: 7739469178168399630, guid: b010e910210f31e48be8d2bd8102cedd, type: 3}
+      objectReference: {fileID: 7230543936245105794, guid: 8ebafa0c32efd1843acc6255bb4088f1, type: 3}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.data[3]
       value: 
@@ -8126,7 +8130,7 @@ PrefabInstance:
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Icon
       value: 
-      objectReference: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
+      objectReference: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Name
       value: MobSpawner (17)
@@ -8137,7 +8141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 106.8
+      value: 101.56
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8145,7 +8149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 99.5
+      value: 107.18
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8189,28 +8193,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: rangeNumberSpawn.y
-      value: 8
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.size
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnRandom.Array.data[0]
+      value: 
+      objectReference: {fileID: 4617658047369064734, guid: b51dc529f6970564faebb55fa793dbd8, type: 3}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.data[1]
       value: 
-      objectReference: {fileID: 689053203717064684, guid: 7556056ada8407346b9f9a89418aba29, type: 3}
+      objectReference: {fileID: 7739469178168399630, guid: a0096ff935a748e45800929c7e9b39c6, type: 3}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.data[2]
       value: 
-      objectReference: {fileID: 7739469178168399630, guid: b010e910210f31e48be8d2bd8102cedd, type: 3}
+      objectReference: {fileID: 4617658047369064734, guid: 1bddc094413f0d64d91cb6de835b4ebe, type: 3}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.data[3]
       value: 
-      objectReference: {fileID: 4617658047369064734, guid: c140bf625d847064a8ba96448d685f82, type: 3}
+      objectReference: {fileID: 689053203717064684, guid: 4e1ed511665902a45b48776d2c830d59, type: 3}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.data[4]
       value: 
-      objectReference: {fileID: 689053203717064684, guid: 80f459291eba34344ba2d9a7fdb3ba7d, type: 3}
+      objectReference: {fileID: 689053203717064684, guid: 3957d7b7d7f80e442932c8095ac5c450, type: 3}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.data[5]
       value: 
@@ -26126,7 +26134,7 @@ PrefabInstance:
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Icon
       value: 
-      objectReference: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
+      objectReference: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Name
       value: MobSpawner (16)
@@ -26137,7 +26145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 82.9
+      value: 53.89
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -26145,7 +26153,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 100.4
+      value: 102.15
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -26185,36 +26193,60 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: rangeNumberSpawn.x
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: rangeNumberSpawn.y
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: mobsToSpawnRandom.Array.size
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnRandom.Array.size
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnRandom.Array.data[0]
+      value: 
+      objectReference: {fileID: 7230543936245105794, guid: 133e7448ab93c894694f1df8948092ad, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.data[1]
       value: 
-      objectReference: {fileID: 689053203717064684, guid: 7556056ada8407346b9f9a89418aba29, type: 3}
+      objectReference: {fileID: 7230543936245105794, guid: 2cc0ac299d7eac446855744f1ee62abc, type: 3}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.data[2]
       value: 
-      objectReference: {fileID: 7739469178168399630, guid: b010e910210f31e48be8d2bd8102cedd, type: 3}
+      objectReference: {fileID: 7230543936245105794, guid: 8ebafa0c32efd1843acc6255bb4088f1, type: 3}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.data[3]
       value: 
-      objectReference: {fileID: 4617658047369064734, guid: c140bf625d847064a8ba96448d685f82, type: 3}
+      objectReference: {fileID: 1171809527445398212, guid: f3cc25fa7e045c04590f5d4e169ac178, type: 3}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.data[4]
       value: 
-      objectReference: {fileID: 689053203717064684, guid: 80f459291eba34344ba2d9a7fdb3ba7d, type: 3}
+      objectReference: {fileID: 1171809527445398212, guid: 73316f88110dd7e48800756576c5d4ed, type: 3}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.data[5]
       value: 
-      objectReference: {fileID: 7739469178168399630, guid: f2a8b6723e1ec7f43a876435626c2926, type: 3}
+      objectReference: {fileID: 1171809527445398212, guid: cc1ccbab0555a004791719df402e0ab9, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnRandom.Array.data[6]
+      value: 
+      objectReference: {fileID: 1171809527445398212, guid: d398816c71f78024b98bb37bf199d0da, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnRandom.Array.data[7]
+      value: 
+      objectReference: {fileID: 849520306477512543, guid: 1cdfbb975a21e5347815b9178319613e, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnRandom.Array.data[8]
+      value: 
+      objectReference: {fileID: 1040573046421291588, guid: 88308ec7ec31e7940a2a0141e462b503, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnRandom.Array.data[9]
+      value: 
+      objectReference: {fileID: 991483508670082476, guid: 092b7f73596d7964da2fb55e6b1eef78, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnRandom.Array.data[10]
+      value: 
+      objectReference: {fileID: 5403377550633065276, guid: 512716a55d14c7543b2e1230f2440543, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -28490,7 +28522,7 @@ PrefabInstance:
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Icon
       value: 
-      objectReference: {fileID: 7422848464349959988, guid: 0000000000000000d000000000000000, type: 0}
+      objectReference: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Name
       value: MobSpawner (5)
@@ -28549,36 +28581,40 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: rangeNumberSpawn.x
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: rangeNumberSpawn.y
-      value: 8
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.size
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnRandom.Array.data[0]
+      value: 
+      objectReference: {fileID: 4617658047369064734, guid: 951ae5178fea7e84594eaf48aa0297ef, type: 3}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.data[1]
       value: 
-      objectReference: {fileID: 689053203717064684, guid: 7556056ada8407346b9f9a89418aba29, type: 3}
+      objectReference: {fileID: 4617658047369064734, guid: b51dc529f6970564faebb55fa793dbd8, type: 3}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.data[2]
       value: 
-      objectReference: {fileID: 7739469178168399630, guid: b010e910210f31e48be8d2bd8102cedd, type: 3}
+      objectReference: {fileID: 689053203717064684, guid: 4e1ed511665902a45b48776d2c830d59, type: 3}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.data[3]
       value: 
-      objectReference: {fileID: 4617658047369064734, guid: c140bf625d847064a8ba96448d685f82, type: 3}
+      objectReference: {fileID: 849520306477512543, guid: 1cdfbb975a21e5347815b9178319613e, type: 3}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.data[4]
       value: 
-      objectReference: {fileID: 689053203717064684, guid: 80f459291eba34344ba2d9a7fdb3ba7d, type: 3}
+      objectReference: {fileID: 1040573046421291588, guid: 88308ec7ec31e7940a2a0141e462b503, type: 3}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.data[5]
       value: 
-      objectReference: {fileID: 7739469178168399630, guid: f2a8b6723e1ec7f43a876435626c2926, type: 3}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -29676,7 +29712,7 @@ PrefabInstance:
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Icon
       value: 
-      objectReference: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
+      objectReference: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Name
       value: MobSpawner (12)
@@ -29687,7 +29723,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 112.73
+      value: 101.24
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -29695,7 +29731,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 74.11
+      value: 84
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -29727,7 +29763,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: spread
-      value: 3
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: timerToRespawn
@@ -29735,36 +29771,44 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: rangeNumberSpawn.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: rangeNumberSpawn.y
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: mobsToSpawnRandom.Array.size
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: rangeNumberSpawn.y
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnRandom.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnRandom.Array.data[0]
+      value: 
+      objectReference: {fileID: 4617658047369064734, guid: 951ae5178fea7e84594eaf48aa0297ef, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.data[1]
       value: 
-      objectReference: {fileID: 689053203717064684, guid: 7556056ada8407346b9f9a89418aba29, type: 3}
+      objectReference: {fileID: 4617658047369064734, guid: b51dc529f6970564faebb55fa793dbd8, type: 3}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.data[2]
       value: 
-      objectReference: {fileID: 7739469178168399630, guid: b010e910210f31e48be8d2bd8102cedd, type: 3}
+      objectReference: {fileID: 4617658047369064734, guid: 1bddc094413f0d64d91cb6de835b4ebe, type: 3}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.data[3]
       value: 
-      objectReference: {fileID: 4617658047369064734, guid: c140bf625d847064a8ba96448d685f82, type: 3}
+      objectReference: {fileID: 1040573046421291588, guid: 88308ec7ec31e7940a2a0141e462b503, type: 3}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.data[4]
       value: 
-      objectReference: {fileID: 689053203717064684, guid: 80f459291eba34344ba2d9a7fdb3ba7d, type: 3}
+      objectReference: {fileID: 849520306477512543, guid: 1cdfbb975a21e5347815b9178319613e, type: 3}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.data[5]
       value: 
-      objectReference: {fileID: 7739469178168399630, guid: f2a8b6723e1ec7f43a876435626c2926, type: 3}
+      objectReference: {fileID: 991483508670082476, guid: 092b7f73596d7964da2fb55e6b1eef78, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnRandom.Array.data[6]
+      value: 
+      objectReference: {fileID: 991483508670082476, guid: 092b7f73596d7964da2fb55e6b1eef78, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -29954,7 +29998,7 @@ PrefabInstance:
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Icon
       value: 
-      objectReference: {fileID: 7422848464349959988, guid: 0000000000000000d000000000000000, type: 0}
+      objectReference: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Name
       value: MobSpawner (6)
@@ -30008,20 +30052,48 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: spawnRandom
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: timerToRespawn
       value: 85
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: rangeNumberSpawn.x
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: rangeNumberSpawn.y
-      value: 8
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnFix.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnFix.Array.data[0]
+      value: 
+      objectReference: {fileID: 5403377550633065276, guid: 512716a55d14c7543b2e1230f2440543, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnFix.Array.data[1]
+      value: 
+      objectReference: {fileID: 1040573046421291588, guid: 88308ec7ec31e7940a2a0141e462b503, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnFix.Array.data[2]
+      value: 
+      objectReference: {fileID: 4617658047369064734, guid: 951ae5178fea7e84594eaf48aa0297ef, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnFix.Array.data[3]
+      value: 
+      objectReference: {fileID: 4617658047369064734, guid: 951ae5178fea7e84594eaf48aa0297ef, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.size
-      value: 6
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnRandom.Array.data[0]
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.data[1]
@@ -32018,7 +32090,7 @@ PrefabInstance:
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Icon
       value: 
-      objectReference: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
+      objectReference: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Name
       value: MobSpawner (19)
@@ -32029,7 +32101,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 80.6
+      value: 83.26
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -32037,7 +32109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 121.2
+      value: 125.37
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -32073,7 +32145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: spawnRandom
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: timerToRespawn
@@ -32089,11 +32161,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnFix.Array.size
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnFix.Array.data[0]
+      value: 
+      objectReference: {fileID: 7230543936245105794, guid: 2cc0ac299d7eac446855744f1ee62abc, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnFix.Array.data[1]
+      value: 
+      objectReference: {fileID: 7230543936245105794, guid: 133e7448ab93c894694f1df8948092ad, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnFix.Array.data[2]
+      value: 
+      objectReference: {fileID: 1171809527445398212, guid: d398816c71f78024b98bb37bf199d0da, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnFix.Array.data[3]
+      value: 
+      objectReference: {fileID: 1171809527445398212, guid: cc1ccbab0555a004791719df402e0ab9, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.size
-      value: 6
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.data[1]
@@ -43977,7 +44065,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 668849960}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 30.699997, y: 0.0000007748604, z: -93.89001}
+  m_LocalPosition: {x: 24.05, y: 0.0000007748604, z: -91.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -49908,7 +49996,7 @@ PrefabInstance:
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Icon
       value: 
-      objectReference: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
+      objectReference: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Name
       value: MobSpawner (13)
@@ -49919,7 +50007,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 85.3
+      value: 73.06
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -49927,7 +50015,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 85.3
+      value: 79.15
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -49959,11 +50047,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: spread
-      value: 3
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: spawnRandom
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: timerToRespawn
@@ -49971,28 +50059,56 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: rangeNumberSpawn.x
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: rangeNumberSpawn.y
-      value: 8
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnFix.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnFix.Array.data[0]
+      value: 
+      objectReference: {fileID: 7739469178168399630, guid: a0096ff935a748e45800929c7e9b39c6, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnFix.Array.data[1]
+      value: 
+      objectReference: {fileID: 689053203717064684, guid: 4e1ed511665902a45b48776d2c830d59, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnFix.Array.data[2]
+      value: 
+      objectReference: {fileID: 4617658047369064734, guid: b51dc529f6970564faebb55fa793dbd8, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnFix.Array.data[3]
+      value: 
+      objectReference: {fileID: 4617658047369064734, guid: 1bddc094413f0d64d91cb6de835b4ebe, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnFix.Array.data[4]
+      value: 
+      objectReference: {fileID: 1171809527445398212, guid: d398816c71f78024b98bb37bf199d0da, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.size
-      value: 6
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnRandom.Array.data[0]
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.data[1]
       value: 
-      objectReference: {fileID: 689053203717064684, guid: 7556056ada8407346b9f9a89418aba29, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.data[2]
       value: 
-      objectReference: {fileID: 7739469178168399630, guid: b010e910210f31e48be8d2bd8102cedd, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.data[3]
       value: 
-      objectReference: {fileID: 4617658047369064734, guid: c140bf625d847064a8ba96448d685f82, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.data[4]
       value: 
@@ -65229,7 +65345,7 @@ PrefabInstance:
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Icon
       value: 
-      objectReference: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
+      objectReference: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Name
       value: MobSpawner (22)
@@ -65240,7 +65356,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 81.2
+      value: 83.39
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -65248,7 +65364,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 145.1
+      value: 147.18
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -65284,7 +65400,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: spawnRandom
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: timerToRespawn
@@ -65299,8 +65415,24 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnFix.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnFix.Array.data[0]
+      value: 
+      objectReference: {fileID: 7230543936245105794, guid: 133e7448ab93c894694f1df8948092ad, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnFix.Array.data[1]
+      value: 
+      objectReference: {fileID: 7739469178168399630, guid: 1ffa873898bb54c4d89a56ca8648c002, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnFix.Array.data[2]
+      value: 
+      objectReference: {fileID: 7739469178168399630, guid: 437b200ee6e31dd4397fc5b4bcf075bf, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.size
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.data[1]
@@ -72375,7 +72507,7 @@ PrefabInstance:
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Icon
       value: 
-      objectReference: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
+      objectReference: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Name
       value: MobSpawner (14)
@@ -72386,7 +72518,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 42.54
+      value: 43.12
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -72394,7 +72526,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 79.47
+      value: 79.71
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -72425,12 +72557,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: isMenu
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: spread
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: spawnRandom
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: timerToRespawn
@@ -72438,15 +72574,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: rangeNumberSpawn.x
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: rangeNumberSpawn.y
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnFix.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnFix.Array.data[0]
+      value: 
+      objectReference: {fileID: 7230543936245105794, guid: 2cc0ac299d7eac446855744f1ee62abc, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnFix.Array.data[1]
+      value: 
+      objectReference: {fileID: 1040573046421291588, guid: 88308ec7ec31e7940a2a0141e462b503, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.size
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.data[1]
@@ -80539,7 +80687,6 @@ Transform:
   - {fileID: 460645827}
   - {fileID: 1449003249}
   - {fileID: 1803224397}
-  - {fileID: 1697869987}
   - {fileID: 458507227}
   - {fileID: 774196986}
   - {fileID: 1115265000}
@@ -80549,7 +80696,6 @@ Transform:
   - {fileID: 1517074258}
   - {fileID: 493826012}
   - {fileID: 1553488864}
-  - {fileID: 1615309166}
   - {fileID: 994025337}
   - {fileID: 7875023}
   - {fileID: 1766499624}
@@ -84379,7 +84525,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 85.23
+      value: 83.7
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -84387,7 +84533,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 181.81
+      value: 178.5
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -91215,11 +91361,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: spawnRandom
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: timerToRespawn
       value: 85
+      objectReference: {fileID: 0}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: rangeNumberSpawn.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: rangeNumberSpawn.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnFix.Array.size
@@ -91241,6 +91395,18 @@ PrefabInstance:
       propertyPath: mobsToSpawnFix.Array.data[3]
       value: 
       objectReference: {fileID: 1171809527445398212, guid: d398816c71f78024b98bb37bf199d0da, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnRandom.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnRandom.Array.data[0]
+      value: 
+      objectReference: {fileID: 7739469178168399630, guid: 1ffa873898bb54c4d89a56ca8648c002, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnRandom.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -94871,7 +95037,7 @@ PrefabInstance:
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Icon
       value: 
-      objectReference: {fileID: 7422848464349959988, guid: 0000000000000000d000000000000000, type: 0}
+      objectReference: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Name
       value: MobSpawner (8)
@@ -98607,7 +98773,7 @@ PrefabInstance:
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Icon
       value: 
-      objectReference: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
+      objectReference: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Name
       value: MobSpawner (18)
@@ -98618,7 +98784,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 106.4
+      value: 113.2
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -98626,7 +98792,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 118.2
+      value: 126.69
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -98657,8 +98823,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: isMenu
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: spread
-      value: 3
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: spawnRandom
@@ -98674,32 +98844,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: rangeNumberSpawn.y
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.size
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnRandom.Array.data[0]
+      value: 
+      objectReference: {fileID: 4617658047369064734, guid: b51dc529f6970564faebb55fa793dbd8, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.data[1]
       value: 
-      objectReference: {fileID: 689053203717064684, guid: 7556056ada8407346b9f9a89418aba29, type: 3}
+      objectReference: {fileID: 4617658047369064734, guid: 1bddc094413f0d64d91cb6de835b4ebe, type: 3}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.data[2]
       value: 
-      objectReference: {fileID: 7739469178168399630, guid: b010e910210f31e48be8d2bd8102cedd, type: 3}
+      objectReference: {fileID: 7739469178168399630, guid: 437b200ee6e31dd4397fc5b4bcf075bf, type: 3}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.data[3]
       value: 
-      objectReference: {fileID: 4617658047369064734, guid: c140bf625d847064a8ba96448d685f82, type: 3}
+      objectReference: {fileID: 1171809527445398212, guid: cc1ccbab0555a004791719df402e0ab9, type: 3}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.data[4]
       value: 
-      objectReference: {fileID: 689053203717064684, guid: 80f459291eba34344ba2d9a7fdb3ba7d, type: 3}
+      objectReference: {fileID: 1040573046421291588, guid: 88308ec7ec31e7940a2a0141e462b503, type: 3}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.data[5]
       value: 
-      objectReference: {fileID: 7739469178168399630, guid: f2a8b6723e1ec7f43a876435626c2926, type: 3}
+      objectReference: {fileID: 1171809527445398212, guid: f3cc25fa7e045c04590f5d4e169ac178, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -101011,7 +101185,7 @@ PrefabInstance:
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Icon
       value: 
-      objectReference: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
+      objectReference: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Name
       value: MobSpawner (20)
@@ -101022,7 +101196,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 55.2
+      value: 56.62
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -101030,7 +101204,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 122.7
+      value: 128.51
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -101074,36 +101248,56 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: rangeNumberSpawn.x
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: rangeNumberSpawn.y
-      value: 8
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.size
-      value: 6
+      value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnRandom.Array.data[0]
+      value: 
+      objectReference: {fileID: 991483508670082476, guid: 092b7f73596d7964da2fb55e6b1eef78, type: 3}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.data[1]
       value: 
-      objectReference: {fileID: 689053203717064684, guid: 7556056ada8407346b9f9a89418aba29, type: 3}
+      objectReference: {fileID: 991483508670082476, guid: 092b7f73596d7964da2fb55e6b1eef78, type: 3}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.data[2]
       value: 
-      objectReference: {fileID: 7739469178168399630, guid: b010e910210f31e48be8d2bd8102cedd, type: 3}
+      objectReference: {fileID: 1040573046421291588, guid: 88308ec7ec31e7940a2a0141e462b503, type: 3}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.data[3]
       value: 
-      objectReference: {fileID: 4617658047369064734, guid: c140bf625d847064a8ba96448d685f82, type: 3}
+      objectReference: {fileID: 4617658047369064734, guid: b51dc529f6970564faebb55fa793dbd8, type: 3}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.data[4]
       value: 
-      objectReference: {fileID: 689053203717064684, guid: 80f459291eba34344ba2d9a7fdb3ba7d, type: 3}
+      objectReference: {fileID: 4617658047369064734, guid: b51dc529f6970564faebb55fa793dbd8, type: 3}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.data[5]
       value: 
-      objectReference: {fileID: 7739469178168399630, guid: f2a8b6723e1ec7f43a876435626c2926, type: 3}
+      objectReference: {fileID: 4617658047369064734, guid: b51dc529f6970564faebb55fa793dbd8, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnRandom.Array.data[6]
+      value: 
+      objectReference: {fileID: 4617658047369064734, guid: 951ae5178fea7e84594eaf48aa0297ef, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnRandom.Array.data[7]
+      value: 
+      objectReference: {fileID: 4617658047369064734, guid: 951ae5178fea7e84594eaf48aa0297ef, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnRandom.Array.data[8]
+      value: 
+      objectReference: {fileID: 4617658047369064734, guid: 951ae5178fea7e84594eaf48aa0297ef, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnRandom.Array.data[9]
+      value: 
+      objectReference: {fileID: 7230543936245105794, guid: 2cc0ac299d7eac446855744f1ee62abc, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -105248,116 +105442,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &1615309165
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1256078974}
-    m_Modifications:
-    - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
-    - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: m_Name
-      value: MobSpawner (21)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: m_RootOrder
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 62.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 145.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: spread
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: timerToRespawn
-      value: 85
-      objectReference: {fileID: 0}
-    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: rangeNumberSpawn.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: rangeNumberSpawn.y
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: mobsToSpawnRandom.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: mobsToSpawnRandom.Array.data[1]
-      value: 
-      objectReference: {fileID: 689053203717064684, guid: 7556056ada8407346b9f9a89418aba29, type: 3}
-    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: mobsToSpawnRandom.Array.data[2]
-      value: 
-      objectReference: {fileID: 7739469178168399630, guid: b010e910210f31e48be8d2bd8102cedd, type: 3}
-    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: mobsToSpawnRandom.Array.data[3]
-      value: 
-      objectReference: {fileID: 4617658047369064734, guid: c140bf625d847064a8ba96448d685f82, type: 3}
-    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: mobsToSpawnRandom.Array.data[4]
-      value: 
-      objectReference: {fileID: 689053203717064684, guid: 80f459291eba34344ba2d9a7fdb3ba7d, type: 3}
-    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: mobsToSpawnRandom.Array.data[5]
-      value: 
-      objectReference: {fileID: 7739469178168399630, guid: f2a8b6723e1ec7f43a876435626c2926, type: 3}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
---- !u!4 &1615309166 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-  m_PrefabInstance: {fileID: 1615309165}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1616294389
 GameObject:
   m_ObjectHideFlags: 0
@@ -109477,116 +109561,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &1697869986
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1256078974}
-    m_Modifications:
-    - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
-    - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: m_Name
-      value: MobSpawner (11)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: m_RootOrder
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 84.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 59.94
-      objectReference: {fileID: 0}
-    - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: spread
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: timerToRespawn
-      value: 85
-      objectReference: {fileID: 0}
-    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: rangeNumberSpawn.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: rangeNumberSpawn.y
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: mobsToSpawnRandom.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: mobsToSpawnRandom.Array.data[1]
-      value: 
-      objectReference: {fileID: 689053203717064684, guid: 7556056ada8407346b9f9a89418aba29, type: 3}
-    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: mobsToSpawnRandom.Array.data[2]
-      value: 
-      objectReference: {fileID: 7739469178168399630, guid: b010e910210f31e48be8d2bd8102cedd, type: 3}
-    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: mobsToSpawnRandom.Array.data[3]
-      value: 
-      objectReference: {fileID: 4617658047369064734, guid: c140bf625d847064a8ba96448d685f82, type: 3}
-    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: mobsToSpawnRandom.Array.data[4]
-      value: 
-      objectReference: {fileID: 689053203717064684, guid: 80f459291eba34344ba2d9a7fdb3ba7d, type: 3}
-    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-      propertyPath: mobsToSpawnRandom.Array.data[5]
-      value: 
-      objectReference: {fileID: 7739469178168399630, guid: f2a8b6723e1ec7f43a876435626c2926, type: 3}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
---- !u!4 &1697869987 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
-  m_PrefabInstance: {fileID: 1697869986}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1699563344
 GameObject:
   m_ObjectHideFlags: 0
@@ -113609,7 +113583,7 @@ PrefabInstance:
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Icon
       value: 
-      objectReference: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+      objectReference: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Name
       value: MobSpawner (24)
@@ -113620,7 +113594,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 83.82
+      value: 64.7
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -113628,7 +113602,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 168.39
+      value: 158.5
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -113668,20 +113642,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: rangeNumberSpawn.x
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: rangeNumberSpawn.y
-      value: 8
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.size
-      value: 6
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnRandom.Array.data[0]
+      value: 
+      objectReference: {fileID: 7739469178168399630, guid: a0096ff935a748e45800929c7e9b39c6, type: 3}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.data[1]
       value: 
-      objectReference: {fileID: 689053203717064684, guid: 7556056ada8407346b9f9a89418aba29, type: 3}
+      objectReference: {fileID: 7739469178168399630, guid: 437b200ee6e31dd4397fc5b4bcf075bf, type: 3}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.data[2]
       value: 
@@ -117057,7 +117035,7 @@ PrefabInstance:
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Icon
       value: 
-      objectReference: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
+      objectReference: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Name
       value: MobSpawner (10)
@@ -117068,7 +117046,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 93.06
+      value: 81.33
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -117076,7 +117054,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 53.9
+      value: 59.88
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -117108,7 +117086,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: spread
-      value: 3
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: spawnRandom
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: timerToRespawn
@@ -117116,20 +117098,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: rangeNumberSpawn.x
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: rangeNumberSpawn.y
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnFix.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnFix.Array.data[0]
+      value: 
+      objectReference: {fileID: 7230543936245105794, guid: 2cc0ac299d7eac446855744f1ee62abc, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnFix.Array.data[1]
+      value: 
+      objectReference: {fileID: 7739469178168399630, guid: a0096ff935a748e45800929c7e9b39c6, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.size
-      value: 6
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnRandom.Array.data[0]
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.data[1]
       value: 
-      objectReference: {fileID: 689053203717064684, guid: 7556056ada8407346b9f9a89418aba29, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.data[2]
       value: 
@@ -135377,7 +135375,7 @@ PrefabInstance:
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Icon
       value: 
-      objectReference: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
+      objectReference: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 1014998596800146313, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_Name
       value: MobSpawner (15)
@@ -135388,7 +135386,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 54.3
+      value: 78.82
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -135396,7 +135394,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 101.5
+      value: 102.32
       objectReference: {fileID: 0}
     - target: {fileID: 2851601046212043030, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -135431,6 +135429,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: spawnRandom
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: timerToRespawn
       value: 85
       objectReference: {fileID: 0}
@@ -135443,8 +135445,16 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnFix.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
+      propertyPath: mobsToSpawnFix.Array.data[0]
+      value: 
+      objectReference: {fileID: 7739469178168399630, guid: 437b200ee6e31dd4397fc5b4bcf075bf, type: 3}
+    - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.size
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3877319111645899152, guid: e49a82246fb1c324e9f7f7a6302668b0, type: 3}
       propertyPath: mobsToSpawnRandom.Array.data[1]

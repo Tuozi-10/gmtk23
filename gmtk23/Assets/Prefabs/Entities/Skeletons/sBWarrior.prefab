@@ -1110,8 +1110,8 @@ MonoBehaviour:
   m_fireball: {fileID: 1127239125271462841, guid: f78a3cca4ecd3574a91602a2a9ceff73, type: 3}
   m_healBall: {fileID: 8591885573117207753, guid: 44c7950bc6ab08d43918d58d996cab8c, type: 3}
   m_aiHp: {fileID: 9126435367830442390}
-  attackSpeedRate: 1.2
-  damagesBonus: 1.2
+  attackSpeedRate: 0.65
+  damagesBonus: 0.6
   scaleShockWave: 0.65
   m_stunMasseDuration: 1
   m_body: {fileID: 2991035087833635177}

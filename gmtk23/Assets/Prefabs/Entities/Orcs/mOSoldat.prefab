@@ -159,7 +159,7 @@ MonoBehaviour:
   m_currentState: 0
   m_currentTeam: 0
   m_currentJob: 0
-  m_baseHp: 16
+  m_baseHp: 17
   currentPack: {fileID: 0}
   m_speedSmall: 3.5
   m_speedMedium: 2.5
@@ -175,8 +175,8 @@ MonoBehaviour:
   m_fireball: {fileID: 1127239125271462841, guid: f78a3cca4ecd3574a91602a2a9ceff73, type: 3}
   m_healBall: {fileID: 8591885573117207753, guid: 44c7950bc6ab08d43918d58d996cab8c, type: 3}
   m_aiHp: {fileID: 3638485886611916090}
-  attackSpeedRate: 1
-  damagesBonus: 1.25
+  attackSpeedRate: 1.1
+  damagesBonus: 1.2
   scaleShockWave: 0.75
   m_stunMasseDuration: 1
   m_body: {fileID: 7203991352291122411}

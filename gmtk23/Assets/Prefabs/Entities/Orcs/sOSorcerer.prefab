@@ -1140,15 +1140,15 @@ MonoBehaviour:
   m_distanceForget: 6
   m_triggerDetection: {fileID: 718687316911559642}
   m_distanceAttackCac: 1.5
-  m_distanceAttackDistance: 8
+  m_distanceAttackDistance: 10
   m_fleeTooNearAttackDistance: 6
   m_arrow: {fileID: 5435709332488754029, guid: a3fcfe6d65609d845ac5695a1b84b366, type: 3}
   m_fireball: {fileID: 1127239125271462841, guid: f78a3cca4ecd3574a91602a2a9ceff73, type: 3}
   m_healBall: {fileID: 8591885573117207753, guid: 44c7950bc6ab08d43918d58d996cab8c, type: 3}
   m_aiHp: {fileID: 616844844514350541}
   attackSpeedRate: 1
-  damagesBonus: 1
-  scaleShockWave: 0.65
+  damagesBonus: 0.8
+  scaleShockWave: 0.7
   m_stunMasseDuration: 1
   m_body: {fileID: 2552373680536056651}
   m_head: {fileID: 3982815749786502399}
