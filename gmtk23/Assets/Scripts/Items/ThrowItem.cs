@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ThrowItem : MonoBehaviour {
     [SerializeField] private AbstractItem item = null;
+    public AbstractItem Item => item;
+    [SerializeField] private SpriteRenderer itemSprite = null;
 
     private void OnCollisionEnter(Collision collision) {
         if (collision.gameObject.CompareTag("Enemy")) {
@@ -20,5 +22,8 @@ public class ThrowItem : MonoBehaviour {
     /// Set the item of this object
     /// </summary>
     /// <param name="item"></param>
-    public void SetItem(AbstractItem itemSet) => item = itemSet;
+    public void SetItem(AbstractItem itemSet) {
+        itemSprite.sprite = itemSet.sprite;
+        item = itemSet;
+    }
 }

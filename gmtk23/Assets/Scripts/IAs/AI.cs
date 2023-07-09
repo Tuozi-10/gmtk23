@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using DG.Tweening;
+using Gameplay;
 using Gameplay.Projectiles;
 using Items;
 using Managers;
@@ -111,6 +113,7 @@ namespace IAs
 
         [SerializeField] private Arrow m_arrow;
         [SerializeField] private BulletTest m_fireball;
+        [SerializeField] private BulletTest m_healBall;
 
         [SerializeField] private AiHp m_aiHp;
 
@@ -224,6 +227,22 @@ namespace IAs
             m_currentJob = Jobs.Cac; // default, hit with hands ? or flee ?
         }
 
+        /// <summary>
+        /// Remove a random item
+        /// </summary>
+        public void RemoveRandomItem() {
+            List<AbstractItem> ToolsItemsList = new();
+            if(m_weapon != null) ToolsItemsList.Add(m_weapon);
+            if(m_armor != null) ToolsItemsList.Add(m_armor);
+
+            if (ToolsItemsList.Count == 0) return;
+            int random = Random.Range(0, ToolsItemsList.Count);
+            Inventory.instance.DropAbstractItem(Vector3.zero, transform.position - PlayerController.instance.DashDir * 2, ToolsItemsList[random]);
+            
+            if(ToolsItemsList[random] is Weapon) RemoveWeapon();
+            else RemoveArmor();
+        }
+        
         #endregion
 
         #region Movement
@@ -281,6 +300,13 @@ namespace IAs
         {
             m_animator.speed = 1f;
             m_animator.Play("Idle");
+            
+            if (m_weapon is null)
+            {
+                CheckWeapons();
+                return;
+            }
+            
             CheckTargets();
         }
 
@@ -306,7 +332,7 @@ namespace IAs
 
         private void CheckWeapons()
         {
-            // TODO
+            // TODO collect weapons
         }
 
         private void CheckTargets()
@@ -366,12 +392,14 @@ namespace IAs
                 m_animator.Play(!isDistance ? "AttackCac" : "AttackDistance");
             }
 
-            if (m_targetAI == null)
+            if (m_targetAI == null || (m_targetAI.m_currentHp >= m_targetAI.m_baseHp && isHealer))
             {
                 m_currentState = States.Wander;
                 return;
             }
 
+            
+            
             var distanceTarget = Vector3.Distance(transform.position, m_targetAI.transform.position);
 
             if (distanceTarget > (!isDistance ? m_distanceAttackCac : m_distanceAttackDistance) + 0.5f)
@@ -416,9 +444,12 @@ namespace IAs
             Destroy(gameObject);
         }
 
+        private bool isHealer =>
+            m_skill is Skills.Healer && m_weapon != null && m_weapon.weaponType == WeaponType.Sceptre;
+        
         protected virtual void DoFlee()
         {
-            if (m_targetAI == null)
+            if (m_targetAI == null )
             {
                 m_currentState = States.Wander;
                 return;
@@ -460,9 +491,17 @@ namespace IAs
 
         public void Hit(int damages, bool fromFire = false)
         {
-            m_currentHp = Mathf.Max(0, m_currentHp - damages);
+            m_currentHp = Mathf.Clamp(m_currentHp - damages,0, m_baseHp);
 
-            FxManagers.RequestDamageFxAtPos(transform.position + Vector3.up);
+            if (damages > 0)
+            {
+                FxManagers.RequestDamageFxAtPos(transform.position + Vector3.up);
+            }
+            else
+            {
+                FxManagers.RequestHealFxAtPos(transform.position + Vector3.up);
+            }
+            
             RefreshHp();
 
             if (m_currentHp == 0)
@@ -496,7 +535,14 @@ namespace IAs
 
             if (isDistance && m_currentJob == Jobs.Support)
             {
-                ShootMagic();
+                if (m_weapon.weaponType == WeaponType.Baguette)
+                {
+                    ShootMagic();
+                }
+                else
+                {
+                    ShootHeal();
+                }
                 return;
             }
 
@@ -509,11 +555,25 @@ namespace IAs
                 {
                     // TODO BREAK FX
                     m_currentJob = Jobs.Cac;
-                    m_weapon = null;
-                    RefreshStuffs();
+                    RemoveWeapon();
                     m_currentState = States.Flee;
                 }
             }
+        }
+
+        public void RemoveWeapon()
+        {
+            m_currentJob = Jobs.Cac;
+            m_weapon = null;
+            RefreshStuffs();
+            m_currentState = States.Wander;
+        }
+        
+        public void RemoveArmor()
+        {
+            m_skill = Skills.NoSkill;
+            m_armor = null;
+            RefreshStuffs();
         }
 
         public void ShootArrow()
@@ -537,6 +597,18 @@ namespace IAs
             }
 
             var fireBall = Instantiate(m_fireball);
+            fireBall.transform.position = transform.position + Vector3.up;
+            fireBall.SetUp(targetAI, (int) (m_weapon.damages * damagesBonus));
+        }
+        
+        public void ShootHeal()
+        {
+            if (targetAI == null)
+            {
+                return;
+            }
+
+            var fireBall = Instantiate(m_healBall);
             fireBall.transform.position = transform.position + Vector3.up;
             fireBall.SetUp(targetAI, (int) (m_weapon.damages * damagesBonus));
         }
