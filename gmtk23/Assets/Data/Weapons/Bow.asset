@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: Bow
   m_EditorClassIdentifier: 
   m_size: {x: 1, y: 1}
-  price: 1
-  sprite: {fileID: 2004522603, guid: 7158d6fd0ff450c42b5e496603875a1b, type: 3}
+  level: 0
+  sprite:
+  - {fileID: -404967554, guid: ac63ce093c7cf3c4199411561f652290, type: 3}
+  - {fileID: -782871099, guid: ac63ce093c7cf3c4199411561f652290, type: 3}
+  - {fileID: 885589126, guid: ac63ce093c7cf3c4199411561f652290, type: 3}
   AssociatedJob: 2
   damages: 010000000200000003000000
   weaponType: 2

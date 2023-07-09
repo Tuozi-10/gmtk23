@@ -14,6 +14,7 @@ public class PackMobManager : MonoBehaviour
     [SerializeField] private float timerToRespawn;
     [SerializeField] private float detectionRangeFactor;
     [SerializeField] private bool spawnRandom;
+    [SerializeField] private bool isMenu;
 
     [Header("Random Spawn Parameters")]
     [SerializeField] private Vector2 rangeNumberSpawn;
@@ -81,6 +82,7 @@ public class PackMobManager : MonoBehaviour
     IEnumerator NewPackIn()
     {
         yield return new WaitForSeconds(timerToRespawn);
+        Debug.Log("New Wave");
         switch (spawnRandom)
         {
             case true : SpawnRandomMobPack();

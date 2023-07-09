@@ -38,7 +38,7 @@ namespace Gameplay
                 return; // clean area first
             }
             
-            CalculateDirection();
+            if (m_currentRoad != null) CalculateDirection();
 
             transform.position += m_currentDirection * speedPack * Time.deltaTime;
         }

@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: Scepter
   m_EditorClassIdentifier: 
   m_size: {x: 1, y: 1}
-  price: 1
-  sprite: {fileID: 2145791596, guid: 64dbc6ac89b8b6d42ae37932ae3ca4ad, type: 3}
+  level: 0
+  sprite:
+  - {fileID: 407761952, guid: ac63ce093c7cf3c4199411561f652290, type: 3}
+  - {fileID: -820350986, guid: ac63ce093c7cf3c4199411561f652290, type: 3}
+  - {fileID: 1142403471, guid: ac63ce093c7cf3c4199411561f652290, type: 3}
   AssociatedJob: 0
   damages: fffffffffefffffffdffffff
   weaponType: 5

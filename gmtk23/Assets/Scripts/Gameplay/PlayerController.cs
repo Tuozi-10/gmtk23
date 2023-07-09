@@ -46,12 +46,12 @@ namespace Gameplay {
         [SerializeField] private Transform cursorTransform = null;
         [SerializeField] private GameObject itemGam = null;
         [SerializeField] private float throwForce = 0;
-        private GameObject gamItemCatchable = null;
-        private ICatchable inAreaCatchable = null;
-        
+        private ThrowItem throwItem = null;
+
         [Header("Inventory")]
         [SerializeField] private Inventory playerInv = new();
         [SerializeField] private GameObject textGetItem = null;
+        public GameObject TextGetItem => textGetItem;
         
         [Header("Interface")]
         [SerializeField] private Transform dashCooldownParent = null;
@@ -60,7 +60,11 @@ namespace Gameplay {
         [SerializeField] private Color hasDashColor = new();
         [SerializeField] private float getDashAnimDuration = 0.25f;
 
+        [SerializeField] private Transform ParentBody;
+        [SerializeField] private Animator m_animator;
+        
         private SortingGroup _sortingGroup;
+        private Vector3 m_spawnPosition;
         
         private void Start() {
             cam = Camera.main;
@@ -69,6 +73,7 @@ namespace Gameplay {
             rb.drag = drag;
             velocityChangeTime = decelerationDashTime;
             textGetItem.GetComponent<CanvasGroup>().alpha = 0;
+            m_spawnPosition = transform.position;
             
             inputs = new PlayerMap();
             inputs.Enable();
@@ -79,13 +84,22 @@ namespace Gameplay {
             _sortingGroup = GetComponent<SortingGroup>();
             m_uiHp.HpRatio(1);
         }
+
+        public void Respawn()
+        {
+            m_currentHp = hp;
+            m_uiHp.HpRatio(1);
+           GetComponent<Rigidbody>() .position = m_spawnPosition;
+        }
         
         private void Update() {
             GetCurrentPlayerVelocity();
             SetCursorLocation();
             UpdateDashState();
             _sortingGroup.sortingOrder = -(int)(transform.position.z*30);
-            
+            if(rb.velocity.magnitude > 0.2f)
+            ParentBody.localScale = new Vector3(rb.velocity.x > 0 ? 1 : -1, 1, 1);
+            m_animator.Play(rb.velocity.magnitude > 0.65f ? "Move": "Idle");
         }
 
         /// <summary>
@@ -234,7 +248,7 @@ namespace Gameplay {
         /// <exception cref="NotImplementedException"></exception>
         private void ThrowItem(InputAction.CallbackContext obj) {
             if (playerInv.items.Count <= playerInv.CurrentSelectedSlot) return;
-            Inventory.instance.DropAbstractItem(CalculateVelocity(), transform.position, null, playerInv.items[playerInv.CurrentSelectedSlot] as AbstractItem);
+            Inventory.instance.DropAbstractItem(CalculateVelocity(), transform.position, null, playerInv.items[playerInv.CurrentSelectedSlot]);
             playerInv.RemoveItem();
         }
 
@@ -261,22 +275,21 @@ namespace Gameplay {
         /// </summary>
         /// <param name="catchable"></param>
         /// <param name="add"></param>
-        public void ChangeObjectState(ICatchable catchable, GameObject catchGam, bool add) {
+        public void ChangeObjectState(ThrowItem throwI, bool add) {
             if (add) {
-                inAreaCatchable = catchable;
-                gamItemCatchable = catchGam;
-                textGetItem.transform.parent = catchGam.transform;
+                throwItem = throwI;
+                textGetItem.transform.parent = throwI.transform;
                 textGetItem.transform.localPosition = Vector3.up;
                 textGetItem.GetComponent<CanvasGroup>().DOFade(1, 0.25f);
             }
-            else if (inAreaCatchable == catchable) {
-                inAreaCatchable = null;
-                gamItemCatchable = null;
+            else if (throwItem == throwI) {
+                throwItem = null;
                 textGetItem.GetComponent<CanvasGroup>().DOFade(0, 0.25f).OnComplete(() => textGetItem.transform.parent = null);
             }
         }
 
         public void ResetPressEText() {
+            throwItem = null;
             textGetItem.transform.parent = null;
             textGetItem.GetComponent<CanvasGroup>().alpha = 0;
         }
@@ -286,10 +299,10 @@ namespace Gameplay {
         /// </summary>
         /// <param name="obj"></param>
         private void AddItemToInventory(InputAction.CallbackContext obj) {
-            if (gamItemCatchable == null) return;
-            inAreaCatchable = playerInv.TryAddItem(inAreaCatchable, gamItemCatchable);
+            if (throwItem == null) return;
+            throwItem = playerInv.TryAddItem(throwItem.Item, throwItem);
 
-            if (inAreaCatchable == null) ResetPressEText();
+            if (throwItem == null) ResetPressEText();
         }
         #endregion Throw Object
         
@@ -369,7 +382,7 @@ namespace Gameplay {
 
         public void Die()
         {
-            
+            TesMortManager.Respawn();
         }
         
         #endregion

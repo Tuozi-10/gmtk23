@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Gameplay;
 using IAs;
 using UnityEngine;
 
@@ -33,6 +34,16 @@ public class ShockWave : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
+        if (other.GetComponent<PlayerController>())
+        {
+            if (target == AI.Team.Hero)
+            {
+                PlayerController.instance.Hit(damages);
+            }
+
+            return;
+        }
+        
         if (other.GetComponent<AI>())
         {
             var otherAI =other.GetComponent<AI>();
