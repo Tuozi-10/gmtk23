@@ -19,5 +19,5 @@ MonoBehaviour:
   - {fileID: -228960905, guid: ac63ce093c7cf3c4199411561f652290, type: 3}
   - {fileID: -2000459767, guid: ac63ce093c7cf3c4199411561f652290, type: 3}
   AssociatedJob: 1
-  damages: 010000000200000003000000
+  damages: 030000000500000008000000
   weaponType: 1
