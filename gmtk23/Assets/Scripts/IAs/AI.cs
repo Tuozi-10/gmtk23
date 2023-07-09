@@ -144,7 +144,8 @@ namespace IAs
         protected NavMeshAgent agent;
 
         [Space, SerializeField] protected Animator m_animator;
-
+        [SerializeField] private GameObject stunFx;
+        
         private Vector3 m_positionInit;
 
         private void Awake()
@@ -168,6 +169,7 @@ namespace IAs
             RefreshHp();
 
             m_triggerDetection.radius = m_radiusAgro;
+            stunFx.SetActive(false);
         }
 
         private void Update()
@@ -351,14 +353,14 @@ namespace IAs
             }
             timeEndStun = Time.time + duration;
             m_currentState = States.Stun;
-            // TODO AFF FX
+            stunFx.SetActive(true);
         }
         
         protected virtual void DoStun()
         {
             if (Time.time > timeEndStun)
             {
-                // TODO REMOVE FX
+                stunFx.SetActive(false);
                 m_currentState = States.Wander;
             }
         }
